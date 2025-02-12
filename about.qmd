@@ -1,0 +1,12 @@
+---
+title: "About"
+image: profile.jpg
+about:
+  template: jolla
+  links:
+    - icon: github
+      text: Github
+      href: https://github.com/guntas-13
+---
+
+Rendered notebooks for AISG 2025 Assignment 1 :)

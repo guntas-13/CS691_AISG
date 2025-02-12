@@ -1,0 +1,18 @@
+---
+title: "AI for Social Good"
+listing:
+  contents: posts
+  fields: [title, author, date, image]
+  sort: "date desc"
+  type: grid
+  categories: false
+  sort-ui: false
+  filter-ui: false
+  page-size: 6
+page-layout: full
+title-block-banner: false
+comments: false
+toc: false
+---
+
+

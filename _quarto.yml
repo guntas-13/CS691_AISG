@@ -1,0 +1,31 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "AISG 2025 Assignment 1"
+  page-footer:
+    left: "Made with [Quarto](https://quarto.org/) © 2025 Digvijay | Guntas | Hrriday | Prathmesh"
+  navbar:
+    background: primary
+    type: primary
+    right:
+      - about.qmd
+      - icon: github
+        href: https://github.com/guntas-13
+format:
+  html:
+    theme:
+      - pulse
+      - custom.scss
+    # css: styles.css
+    mainfont: Poppins
+    code-copy: true
+    code-fold: true
+    code-overflow: wrap
+    citations-hover: true
+    footnotes-hover: true
+    toc: true
+    code-link: true
+
+editor: visual
