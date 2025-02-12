@@ -2,7 +2,8 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/processing/data.html"
+      "/posts/processing/data.html",
+      "/posts/welcome/index.html"
     ]
   }
 ]

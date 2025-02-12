@@ -7,6 +7,13 @@
     "text": "Rendered notebooks for AISG 2025 Assignment 1 :)"
   },
   {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
     "objectID": "posts/processing/data.html",
     "href": "posts/processing/data.html",
     "title": "Dataset Preprocessing",
@@ -18,6 +25,6 @@
     "href": "index.html",
     "title": "AI for Social Good",
     "section": "",
-    "text": "Dataset Preprocessing\n\n\n\nGuntas Singh Saran\n\n\nFeb 12, 2025\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Dataset Preprocessing\n\n\n\nGuntas Singh Saran\n\n\nFeb 12, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\nTristan O’Malley\n\n\nFeb 9, 2025\n\n\n\n\n\n\n\n\nNo matching items"
   }
 ]
