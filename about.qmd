@@ -1,12 +1,29 @@
 ---
-title: "About"
-image: profile.jpg
+title: "अप्राकृतिक बुद्धिमत्ता 4 सामाजिक भलाई"
+image: icon.png
 about:
   template: jolla
   links:
     - icon: github
-      text: Github
+      text: Digvijay
+      href: https://github.com/dsp81
+    - icon: github
+      text: Guntas
       href: https://github.com/guntas-13
+    - icon: github
+      text: Hrriday
+      href: https://github.com/Robohrriday
+    - icon: github
+      text: Prathmesh
+      href: https://github.com/Prath-Maharshi
 ---
 
 Rendered notebooks for AISG 2025 Assignment 1 :)
+
+Digvijay Singh Parihar
+
+Guntas Singh Saran
+
+Hrriday V. Ruparel
+
+Prathmesh Maharshi
