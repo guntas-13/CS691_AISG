@@ -4,6 +4,7 @@ project:
 
 website:
   title: "AISG 2025 Assignment 1"
+  favicon: "icon.PNG"
   page-footer:
     left: "Made with [Quarto](https://quarto.org/) © 2025 Digvijay | Guntas | Hrriday | Prathmesh"
   navbar:
