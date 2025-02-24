@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/data_analysis/analysis.html",
       "/posts/split/data.html",
       "/posts/zeel/notebook.html"
     ]
