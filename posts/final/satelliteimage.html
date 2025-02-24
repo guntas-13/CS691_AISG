@@ -1,0 +1,2455 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.549">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Guntas Singh Saran">
+<meta name="author" content="Digvijay Singh Parihar">
+<meta name="dcterms.date" content="2025-02-24">
+
+<title>AISG 2025 Assignment 1 - Part3: Model Training and Bonus!</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../icon.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">AISG 2025 Assignment 1</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">अप्राकृतिक बुद्धिमत्ता 4 सामाजिक भलाई</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/guntas-13/CS691_AISG"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Part3: Model Training and Bonus!</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Authors</div>
+      <div class="quarto-title-meta-contents">
+               <p>Guntas Singh Saran </p>
+               <p>Digvijay Singh Parihar </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">February 24, 2025</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#final-split-dataset" id="toc-final-split-dataset" class="nav-link active" data-scroll-target="#final-split-dataset">Final Split Dataset</a></li>
+  <li><a href="#weights-biases-training-report" id="toc-weights-biases-training-report" class="nav-link" data-scroll-target="#weights-biases-training-report">Weights &amp; Biases Training Report</a></li>
+  <li><a href="#getting-to-know-supervision" id="toc-getting-to-know-supervision" class="nav-link" data-scroll-target="#getting-to-know-supervision">Getting to know SuperVision</a></li>
+  <li><a href="#loading-saved-model-a-demo" id="toc-loading-saved-model-a-demo" class="nav-link" data-scroll-target="#loading-saved-model-a-demo">Loading Saved Model (A Demo)</a></li>
+  <li><a href="#predict-solar-panels-using-the-trained-model" id="toc-predict-solar-panels-using-the-trained-model" class="nav-link" data-scroll-target="#predict-solar-panels-using-the-trained-model">Predict solar panels using the trained model</a></li>
+  <li><a href="#using-supervision.metrics" id="toc-using-supervision.metrics" class="nav-link" data-scroll-target="#using-supervision.metrics">Using <code>supervision.metrics</code></a></li>
+  <li><a href="#map50" id="toc-map50" class="nav-link" data-scroll-target="#map50">mAP50</a></li>
+  <li><a href="#precision-recall-f1-score" id="toc-precision-recall-f1-score" class="nav-link" data-scroll-target="#precision-recall-f1-score">Precision, Recall, F1 Score</a>
+  <ul class="collapse">
+  <li><a href="#confusion-matrix-with-background-class-predictions-along-horizontal-axis-and-ground-truth-on-the-vertical-axis" id="toc-confusion-matrix-with-background-class-predictions-along-horizontal-axis-and-ground-truth-on-the-vertical-axis" class="nav-link" data-scroll-target="#confusion-matrix-with-background-class-predictions-along-horizontal-axis-and-ground-truth-on-the-vertical-axis">Confusion Matrix with Background Class [Predictions along horizontal axis and Ground Truth on the vertical axis]</a></li>
+  </ul></li>
+  <li><a href="#bonus-part---for-india" id="toc-bonus-part---for-india" class="nav-link" data-scroll-target="#bonus-part---for-india">BONUS PART - FOR INDIA!!!</a></li>
+  <li><a href="#scraped-out-images" id="toc-scraped-out-images" class="nav-link" data-scroll-target="#scraped-out-images">Scraped out Images</a>
+  <ul class="collapse">
+  <li><a href="#iit-delhi-campus" id="toc-iit-delhi-campus" class="nav-link" data-scroll-target="#iit-delhi-campus">IIT Delhi Campus</a></li>
+  <li><a href="#kochin-airport-parking-false-solar-panels-sheds" id="toc-kochin-airport-parking-false-solar-panels-sheds" class="nav-link" data-scroll-target="#kochin-airport-parking-false-solar-panels-sheds">Kochin Airport Parking (false solar panels sheds)</a></li>
+  <li><a href="#iitgn-hostel" id="toc-iitgn-hostel" class="nav-link" data-scroll-target="#iitgn-hostel">IITGN Hostel</a></li>
+  <li><a href="#iitgn-acad-area" id="toc-iitgn-acad-area" class="nav-link" data-scroll-target="#iitgn-acad-area">IITGN Acad Area</a></li>
+  <li><a href="#honolulu-hawaii" id="toc-honolulu-hawaii" class="nav-link" data-scroll-target="#honolulu-hawaii">Honolulu, Hawaii</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<section id="final-split-dataset" class="level1">
+<h1><a href="https://www.kaggle.com/datasets/guntassinghsaran/satellite-aisg">Final Split Dataset</a></h1>
+</section>
+<section id="weights-biases-training-report" class="level1">
+<h1><a href="https://api.wandb.ai/links/digvijaysingh-parihar-iit-gandhinagar/y0w54hu8">Weights &amp; Biases Training Report</a></h1>
+<div id="cell-3" class="cell" data-trusted="true">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install ultralytics</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install <span class="op">-</span>U ipywidgets</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install supervision</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install roboflow</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install shapely</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install <span class="op">-</span>U wandb</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>yolo settings wandb<span class="op">=</span><span class="va">True</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-4" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-24T09:22:09.827572Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-24T09:22:09.827211Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-24T09:22:13.329389Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-24T09:22:13.328499Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-02-24T09:22:09.827535Z&quot;}" data-trusted="true" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cv2</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> roboflow <span class="im">import</span> Roboflow</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> supervision <span class="im">as</span> sv</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ultralytics <span class="im">import</span> YOLO</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> PIL <span class="im">import</span> Image</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> shapely.geometry <span class="im">import</span> box</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tqdm.notebook <span class="im">import</span> tqdm</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> glob</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>matplotlib inline</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>config InlineBackend.figure_format <span class="op">=</span> <span class="st">'retina'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-5" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-24T09:22:13.331229Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-24T09:22:13.330675Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-24T09:22:13.334756Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-24T09:22:13.333981Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-02-24T09:22:13.331196Z&quot;}" data-trusted="true" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>dataset_location <span class="op">=</span> <span class="st">"/kaggle/input/satellite-aisg/data"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-6" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-24T09:22:13.336351Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-24T09:22:13.336094Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-24T09:22:30.687450Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-24T09:22:30.686597Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-02-24T09:22:13.336333Z&quot;}" data-trusted="true">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> wandb</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>wandb.login(key<span class="op">=</span><span class="st">"&lt;API-KEY&gt;"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: WARNING If you're specifying your api key in code, ensure this code is not shared publicly.
+wandb: WARNING Consider setting the WANDB_API_KEY environment variable, or running `wandb login` from the command line.
+wandb: No netrc file found, creating one.
+wandb: Appending key for api.wandb.ai to your netrc file: /root/.netrc
+wandb: Currently logged in as: digvijaysingh-parihar (digvijaysingh-parihar-iit-gandhinagar) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>True</code></pre>
+</div>
+</div>
+<div id="cell-7" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-22T22:33:13.993382Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-22T22:33:13.992650Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-22T22:33:20.180180Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-22T22:33:20.179493Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-02-22T22:33:13.993353Z&quot;}" data-trusted="true" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>wandb.init(project <span class="op">=</span> <span class="st">"FinalUltralytics"</span>, name <span class="op">=</span> <span class="st">"YOLO11v"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+Tracking run with wandb version 0.19.7
+</div>
+<div class="cell-output cell-output-display">
+Run data is saved locally in <code>/kaggle/working/wandb/run-20250222_223314-26dbspcz</code>
+</div>
+<div class="cell-output cell-output-display">
+Syncing run <strong><a href="https://wandb.ai/digvijaysingh-parihar-iit-gandhinagar/FinalUltralytics/runs/26dbspcz" target="_blank">YOLO11v</a></strong> to <a href="https://wandb.ai/digvijaysingh-parihar-iit-gandhinagar/FinalUltralytics" target="_blank">Weights &amp; Biases</a> (<a href="https://wandb.me/developer-guide" target="_blank">docs</a>)<br>
+</div>
+<div class="cell-output cell-output-display">
+ View project at <a href="https://wandb.ai/digvijaysingh-parihar-iit-gandhinagar/FinalUltralytics" target="_blank">https://wandb.ai/digvijaysingh-parihar-iit-gandhinagar/FinalUltralytics</a>
+</div>
+<div class="cell-output cell-output-display">
+ View run at <a href="https://wandb.ai/digvijaysingh-parihar-iit-gandhinagar/FinalUltralytics/runs/26dbspcz" target="_blank">https://wandb.ai/digvijaysingh-parihar-iit-gandhinagar/FinalUltralytics/runs/26dbspcz</a>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<button onclick="this.nextSibling.style.display='block';this.style.display='none';">Display W&amp;B run</button><iframe src="https://wandb.ai/digvijaysingh-parihar-iit-gandhinagar/FinalUltralytics/runs/26dbspcz?jupyter=true" style="border:none;width:100%;height:420px;display:none;"></iframe>
+</div>
+</div>
+<div id="cell-8" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-22T22:34:40.359289Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-22T22:34:40.358960Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-22T22:34:40.485271Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-22T22:34:40.484363Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-02-22T22:34:40.359263Z&quot;}" data-trusted="true" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> YOLO(<span class="st">"yolo11m.pt"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-9" class="cell" data-execution="{&quot;execution_failed&quot;:&quot;2025-02-22T23:54:31.001Z&quot;,&quot;iopub.execute_input&quot;:&quot;2025-02-22T22:34:43.016301Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-22T22:34:43.015981Z&quot;}" data-trusted="true">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>model.train(data <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span>dataset_location<span class="sc">}</span><span class="ss">/data.yaml"</span>, epochs <span class="op">=</span> <span class="dv">50</span>, imgsz <span class="op">=</span> <span class="dv">640</span>, batch <span class="op">=</span> <span class="dv">16</span>, workers <span class="op">=</span> <span class="dv">4</span>, device <span class="op">=</span> <span class="dv">0</span>, project <span class="op">=</span> <span class="st">"FinalUltralytics"</span>, name <span class="op">=</span> <span class="st">"YOLO11v"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Ultralytics 8.3.78 🚀 Python-3.10.12 torch-2.5.1+cu121 CUDA:0 (Tesla T4, 15095MiB)
+engine/trainer: task=detect, mode=train, model=yolo11m.pt, data=/kaggle/input/satellite-aisg/data/data.yaml, epochs=50, time=None, patience=100, batch=16, imgsz=640, save=True, save_period=-1, cache=False, device=0, workers=4, project=FinalUltralytics, name=YOLO11v, exist_ok=False, pretrained=True, optimizer=auto, verbose=True, seed=0, deterministic=True, single_cls=False, rect=False, cos_lr=False, close_mosaic=10, resume=False, amp=True, fraction=1.0, profile=False, freeze=None, multi_scale=False, overlap_mask=True, mask_ratio=4, dropout=0.0, val=True, split=val, save_json=False, save_hybrid=False, conf=None, iou=0.7, max_det=300, half=False, dnn=False, plots=True, source=None, vid_stride=1, stream_buffer=False, visualize=False, augment=False, agnostic_nms=False, classes=None, retina_masks=False, embed=None, show=False, save_frames=False, save_txt=False, save_conf=False, save_crop=False, show_labels=True, show_conf=True, show_boxes=True, line_width=None, format=torchscript, keras=False, optimize=False, int8=False, dynamic=False, simplify=True, opset=None, workspace=None, nms=False, lr0=0.01, lrf=0.01, momentum=0.937, weight_decay=0.0005, warmup_epochs=3.0, warmup_momentum=0.8, warmup_bias_lr=0.1, box=7.5, cls=0.5, dfl=1.5, pose=12.0, kobj=1.0, nbs=64, hsv_h=0.015, hsv_s=0.7, hsv_v=0.4, degrees=0.0, translate=0.1, scale=0.5, shear=0.0, perspective=0.0, flipud=0.0, fliplr=0.5, bgr=0.0, mosaic=1.0, mixup=0.0, copy_paste=0.0, copy_paste_mode=flip, auto_augment=randaugment, erasing=0.4, crop_fraction=1.0, cfg=None, tracker=botsort.yaml, save_dir=FinalUltralytics/YOLO11v
+Overriding model.yaml nc=80 with nc=3
+
+                   from  n    params  module                                       arguments                     
+  0                  -1  1      1856  ultralytics.nn.modules.conv.Conv             [3, 64, 3, 2]                 
+  1                  -1  1     73984  ultralytics.nn.modules.conv.Conv             [64, 128, 3, 2]               
+  2                  -1  1    111872  ultralytics.nn.modules.block.C3k2            [128, 256, 1, True, 0.25]     
+  3                  -1  1    590336  ultralytics.nn.modules.conv.Conv             [256, 256, 3, 2]              
+  4                  -1  1    444928  ultralytics.nn.modules.block.C3k2            [256, 512, 1, True, 0.25]     
+  5                  -1  1   2360320  ultralytics.nn.modules.conv.Conv             [512, 512, 3, 2]              
+  6                  -1  1   1380352  ultralytics.nn.modules.block.C3k2            [512, 512, 1, True]           
+  7                  -1  1   2360320  ultralytics.nn.modules.conv.Conv             [512, 512, 3, 2]              
+  8                  -1  1   1380352  ultralytics.nn.modules.block.C3k2            [512, 512, 1, True]           
+  9                  -1  1    656896  ultralytics.nn.modules.block.SPPF            [512, 512, 5]                 
+ 10                  -1  1    990976  ultralytics.nn.modules.block.C2PSA           [512, 512, 1]                 
+ 11                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']          
+ 12             [-1, 6]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 13                  -1  1   1642496  ultralytics.nn.modules.block.C3k2            [1024, 512, 1, True]          
+ 14                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']          
+ 15             [-1, 4]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 16                  -1  1    542720  ultralytics.nn.modules.block.C3k2            [1024, 256, 1, True]          
+ 17                  -1  1    590336  ultralytics.nn.modules.conv.Conv             [256, 256, 3, 2]              
+ 18            [-1, 13]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 19                  -1  1   1511424  ultralytics.nn.modules.block.C3k2            [768, 512, 1, True]           
+ 20                  -1  1   2360320  ultralytics.nn.modules.conv.Conv             [512, 512, 3, 2]              
+ 21            [-1, 10]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 22                  -1  1   1642496  ultralytics.nn.modules.block.C3k2            [1024, 512, 1, True]          
+ 23        [16, 19, 22]  1   1413337  ultralytics.nn.modules.head.Detect           [3, [256, 512, 512]]          
+YOLO11m summary: 231 layers, 20,055,321 parameters, 20,055,305 gradients, 68.2 GFLOPs
+
+Transferred 643/649 items from pretrained weights
+TensorBoard: Start with 'tensorboard --logdir FinalUltralytics/YOLO11v', view at http://localhost:6006/
+Freezing layer 'model.23.dfl.conv.weight'
+AMP: running Automatic Mixed Precision (AMP) checks...
+AMP: checks passed ✅
+train: WARNING ⚠️ Cache directory /kaggle/input/satellite-aisg/data/train is not writeable, cache not saved.
+albumentations: Blur(p=0.01, blur_limit=(3, 7)), MedianBlur(p=0.01, blur_limit=(3, 7)), ToGray(p=0.01, num_output_channels=3, method='weighted_average'), CLAHE(p=0.01, clip_limit=(1.0, 4.0), tile_grid_size=(8, 8))
+val: WARNING ⚠️ Cache directory /kaggle/input/satellite-aisg/data/val is not writeable, cache not saved.
+Plotting labels to FinalUltralytics/YOLO11v/labels.jpg... 
+optimizer: 'optimizer=auto' found, ignoring 'lr0=0.01' and 'momentum=0.937' and determining best 'optimizer', 'lr0' and 'momentum' automatically... 
+optimizer: AdamW(lr=0.001429, momentum=0.9) with parameter groups 106 weight(decay=0.0), 113 weight(decay=0.0005), 112 bias(decay=0.0)
+TensorBoard: model graph visualization added ✅
+Image sizes 640 train, 640 val
+Using 4 dataloader workers
+Logging results to FinalUltralytics/YOLO11v
+Starting training for 50 epochs...
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        203       2232      0.549      0.249      0.239       0.15
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        203       2232      0.422      0.252     0.0812     0.0468
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        203       2232      0.924      0.271      0.376      0.234
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        203       2232      0.748      0.356      0.384      0.253
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        203       2232      0.739      0.456      0.547      0.381
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        203       2232      0.661      0.425       0.42      0.279
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        203       2232      0.481      0.474      0.489      0.335
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        203       2232      0.942      0.468      0.594      0.405
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        203       2232        0.9      0.522      0.572      0.387
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        203       2232      0.737      0.606      0.626      0.413
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        203       2232      0.563      0.581      0.603      0.401
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        203       2232       0.86      0.645      0.733      0.523
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        203       2232      0.749       0.68      0.714      0.532
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        203       2232      0.806      0.737      0.733      0.555
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        203       2232      0.926      0.721      0.761      0.558
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        203       2232      0.903      0.719      0.783      0.598
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        203       2232      0.873      0.624      0.716      0.546
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        203       2232       0.87      0.722      0.819      0.614
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        203       2232      0.841       0.72      0.767      0.563
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        203       2232      0.954      0.715       0.79      0.603
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        203       2232      0.905      0.743      0.774      0.628
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        203       2232      0.913      0.766       0.78      0.628
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        203       2232       0.92      0.705      0.783      0.628
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        203       2232       0.95      0.734        0.8      0.647
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        203       2232       0.97      0.769      0.829      0.649
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        203       2232      0.961      0.743      0.784      0.643
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        203       2232      0.958       0.74      0.818      0.648
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        203       2232      0.981      0.805      0.861      0.689
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        203       2232      0.963      0.793      0.839      0.682
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        203       2232      0.963      0.747       0.87      0.708
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        203       2232      0.949      0.848      0.909      0.726
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        203       2232      0.988      0.801      0.847      0.703
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        203       2232      0.982      0.822      0.876      0.742
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        203       2232      0.948      0.755      0.829       0.71
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        203       2232      0.985      0.804      0.873      0.726
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>train: Scanning /kaggle/input/satellite-aisg/data/train/labels... 1831 images, 0 backgrounds, 0 corrupt: 100%|██████████| 1831/1831 [00:02&lt;00:00, 720.84it/s]
+val: Scanning /kaggle/input/satellite-aisg/data/val/labels... 203 images, 0 backgrounds, 0 corrupt: 100%|██████████| 203/203 [00:00&lt;00:00, 313.35it/s]
+       1/50      9.24G      1.457      1.458      1.279        164        640: 100%|██████████| 115/115 [01:09&lt;00:00,  1.65it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 7/7 [00:04&lt;00:00,  1.72it/s]
+       2/50      8.63G        1.3     0.9228      1.161        135        640: 100%|██████████| 115/115 [01:15&lt;00:00,  1.53it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 7/7 [00:03&lt;00:00,  1.84it/s]
+       3/50      8.53G      1.249     0.8702      1.151        210        640: 100%|██████████| 115/115 [01:14&lt;00:00,  1.55it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 7/7 [00:03&lt;00:00,  1.92it/s]
+       4/50      8.79G      1.222     0.8092       1.13        167        640: 100%|██████████| 115/115 [01:14&lt;00:00,  1.55it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 7/7 [00:03&lt;00:00,  1.95it/s]
+       5/50      8.54G      1.157     0.7759      1.096        106        640: 100%|██████████| 115/115 [01:14&lt;00:00,  1.55it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 7/7 [00:03&lt;00:00,  1.93it/s]
+       6/50       8.7G      1.104     0.7101       1.07        144        640: 100%|██████████| 115/115 [01:14&lt;00:00,  1.55it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 7/7 [00:03&lt;00:00,  1.94it/s]
+       7/50      8.56G      1.072     0.6872      1.061         74        640: 100%|██████████| 115/115 [01:13&lt;00:00,  1.56it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 7/7 [00:03&lt;00:00,  1.94it/s]
+       8/50       8.7G      1.069     0.6731      1.055        164        640: 100%|██████████| 115/115 [01:13&lt;00:00,  1.56it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 7/7 [00:03&lt;00:00,  1.96it/s]
+       9/50      8.78G      1.038     0.6518      1.037        109        640: 100%|██████████| 115/115 [01:14&lt;00:00,  1.55it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 7/7 [00:03&lt;00:00,  1.97it/s]
+      10/50      8.55G      1.004      0.613      1.022        126        640: 100%|██████████| 115/115 [01:13&lt;00:00,  1.56it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 7/7 [00:03&lt;00:00,  1.99it/s]
+      11/50      8.53G     0.9817     0.5974      1.021        125        640: 100%|██████████| 115/115 [01:13&lt;00:00,  1.56it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 7/7 [00:03&lt;00:00,  1.92it/s]
+      12/50      8.86G     0.9693     0.5919       1.01        118        640: 100%|██████████| 115/115 [01:13&lt;00:00,  1.56it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 7/7 [00:03&lt;00:00,  1.99it/s]
+      13/50      8.52G     0.9407      0.572          1        310        640: 100%|██████████| 115/115 [01:13&lt;00:00,  1.56it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 7/7 [00:03&lt;00:00,  1.99it/s]
+      14/50      8.62G     0.9273     0.5611     0.9932        142        640: 100%|██████████| 115/115 [01:14&lt;00:00,  1.55it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 7/7 [00:03&lt;00:00,  1.98it/s]
+      15/50      8.58G     0.9183     0.5411      0.987        101        640: 100%|██████████| 115/115 [01:13&lt;00:00,  1.57it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 7/7 [00:03&lt;00:00,  1.97it/s]
+      16/50      8.71G     0.8901      0.532     0.9788        128        640: 100%|██████████| 115/115 [01:13&lt;00:00,  1.56it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 7/7 [00:03&lt;00:00,  1.98it/s]
+      17/50      8.54G     0.8703     0.5244      0.975        136        640: 100%|██████████| 115/115 [01:13&lt;00:00,  1.57it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 7/7 [00:03&lt;00:00,  1.99it/s]
+      18/50      8.76G     0.8674     0.5111     0.9688        142        640: 100%|██████████| 115/115 [01:13&lt;00:00,  1.56it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 7/7 [00:03&lt;00:00,  1.98it/s]
+      19/50      8.54G     0.8221     0.4864     0.9492        121        640: 100%|██████████| 115/115 [01:13&lt;00:00,  1.56it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 7/7 [00:03&lt;00:00,  1.97it/s]
+      20/50      8.54G     0.8086     0.4847     0.9446        122        640: 100%|██████████| 115/115 [01:13&lt;00:00,  1.56it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 7/7 [00:03&lt;00:00,  1.99it/s]
+      21/50      8.93G     0.7948     0.4774      0.943        137        640: 100%|██████████| 115/115 [01:13&lt;00:00,  1.56it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 7/7 [00:03&lt;00:00,  1.99it/s]
+      22/50      8.51G     0.7927      0.474      0.947        152        640: 100%|██████████| 115/115 [01:13&lt;00:00,  1.56it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 7/7 [00:03&lt;00:00,  1.98it/s]
+      23/50      8.82G     0.7714     0.4669     0.9363        230        640: 100%|██████████| 115/115 [01:13&lt;00:00,  1.56it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 7/7 [00:03&lt;00:00,  1.98it/s]
+      24/50      8.55G       0.77     0.4663     0.9403        168        640: 100%|██████████| 115/115 [01:13&lt;00:00,  1.56it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 7/7 [00:03&lt;00:00,  1.96it/s]
+      25/50      8.52G     0.7492     0.4512     0.9302        174        640: 100%|██████████| 115/115 [01:13&lt;00:00,  1.56it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 7/7 [00:03&lt;00:00,  1.98it/s]
+      26/50      8.82G     0.7376     0.4444      0.925        230        640: 100%|██████████| 115/115 [01:13&lt;00:00,  1.56it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 7/7 [00:03&lt;00:00,  1.96it/s]
+      27/50      8.79G     0.7184     0.4389     0.9207        175        640: 100%|██████████| 115/115 [01:13&lt;00:00,  1.56it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 7/7 [00:03&lt;00:00,  1.98it/s]
+      28/50      8.88G     0.7015     0.4278     0.9164        137        640: 100%|██████████| 115/115 [01:13&lt;00:00,  1.56it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 7/7 [00:03&lt;00:00,  1.98it/s]
+      29/50      8.64G     0.6932     0.4209     0.9117        115        640: 100%|██████████| 115/115 [01:13&lt;00:00,  1.56it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 7/7 [00:03&lt;00:00,  1.97it/s]
+      30/50      8.73G      0.671     0.4141     0.9089         68        640: 100%|██████████| 115/115 [01:13&lt;00:00,  1.55it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 7/7 [00:03&lt;00:00,  1.99it/s]
+      31/50      8.54G     0.6711     0.4114     0.9024        166        640: 100%|██████████| 115/115 [01:13&lt;00:00,  1.56it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 7/7 [00:03&lt;00:00,  1.99it/s]
+      32/50      8.84G     0.6485     0.3991     0.8974        103        640: 100%|██████████| 115/115 [01:13&lt;00:00,  1.56it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 7/7 [00:03&lt;00:00,  1.97it/s]
+      33/50      8.67G     0.6343     0.3919     0.8965         86        640: 100%|██████████| 115/115 [01:13&lt;00:00,  1.57it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 7/7 [00:03&lt;00:00,  1.99it/s]
+      34/50      8.59G     0.6484     0.3989     0.8985        121        640: 100%|██████████| 115/115 [01:13&lt;00:00,  1.56it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 7/7 [00:03&lt;00:00,  1.99it/s]
+      35/50       8.8G     0.6263     0.3911      0.892        127        640: 100%|██████████| 115/115 [01:13&lt;00:00,  1.56it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 7/7 [00:03&lt;00:00,  1.99it/s]
+      36/50      8.75G     0.6276     0.3914     0.8976        257        640:  36%|███▌      | 41/115 [00:26&lt;00:47,  1.55it/s]</code></pre>
+</div>
+</div>
+</section>
+<section id="getting-to-know-supervision" class="level1">
+<h1>Getting to know SuperVision</h1>
+<section id="poor-documention-refer-code" class="level4">
+<h4 class="anchored" data-anchor-id="poor-documention-refer-code"><a href="https://github.com/roboflow/supervision/blob/develop/supervision/annotators/core.py">poor documention, refer code</a></h4>
+<div id="cell-11" class="cell" data-trusted="true">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> model(<span class="st">"/kaggle/input/satellite-aisg/data/test/images/solarpanels_native_1__x0_4766_y0_12968_dxdy_416.tif"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-12" class="cell" data-trusted="true">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(results), results[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-13" class="cell" data-trusted="true">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>results[<span class="dv">0</span>].boxes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-14" class="cell" data-trusted="true">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> results[<span class="dv">0</span>]</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>boxes <span class="op">=</span> result.boxes.xyxy.cpu().numpy()</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>scores <span class="op">=</span> result.boxes.conf.cpu().numpy()</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> result.boxes.cls.cpu().numpy().astype(<span class="bu">int</span>)</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>img <span class="op">=</span> result.orig_img</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>sv_det <span class="op">=</span> sv.Detections(</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>                xyxy<span class="op">=</span>boxes,</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>                confidence<span class="op">=</span>scores,</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>                class_id<span class="op">=</span>labels)</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>class_ids <span class="op">=</span> {<span class="dv">0</span>: <span class="st">'high'</span>, <span class="dv">1</span>: <span class="st">'moderate'</span>, <span class="dv">2</span>: <span class="st">'low'</span>}</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>sv_det.data[<span class="st">"class_name"</span>] <span class="op">=</span> np.array([<span class="ss">f"</span><span class="sc">{</span>class_ids[sv_det.class_id[i]]<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>sv_det<span class="sc">.</span>confidence[i]<span class="sc">:.2f}</span><span class="ss">"</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(sv_det.class_id))])</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>sv_det</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-15" class="cell" data-trusted="true">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>bounding_box_annotator <span class="op">=</span> sv.BoxAnnotator()</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>annotated_img <span class="op">=</span> bounding_box_annotator.annotate(</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    scene<span class="op">=</span>img.copy(),</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    detections<span class="op">=</span>sv_det</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>plt.imshow(annotated_img)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-16" class="cell" data-trusted="true">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>label_annotator <span class="op">=</span> sv.LabelAnnotator(text_scale<span class="op">=</span><span class="fl">0.3</span>, smart_position <span class="op">=</span> <span class="va">True</span>)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>label_annotated_img <span class="op">=</span> label_annotator.annotate(annotated_img, sv_det)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>plt.imshow(label_annotated_img)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="loading-saved-model-a-demo" class="level1">
+<h1>Loading Saved Model (A Demo)</h1>
+<div id="cell-18" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-24T09:22:30.689276Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-24T09:22:30.688718Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-24T09:22:54.067168Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-24T09:22:54.066497Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-02-24T09:22:30.689252Z&quot;}" data-trusted="true">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Paste this from the WANDB Artifact Segment</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>run <span class="op">=</span> wandb.init()</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>artifact <span class="op">=</span> run.use_artifact(<span class="st">'&lt;artificat-location&gt;'</span>, <span class="bu">type</span><span class="op">=</span><span class="st">'model'</span>)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>artifact_dir <span class="op">=</span> artifact.download()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+Tracking run with wandb version 0.19.7
+</div>
+<div class="cell-output cell-output-display">
+Run data is saved locally in <code>/kaggle/working/wandb/run-20250224_092230-t9notxvw</code>
+</div>
+<div class="cell-output cell-output-display">
+Syncing run <strong><a href="https://wandb.ai/digvijaysingh-parihar-iit-gandhinagar/uncategorized/runs/t9notxvw" target="_blank">trim-dust-5</a></strong> to <a href="https://wandb.ai/digvijaysingh-parihar-iit-gandhinagar/uncategorized" target="_blank">Weights &amp; Biases</a> (<a href="https://wandb.me/developer-guide" target="_blank">docs</a>)<br>
+</div>
+<div class="cell-output cell-output-display">
+ View project at <a href="https://wandb.ai/digvijaysingh-parihar-iit-gandhinagar/uncategorized" target="_blank">https://wandb.ai/digvijaysingh-parihar-iit-gandhinagar/uncategorized</a>
+</div>
+<div class="cell-output cell-output-display">
+ View run at <a href="https://wandb.ai/digvijaysingh-parihar-iit-gandhinagar/uncategorized/runs/t9notxvw" target="_blank">https://wandb.ai/digvijaysingh-parihar-iit-gandhinagar/uncategorized/runs/t9notxvw</a>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>wandb:   1 of 1 files downloaded.  </code></pre>
+</div>
+</div>
+<div id="cell-19" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-24T09:22:54.068797Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-24T09:22:54.068505Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-24T09:22:54.189382Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-24T09:22:54.188422Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-02-24T09:22:54.068777Z&quot;}" data-trusted="true" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> YOLO(<span class="ss">f"</span><span class="sc">{</span>artifact_dir<span class="sc">}</span><span class="ss">/best.pt"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="predict-solar-panels-using-the-trained-model" class="level1">
+<h1>Predict solar panels using the trained model</h1>
+<div id="cell-21" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-24T09:22:54.190746Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-24T09:22:54.190364Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-24T09:22:54.203947Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-24T09:22:54.203022Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-02-24T09:22:54.190721Z&quot;}" data-trusted="true" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> give_image(fileIm, model, fileLb <span class="op">=</span> <span class="va">None</span>):</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    im <span class="op">=</span> Image.<span class="bu">open</span>(fileIm)</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    im <span class="op">=</span> np.array(im)</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>    results <span class="op">=</span> model(fileIm)</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>    data_pred <span class="op">=</span> []</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> result <span class="kw">in</span> results:</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>        boxes <span class="op">=</span> result.boxes.xyxy.cpu().numpy()</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>        scores <span class="op">=</span> result.boxes.conf.cpu().numpy()</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>        labels <span class="op">=</span> result.boxes.cls.cpu().numpy().astype(<span class="bu">int</span>)</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>        sv_det <span class="op">=</span> sv.Detections(</span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>                        xyxy<span class="op">=</span>boxes,</span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>                        confidence<span class="op">=</span>scores,</span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>                        class_id<span class="op">=</span>labels)</span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>        class_ids <span class="op">=</span> {<span class="dv">0</span>: <span class="st">'high'</span>, <span class="dv">1</span>: <span class="st">'moderate'</span>, <span class="dv">2</span>: <span class="st">'low'</span>}</span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>        sv_det.data[<span class="st">"class_name"</span>] <span class="op">=</span> np.array([<span class="ss">f"</span><span class="sc">{</span>class_ids[sv_det.class_id[i]]<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>sv_det<span class="sc">.</span>confidence[i]<span class="sc">:.2f}</span><span class="ss">"</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(sv_det.class_id))])</span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>        bounding_box_annotator <span class="op">=</span> sv.BoxAnnotator()</span>
+<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a>        annotated_img <span class="op">=</span> bounding_box_annotator.annotate(</span>
+<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a>            scene<span class="op">=</span>im.copy(),</span>
+<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a>            detections<span class="op">=</span>sv_det</span>
+<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a>        label_annotator <span class="op">=</span> sv.LabelAnnotator(text_scale<span class="op">=</span><span class="fl">0.3</span>, text_padding <span class="op">=</span> <span class="dv">5</span>, smart_position <span class="op">=</span> <span class="va">True</span>)</span>
+<span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a>        annotated_img <span class="op">=</span> label_annotator.annotate(annotated_img, sv_det)</span>
+<span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb21-30"><a href="#cb21-30" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> (box, conf, class_id) <span class="kw">in</span> <span class="bu">zip</span>(boxes, scores, labels):</span>
+<span id="cb21-31"><a href="#cb21-31" aria-hidden="true" tabindex="-1"></a>            x1, y1, x2, y2 <span class="op">=</span> <span class="bu">map</span>(<span class="bu">int</span>, box)</span>
+<span id="cb21-32"><a href="#cb21-32" aria-hidden="true" tabindex="-1"></a>            data_pred.append((class_id, (x1, y1), (x2, y2), conf))</span>
+<span id="cb21-33"><a href="#cb21-33" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb21-34"><a href="#cb21-34" aria-hidden="true" tabindex="-1"></a>    data_pred <span class="op">=</span> <span class="bu">sorted</span>(data_pred)</span>
+<span id="cb21-35"><a href="#cb21-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-36"><a href="#cb21-36" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> fileLb:</span>
+<span id="cb21-37"><a href="#cb21-37" aria-hidden="true" tabindex="-1"></a>        <span class="cf">with</span> <span class="bu">open</span>(fileLb, <span class="st">'r'</span>) <span class="im">as</span> f:</span>
+<span id="cb21-38"><a href="#cb21-38" aria-hidden="true" tabindex="-1"></a>            lines <span class="op">=</span> f.readlines()</span>
+<span id="cb21-39"><a href="#cb21-39" aria-hidden="true" tabindex="-1"></a>        data_org <span class="op">=</span> []</span>
+<span id="cb21-40"><a href="#cb21-40" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> line <span class="kw">in</span> lines:</span>
+<span id="cb21-41"><a href="#cb21-41" aria-hidden="true" tabindex="-1"></a>            line <span class="op">=</span> line.strip().split()</span>
+<span id="cb21-42"><a href="#cb21-42" aria-hidden="true" tabindex="-1"></a>            class_id, x_center, y_center, width, height <span class="op">=</span> <span class="bu">map</span>(<span class="bu">float</span>, line)</span>
+<span id="cb21-43"><a href="#cb21-43" aria-hidden="true" tabindex="-1"></a>            x_center, y_center <span class="op">=</span> <span class="bu">int</span>(x_center <span class="op">*</span> im.shape[<span class="dv">1</span>]), <span class="bu">int</span>(y_center <span class="op">*</span> im.shape[<span class="dv">0</span>])</span>
+<span id="cb21-44"><a href="#cb21-44" aria-hidden="true" tabindex="-1"></a>            width, height <span class="op">=</span> <span class="bu">int</span>(width <span class="op">*</span> im.shape[<span class="dv">1</span>]), <span class="bu">int</span>(height <span class="op">*</span> im.shape[<span class="dv">0</span>])</span>
+<span id="cb21-45"><a href="#cb21-45" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb21-46"><a href="#cb21-46" aria-hidden="true" tabindex="-1"></a>            x1, y1 <span class="op">=</span> x_center <span class="op">-</span> width <span class="op">//</span> <span class="dv">2</span>, y_center <span class="op">-</span> height <span class="op">//</span> <span class="dv">2</span></span>
+<span id="cb21-47"><a href="#cb21-47" aria-hidden="true" tabindex="-1"></a>            x2, y2 <span class="op">=</span> x_center <span class="op">+</span> width <span class="op">//</span> <span class="dv">2</span>, y_center <span class="op">+</span> height <span class="op">//</span> <span class="dv">2</span></span>
+<span id="cb21-48"><a href="#cb21-48" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb21-49"><a href="#cb21-49" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> class_id <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb21-50"><a href="#cb21-50" aria-hidden="true" tabindex="-1"></a>                cv2.rectangle(annotated_img, (x1, y1), (x2, y2), (<span class="dv">0</span>, <span class="dv">255</span>, <span class="dv">0</span>), <span class="dv">2</span>)</span>
+<span id="cb21-51"><a href="#cb21-51" aria-hidden="true" tabindex="-1"></a>            <span class="cf">elif</span> class_id <span class="op">==</span> <span class="dv">1</span>:</span>
+<span id="cb21-52"><a href="#cb21-52" aria-hidden="true" tabindex="-1"></a>                cv2.rectangle(annotated_img, (x1, y1), (x2, y2), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">255</span>), <span class="dv">2</span>)</span>
+<span id="cb21-53"><a href="#cb21-53" aria-hidden="true" tabindex="-1"></a>            <span class="cf">elif</span> class_id <span class="op">==</span> <span class="dv">2</span>:</span>
+<span id="cb21-54"><a href="#cb21-54" aria-hidden="true" tabindex="-1"></a>                cv2.rectangle(annotated_img, (x1, y1), (x2, y2), (<span class="dv">255</span>, <span class="dv">0</span>, <span class="dv">0</span>), <span class="dv">2</span>)</span>
+<span id="cb21-55"><a href="#cb21-55" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb21-56"><a href="#cb21-56" aria-hidden="true" tabindex="-1"></a>            data_org.append((class_id, (x1, y1), (x2, y2)))</span>
+<span id="cb21-57"><a href="#cb21-57" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb21-58"><a href="#cb21-58" aria-hidden="true" tabindex="-1"></a>        data_org <span class="op">=</span> <span class="bu">sorted</span>(data_org)</span>
+<span id="cb21-59"><a href="#cb21-59" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"=================Original================="</span>)</span>
+<span id="cb21-60"><a href="#cb21-60" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> i, data <span class="kw">in</span> <span class="bu">enumerate</span>(data_org):</span>
+<span id="cb21-61"><a href="#cb21-61" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(i, <span class="st">": "</span>, data)</span>
+<span id="cb21-62"><a href="#cb21-62" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb21-63"><a href="#cb21-63" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">=================Prediction================="</span>)</span>
+<span id="cb21-64"><a href="#cb21-64" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i, data <span class="kw">in</span> <span class="bu">enumerate</span>(data_pred):</span>
+<span id="cb21-65"><a href="#cb21-65" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(i, <span class="st">": "</span>, data)</span>
+<span id="cb21-66"><a href="#cb21-66" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb21-67"><a href="#cb21-67" aria-hidden="true" tabindex="-1"></a>    plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">6</span>))</span>
+<span id="cb21-68"><a href="#cb21-68" aria-hidden="true" tabindex="-1"></a>    plt.imshow(annotated_img)</span>
+<span id="cb21-69"><a href="#cb21-69" aria-hidden="true" tabindex="-1"></a>    plt.axis(<span class="st">'off'</span>)</span>
+<span id="cb21-70"><a href="#cb21-70" aria-hidden="true" tabindex="-1"></a>    plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-22" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-23T14:02:12.115506Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-23T14:02:12.115176Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-23T14:02:14.780381Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-23T14:02:14.779445Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-02-23T14:02:12.115482Z&quot;}" data-trusted="true" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>test_images <span class="op">=</span> glob.glob(<span class="ss">f"</span><span class="sc">{</span>dataset_location<span class="sc">}</span><span class="ss">/test/images/*.tif"</span>)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>random_samples <span class="op">=</span> random.sample(test_images, <span class="dv">4</span>)</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> img_path <span class="kw">in</span> random_samples:</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>    label_path <span class="op">=</span> img_path.replace(<span class="st">"images"</span>, <span class="st">"labels"</span>).replace(<span class="st">".tif"</span>, <span class="st">".txt"</span>)</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    give_image(img_path, model, label_path)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+image 1/1 /kaggle/input/satellite-aisg/data/test/images/solarpanels_native_3__x0_10185_y0_9767_dxdy_416.tif: 640x640 43 highs, 36.9ms
+Speed: 3.1ms preprocess, 36.9ms inference, 2.0ms postprocess per image at shape (1, 3, 640, 640)
+=================Original=================
+0 :  (0.0, (0, 312), (18, 374))
+1 :  (0.0, (0, 391), (58, 415))
+2 :  (0.0, (13, 362), (101, 416))
+3 :  (0.0, (27, 280), (153, 416))
+4 :  (0.0, (29, 355), (119, 415))
+5 :  (0.0, (58, 263), (198, 415))
+6 :  (0.0, (121, 226), (173, 282))
+7 :  (0.0, (157, 200), (211, 256))
+8 :  (0.0, (176, 269), (210, 309))
+9 :  (0.0, (188, 264), (218, 302))
+10 :  (0.0, (199, 177), (251, 233))
+11 :  (0.0, (203, 311), (243, 365))
+12 :  (0.0, (214, 302), (258, 358))
+13 :  (0.0, (218, 246), (248, 284))
+14 :  (0.0, (227, 237), (259, 277))
+15 :  (0.0, (234, 361), (266, 397))
+16 :  (0.0, (237, 287), (283, 341))
+17 :  (0.0, (238, 154), (282, 208))
+18 :  (0.0, (247, 351), (279, 389))
+19 :  (0.0, (252, 278), (296, 330))
+20 :  (0.0, (257, 221), (287, 259))
+21 :  (0.0, (265, 212), (301, 252))
+22 :  (0.0, (271, 335), (303, 375))
+23 :  (0.0, (275, 262), (321, 318))
+24 :  (0.0, (281, 202), (311, 244))
+25 :  (0.0, (284, 328), (316, 364))
+26 :  (0.0, (292, 253), (336, 309))
+27 :  (0.0, (306, 242), (348, 298))
+28 :  (0.0, (308, 188), (342, 224))
+29 :  (0.0, (310, 310), (342, 348))
+30 :  (0.0, (319, 179), (349, 219))
+31 :  (0.0, (324, 301), (358, 341))
+32 :  (0.0, (331, 228), (375, 282))
+33 :  (0.0, (337, 294), (373, 330))
+34 :  (0.0, (344, 219), (388, 273))
+35 :  (0.0, (348, 163), (380, 201))
+36 :  (0.0, (358, 157), (386, 195))
+37 :  (0.0, (362, 276), (398, 316))
+38 :  (0.0, (368, 204), (412, 260))
+39 :  (0.0, (376, 267), (410, 307))
+40 :  (0.0, (382, 197), (416, 249))
+41 :  (0.0, (400, 259), (416, 293))
+
+=================Prediction=================
+0 :  (0, (0, 281), (20, 373), 0.30878797)
+1 :  (0, (0, 308), (19, 374), 0.6124165)
+2 :  (0, (0, 384), (58, 415), 0.46623358)
+3 :  (0, (13, 362), (79, 415), 0.69142836)
+4 :  (0, (28, 279), (147, 416), 0.91060656)
+5 :  (0, (29, 353), (107, 415), 0.8033914)
+6 :  (0, (55, 263), (197, 416), 0.9356797)
+7 :  (0, (120, 226), (173, 283), 0.949125)
+8 :  (0, (159, 200), (212, 256), 0.9613254)
+9 :  (0, (176, 268), (210, 309), 0.9556042)
+10 :  (0, (188, 263), (218, 301), 0.9557023)
+11 :  (0, (198, 176), (250, 232), 0.956405)
+12 :  (0, (203, 311), (243, 365), 0.95102715)
+13 :  (0, (214, 301), (259, 358), 0.9547617)
+14 :  (0, (217, 246), (248, 283), 0.94844615)
+15 :  (0, (226, 236), (259, 278), 0.9536938)
+16 :  (0, (233, 360), (266, 397), 0.95684737)
+17 :  (0, (237, 286), (282, 342), 0.9524979)
+18 :  (0, (238, 153), (282, 207), 0.9426275)
+19 :  (0, (246, 351), (278, 390), 0.95099145)
+20 :  (0, (252, 277), (296, 331), 0.94632125)
+21 :  (0, (256, 220), (288, 259), 0.9506693)
+22 :  (0, (265, 211), (301, 252), 0.95992774)
+23 :  (0, (270, 335), (302, 375), 0.94975764)
+24 :  (0, (274, 262), (322, 317), 0.9417244)
+25 :  (0, (281, 201), (310, 244), 0.951552)
+26 :  (0, (283, 327), (316, 365), 0.94701815)
+27 :  (0, (291, 252), (337, 309), 0.9469555)
+28 :  (0, (306, 241), (348, 298), 0.95069873)
+29 :  (0, (307, 188), (341, 225), 0.95270604)
+30 :  (0, (309, 309), (341, 348), 0.9534724)
+31 :  (0, (318, 178), (348, 219), 0.9505675)
+32 :  (0, (323, 300), (357, 340), 0.9519473)
+33 :  (0, (331, 228), (375, 282), 0.9474841)
+34 :  (0, (336, 293), (372, 331), 0.9512042)
+35 :  (0, (344, 218), (388, 272), 0.95065045)
+36 :  (0, (347, 162), (379, 201), 0.93975514)
+37 :  (0, (357, 156), (387, 195), 0.9470209)
+38 :  (0, (361, 276), (397, 316), 0.95710367)
+39 :  (0, (368, 203), (412, 259), 0.9515115)
+40 :  (0, (375, 266), (411, 306), 0.95357144)
+41 :  (0, (382, 196), (416, 249), 0.93648064)
+42 :  (0, (399, 258), (415, 292), 0.90639275)
+
+image 1/1 /kaggle/input/satellite-aisg/data/test/images/solarpanels_native_1__x0_3507_y0_10308_dxdy_416.tif: 640x640 3 highs, 36.8ms
+Speed: 2.2ms preprocess, 36.8ms inference, 1.3ms postprocess per image at shape (1, 3, 640, 640)
+=================Original=================
+0 :  (0.0, (168, 58), (210, 92))
+1 :  (0.0, (199, 154), (301, 228))
+2 :  (0.0, (218, 144), (304, 198))
+
+=================Prediction=================
+0 :  (0, (167, 57), (210, 92), 0.91490316)
+1 :  (0, (198, 153), (301, 228), 0.95831615)
+2 :  (0, (219, 143), (304, 198), 0.93578416)
+
+image 1/1 /kaggle/input/satellite-aisg/data/test/images/solarpanels_native_2__x0_15536_y0_14453_dxdy_416.tif: 640x640 3 highs, 36.8ms
+Speed: 2.2ms preprocess, 36.8ms inference, 1.3ms postprocess per image at shape (1, 3, 640, 640)
+=================Original=================
+0 :  (0.0, (187, 98), (197, 104))
+1 :  (0.0, (204, 164), (262, 190))
+2 :  (0.0, (404, 400), (416, 416))
+
+=================Prediction=================
+0 :  (0, (186, 95), (198, 104), 0.38698897)
+1 :  (0, (204, 163), (262, 191), 0.9209438)
+2 :  (0, (404, 399), (416, 416), 0.71941924)
+
+image 1/1 /kaggle/input/satellite-aisg/data/test/images/solarpanels_native_1__x0_1057_y0_7326_dxdy_416.tif: 640x640 11 highs, 36.8ms
+Speed: 2.3ms preprocess, 36.8ms inference, 1.4ms postprocess per image at shape (1, 3, 640, 640)
+=================Original=================
+0 :  (0.0, (10, 300), (28, 318))
+1 :  (0.0, (30, 114), (70, 158))
+2 :  (0.0, (149, 94), (161, 114))
+3 :  (0.0, (155, 286), (173, 300))
+4 :  (0.0, (164, 67), (180, 89))
+5 :  (0.0, (197, 394), (211, 408))
+6 :  (0.0, (216, 411), (232, 415))
+7 :  (0.0, (229, 157), (257, 185))
+8 :  (0.0, (366, 346), (382, 370))
+9 :  (0.0, (366, 370), (398, 416))
+10 :  (0.0, (397, 280), (415, 306))
+
+=================Prediction=================
+0 :  (0, (10, 300), (28, 318), 0.90315515)
+1 :  (0, (30, 113), (69, 157), 0.93828917)
+2 :  (0, (148, 93), (161, 114), 0.8814513)
+3 :  (0, (155, 285), (172, 301), 0.88774616)
+4 :  (0, (163, 66), (181, 89), 0.9137605)
+5 :  (0, (196, 394), (212, 409), 0.89832366)
+6 :  (0, (215, 411), (228, 415), 0.52364206)
+7 :  (0, (228, 157), (258, 186), 0.9239894)
+8 :  (0, (365, 345), (381, 369), 0.89698017)
+9 :  (0, (365, 369), (398, 415), 0.95500565)
+10 :  (0, (395, 280), (415, 304), 0.8676005)</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="satelliteimage_files/figure-html/cell-18-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="satelliteimage_files/figure-html/cell-18-output-3.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="satelliteimage_files/figure-html/cell-18-output-4.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="satelliteimage_files/figure-html/cell-18-output-5.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-23" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-23T14:03:04.592038Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-23T14:03:04.591755Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-23T14:03:17.534325Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-23T14:03:17.533318Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-02-23T14:03:04.592018Z&quot;}" data-trusted="true" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>random_samples <span class="op">=</span> random.sample(test_images, <span class="dv">20</span>)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> img_path <span class="kw">in</span> random_samples:</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    label_path <span class="op">=</span> img_path.replace(<span class="st">"images"</span>, <span class="st">"labels"</span>).replace(<span class="st">".tif"</span>, <span class="st">".txt"</span>)</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>    give_image(img_path, model, label_path)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+image 1/1 /kaggle/input/satellite-aisg/data/test/images/solarpanels_native_1__x0_368_y0_7395_dxdy_416.tif: 640x640 7 highs, 1 low, 36.9ms
+Speed: 2.4ms preprocess, 36.9ms inference, 1.5ms postprocess per image at shape (1, 3, 640, 640)
+=================Original=================
+0 :  (0.0, (59, 207), (113, 251))
+1 :  (0.0, (176, 204), (208, 226))
+2 :  (0.0, (203, 234), (229, 260))
+3 :  (0.0, (340, 351), (388, 399))
+4 :  (0.0, (357, 97), (375, 115))
+5 :  (0.0, (367, 111), (387, 129))
+6 :  (0.0, (391, 89), (411, 109))
+7 :  (2.0, (170, 180), (204, 210))
+
+=================Prediction=================
+0 :  (0, (59, 206), (113, 251), 0.9421165)
+1 :  (0, (176, 203), (207, 227), 0.90640813)
+2 :  (0, (202, 234), (230, 261), 0.93654466)
+3 :  (0, (340, 350), (388, 398), 0.9431328)
+4 :  (0, (357, 96), (374, 115), 0.901244)
+5 :  (0, (367, 110), (386, 130), 0.91215146)
+6 :  (0, (390, 89), (411, 108), 0.91191894)
+7 :  (2, (169, 179), (204, 211), 0.9473606)
+
+image 1/1 /kaggle/input/satellite-aisg/data/test/images/solarpanels_native_1__x0_7604_y0_9799_dxdy_416.tif: 640x640 7 highs, 1 low, 36.9ms
+Speed: 2.2ms preprocess, 36.9ms inference, 1.3ms postprocess per image at shape (1, 3, 640, 640)
+=================Original=================
+0 :  (0.0, (48, 0), (66, 10))
+1 :  (0.0, (122, 210), (140, 220))
+2 :  (0.0, (200, 114), (250, 168))
+3 :  (0.0, (254, 232), (282, 266))
+4 :  (0.0, (280, 214), (320, 242))
+5 :  (0.0, (336, 172), (354, 196))
+6 :  (0.0, (337, 205), (399, 247))
+7 :  (2.0, (0, 214), (34, 242))
+
+=================Prediction=================
+0 :  (0, (47, 0), (64, 9), 0.5840571)
+1 :  (0, (121, 210), (140, 220), 0.8610268)
+2 :  (0, (199, 113), (250, 168), 0.95477086)
+3 :  (0, (254, 231), (283, 266), 0.9301954)
+4 :  (0, (281, 213), (321, 241), 0.92727745)
+5 :  (0, (335, 171), (354, 196), 0.9200325)
+6 :  (0, (337, 204), (399, 247), 0.93252647)
+7 :  (2, (0, 213), (35, 241), 0.958617)
+
+image 1/1 /kaggle/input/satellite-aisg/data/test/images/solarpanels_native_1__x0_5975_y0_12167_dxdy_416.tif: 640x640 9 highs, 36.9ms
+Speed: 2.5ms preprocess, 36.9ms inference, 1.4ms postprocess per image at shape (1, 3, 640, 640)
+=================Original=================
+0 :  (0.0, (99, 74), (135, 106))
+1 :  (0.0, (114, 62), (148, 88))
+2 :  (0.0, (265, 134), (283, 150))
+3 :  (0.0, (273, 128), (289, 144))
+4 :  (0.0, (275, 122), (297, 140))
+5 :  (0.0, (281, 305), (325, 359))
+6 :  (0.0, (284, 116), (302, 134))
+7 :  (0.0, (290, 110), (308, 130))
+8 :  (0.0, (396, 299), (416, 343))
+
+=================Prediction=================
+0 :  (0, (98, 73), (136, 107), 0.93956876)
+1 :  (0, (114, 62), (147, 89), 0.93684524)
+2 :  (0, (265, 134), (283, 150), 0.86820143)
+3 :  (0, (272, 127), (290, 144), 0.8352524)
+4 :  (0, (274, 121), (297, 141), 0.8349731)
+5 :  (0, (280, 304), (325, 359), 0.9403952)
+6 :  (0, (283, 115), (303, 135), 0.866649)
+7 :  (0, (288, 109), (308, 131), 0.8782533)
+8 :  (0, (396, 298), (415, 342), 0.70796734)
+
+image 1/1 /kaggle/input/satellite-aisg/data/test/images/solarpanels_native_2__x0_8478_y0_3018_dxdy_416.tif: 640x640 4 highs, 2 moderates, 36.8ms
+Speed: 2.4ms preprocess, 36.8ms inference, 1.3ms postprocess per image at shape (1, 3, 640, 640)
+=================Original=================
+0 :  (0.0, (0, 302), (8, 320))
+1 :  (0.0, (4, 240), (50, 276))
+2 :  (0.0, (108, 217), (140, 243))
+3 :  (0.0, (323, 40), (415, 74))
+4 :  (1.0, (119, 215), (167, 251))
+5 :  (1.0, (131, 187), (185, 227))
+
+=================Prediction=================
+0 :  (0, (0, 302), (7, 322), 0.60488135)
+1 :  (0, (4, 240), (50, 275), 0.9363185)
+2 :  (0, (108, 216), (140, 242), 0.9081131)
+3 :  (0, (325, 39), (416, 75), 0.92918706)
+4 :  (1, (119, 215), (166, 251), 0.9467244)
+5 :  (1, (130, 187), (184, 227), 0.9817692)
+
+image 1/1 /kaggle/input/satellite-aisg/data/test/images/solarpanels_native_3__x0_10277_y0_15868_dxdy_416.tif: 640x640 1 high, 36.9ms
+Speed: 2.2ms preprocess, 36.9ms inference, 1.3ms postprocess per image at shape (1, 3, 640, 640)
+=================Original=================
+0 :  (0.0, (211, 226), (253, 294))
+
+=================Prediction=================
+0 :  (0, (211, 224), (254, 294), 0.94161725)
+
+image 1/1 /kaggle/input/satellite-aisg/data/test/images/solarpanels_native_1__x0_0_y0_7119_dxdy_416.tif: 640x640 18 highs, 1 low, 36.9ms
+Speed: 3.0ms preprocess, 36.9ms inference, 1.3ms postprocess per image at shape (1, 3, 640, 640)
+=================Original=================
+0 :  (0.0, (0, 262), (22, 286))
+1 :  (0.0, (1, 305), (23, 333))
+2 :  (0.0, (123, 115), (147, 141))
+3 :  (0.0, (132, 378), (172, 410))
+4 :  (0.0, (183, 381), (207, 409))
+5 :  (0.0, (249, 2), (267, 18))
+6 :  (0.0, (266, 20), (282, 32))
+7 :  (0.0, (277, 205), (313, 239))
+8 :  (0.0, (290, 29), (312, 51))
+9 :  (0.0, (336, 171), (346, 181))
+10 :  (0.0, (342, 375), (362, 393))
+11 :  (0.0, (351, 6), (375, 28))
+12 :  (0.0, (355, 186), (365, 198))
+13 :  (0.0, (358, 109), (370, 121))
+14 :  (0.0, (370, 200), (396, 226))
+15 :  (0.0, (372, 118), (390, 132))
+16 :  (0.0, (392, 139), (408, 159))
+17 :  (2.0, (150, 151), (168, 173))
+
+=================Prediction=================
+0 :  (0, (0, 262), (22, 287), 0.9086723)
+1 :  (0, (0, 303), (22, 332), 0.9120833)
+2 :  (0, (122, 114), (146, 141), 0.9189599)
+3 :  (0, (131, 378), (171, 410), 0.94109166)
+4 :  (0, (183, 381), (207, 408), 0.9298301)
+5 :  (0, (248, 1), (267, 17), 0.91467494)
+6 :  (0, (266, 20), (282, 32), 0.89810663)
+7 :  (0, (276, 205), (313, 240), 0.95435494)
+8 :  (0, (289, 28), (311, 51), 0.9210411)
+9 :  (0, (335, 171), (346, 181), 0.8693833)
+10 :  (0, (342, 375), (362, 392), 0.91254)
+11 :  (0, (351, 5), (374, 28), 0.92341137)
+12 :  (0, (354, 186), (365, 198), 0.8959773)
+13 :  (0, (358, 109), (369, 121), 0.8933606)
+14 :  (0, (369, 200), (395, 226), 0.93242145)
+15 :  (0, (371, 117), (389, 131), 0.90579635)
+16 :  (0, (392, 138), (408, 159), 0.9079391)
+17 :  (0, (410, 292), (416, 313), 0.26812115)
+18 :  (2, (149, 150), (167, 173), 0.90474993)
+
+image 1/1 /kaggle/input/satellite-aisg/data/test/images/solarpanels_native_1__x0_9847_y0_10811_dxdy_416.tif: 640x640 10 highs, 1 low, 36.8ms
+Speed: 2.2ms preprocess, 36.8ms inference, 1.3ms postprocess per image at shape (1, 3, 640, 640)
+=================Original=================
+0 :  (0.0, (54, 100), (70, 112))
+1 :  (0.0, (60, 399), (76, 409))
+2 :  (0.0, (87, 126), (99, 136))
+3 :  (0.0, (91, 115), (103, 125))
+4 :  (0.0, (240, 0), (262, 16))
+5 :  (0.0, (341, 106), (397, 130))
+6 :  (0.0, (400, 33), (416, 59))
+7 :  (0.0, (400, 376), (412, 382))
+8 :  (2.0, (148, 205), (172, 223))
+
+=================Prediction=================
+0 :  (0, (54, 100), (70, 113), 0.8771997)
+1 :  (0, (58, 403), (75, 415), 0.43849236)
+2 :  (0, (59, 399), (75, 415), 0.43053612)
+3 :  (0, (60, 397), (76, 410), 0.83215916)
+4 :  (0, (86, 125), (99, 136), 0.88174164)
+5 :  (0, (90, 115), (102, 125), 0.84904134)
+6 :  (0, (238, 0), (262, 15), 0.8401951)
+7 :  (0, (340, 106), (397, 129), 0.9345516)
+8 :  (0, (400, 33), (415, 58), 0.8189367)
+9 :  (0, (400, 375), (412, 383), 0.39653113)
+10 :  (2, (148, 205), (171, 223), 0.91046834)
+
+image 1/1 /kaggle/input/satellite-aisg/data/test/images/solarpanels_native_3__x0_13756_y0_15968_dxdy_416.tif: 640x640 2 highs, 36.9ms
+Speed: 2.1ms preprocess, 36.9ms inference, 1.3ms postprocess per image at shape (1, 3, 640, 640)
+=================Original=================
+0 :  (0.0, (133, 392), (191, 414))
+1 :  (0.0, (213, 388), (269, 416))
+
+=================Prediction=================
+0 :  (0, (132, 392), (193, 415), 0.90054643)
+1 :  (0, (210, 386), (269, 415), 0.9246368)
+
+image 1/1 /kaggle/input/satellite-aisg/data/test/images/solarpanels_native_2__x0_6273_y0_2640_dxdy_416.tif: 640x640 7 highs, 36.9ms
+Speed: 2.3ms preprocess, 36.9ms inference, 1.3ms postprocess per image at shape (1, 3, 640, 640)
+=================Original=================
+0 :  (0.0, (116, 240), (214, 320))
+1 :  (0.0, (154, 200), (214, 250))
+2 :  (0.0, (196, 157), (274, 217))
+3 :  (0.0, (196, 308), (302, 396))
+4 :  (0.0, (347, 391), (381, 415))
+5 :  (0.0, (369, 376), (407, 408))
+6 :  (0.0, (396, 365), (416, 381))
+
+=================Prediction=================
+0 :  (0, (118, 240), (215, 322), 0.9428232)
+1 :  (0, (154, 200), (213, 250), 0.9471053)
+2 :  (0, (194, 306), (304, 397), 0.94523466)
+3 :  (0, (196, 157), (274, 217), 0.94904524)
+4 :  (0, (347, 391), (381, 415), 0.9055823)
+5 :  (0, (368, 376), (407, 408), 0.93742704)
+6 :  (0, (396, 365), (415, 382), 0.88893497)
+
+image 1/1 /kaggle/input/satellite-aisg/data/test/images/solarpanels_native_3__x0_6425_y0_10827_dxdy_416.tif: 640x640 14 highs, 36.9ms
+Speed: 3.5ms preprocess, 36.9ms inference, 1.3ms postprocess per image at shape (1, 3, 640, 640)
+=================Original=================
+0 :  (0.0, (148, 0), (218, 32))
+1 :  (0.0, (198, 1), (268, 67))
+2 :  (0.0, (234, 191), (280, 223))
+3 :  (0.0, (237, 185), (285, 219))
+4 :  (0.0, (240, 179), (288, 211))
+5 :  (0.0, (244, 174), (292, 206))
+6 :  (0.0, (247, 167), (271, 183))
+7 :  (0.0, (252, 229), (270, 241))
+8 :  (0.0, (254, 220), (272, 234))
+9 :  (0.0, (259, 216), (277, 228))
+10 :  (0.0, (267, 191), (339, 265))
+11 :  (0.0, (281, 189), (295, 201))
+12 :  (0.0, (305, 54), (407, 140))
+
+=================Prediction=================
+0 :  (0, (144, 0), (215, 33), 0.92399156)
+1 :  (0, (196, 2), (266, 66), 0.94406396)
+2 :  (0, (233, 188), (281, 221), 0.88141376)
+3 :  (0, (237, 180), (285, 216), 0.78455484)
+4 :  (0, (242, 173), (293, 210), 0.93512887)
+5 :  (0, (242, 185), (288, 213), 0.45032677)
+6 :  (0, (247, 169), (271, 187), 0.7597884)
+7 :  (0, (250, 226), (268, 239), 0.84563535)
+8 :  (0, (251, 222), (270, 238), 0.61957645)
+9 :  (0, (253, 220), (271, 235), 0.759126)
+10 :  (0, (256, 212), (275, 229), 0.7895802)
+11 :  (0, (258, 204), (279, 224), 0.4901124)
+12 :  (0, (265, 190), (338, 266), 0.95200354)
+13 :  (0, (308, 53), (408, 139), 0.94987786)
+
+image 1/1 /kaggle/input/satellite-aisg/data/test/images/solarpanels_native_1__x0_2884_y0_7809_dxdy_416.tif: 640x640 6 highs, 36.9ms
+Speed: 2.3ms preprocess, 36.9ms inference, 1.3ms postprocess per image at shape (1, 3, 640, 640)
+=================Original=================
+0 :  (0.0, (94, 254), (148, 304))
+1 :  (0.0, (178, 364), (194, 378))
+2 :  (0.0, (235, 129), (255, 149))
+3 :  (0.0, (330, 389), (346, 405))
+4 :  (0.0, (341, 369), (357, 387))
+5 :  (0.0, (382, 136), (396, 150))
+
+=================Prediction=================
+0 :  (0, (94, 254), (149, 304), 0.9434067)
+1 :  (0, (177, 365), (194, 378), 0.864983)
+2 :  (0, (235, 129), (255, 149), 0.90357924)
+3 :  (0, (328, 388), (345, 405), 0.91845214)
+4 :  (0, (340, 369), (357, 388), 0.9080471)
+5 :  (0, (382, 135), (396, 149), 0.8908458)
+
+image 1/1 /kaggle/input/satellite-aisg/data/test/images/solarpanels_native_2__x0_9770_y0_7171_dxdy_416.tif: 640x640 5 highs, 36.9ms
+Speed: 2.3ms preprocess, 36.9ms inference, 1.3ms postprocess per image at shape (1, 3, 640, 640)
+=================Original=================
+0 :  (0.0, (0, 386), (28, 416))
+1 :  (0.0, (196, 178), (248, 226))
+2 :  (0.0, (257, 63), (269, 75))
+3 :  (0.0, (356, 150), (382, 174))
+4 :  (0.0, (405, 182), (415, 212))
+
+=================Prediction=================
+0 :  (0, (0, 385), (28, 416), 0.8885155)
+1 :  (0, (195, 176), (247, 226), 0.9478406)
+2 :  (0, (256, 62), (268, 75), 0.88436097)
+3 :  (0, (357, 150), (383, 175), 0.91560316)
+4 :  (0, (403, 180), (416, 231), 0.4770716)
+
+image 1/1 /kaggle/input/satellite-aisg/data/test/images/solarpanels_native_1__x0_4033_y0_13297_dxdy_416.tif: 640x640 10 highs, 36.9ms
+Speed: 2.2ms preprocess, 36.9ms inference, 1.4ms postprocess per image at shape (1, 3, 640, 640)
+=================Original=================
+0 :  (0.0, (77, 0), (137, 24))
+1 :  (0.0, (136, 193), (152, 229))
+2 :  (0.0, (155, 211), (167, 227))
+3 :  (0.0, (178, 118), (214, 142))
+4 :  (0.0, (218, 118), (264, 138))
+5 :  (0.0, (224, 197), (250, 209))
+6 :  (0.0, (285, 90), (311, 114))
+7 :  (0.0, (309, 77), (365, 111))
+8 :  (0.0, (317, 148), (347, 204))
+9 :  (0.0, (337, 144), (365, 200))
+
+=================Prediction=================
+0 :  (0, (76, 0), (136, 25), 0.91760457)
+1 :  (0, (135, 192), (152, 228), 0.90744394)
+2 :  (0, (154, 210), (166, 227), 0.88908577)
+3 :  (0, (178, 118), (214, 141), 0.91896284)
+4 :  (0, (217, 118), (264, 138), 0.9196532)
+5 :  (0, (224, 197), (251, 210), 0.8933474)
+6 :  (0, (285, 90), (310, 114), 0.9282018)
+7 :  (0, (309, 77), (365, 111), 0.9353132)
+8 :  (0, (317, 147), (346, 205), 0.9037667)
+9 :  (0, (337, 143), (364, 201), 0.9071225)
+
+image 1/1 /kaggle/input/satellite-aisg/data/test/images/solarpanels_native_3__x0_4769_y0_13391_dxdy_416.tif: 640x640 2 highs, 36.8ms
+Speed: 2.3ms preprocess, 36.8ms inference, 1.3ms postprocess per image at shape (1, 3, 640, 640)
+=================Original=================
+0 :  (0.0, (38, 239), (56, 249))
+1 :  (0.0, (181, 0), (211, 6))
+2 :  (0.0, (204, 219), (218, 229))
+
+=================Prediction=================
+0 :  (0, (35, 239), (54, 250), 0.8522825)
+1 :  (0, (202, 218), (220, 229), 0.75753)
+
+image 1/1 /kaggle/input/satellite-aisg/data/test/images/solarpanels_native_3__x0_3662_y0_15968_dxdy_416.tif: 640x640 4 highs, 36.8ms
+Speed: 2.3ms preprocess, 36.8ms inference, 1.3ms postprocess per image at shape (1, 3, 640, 640)
+=================Original=================
+0 :  (0.0, (86, 394), (130, 414))
+1 :  (0.0, (114, 375), (162, 415))
+2 :  (0.0, (142, 357), (190, 403))
+3 :  (0.0, (171, 343), (209, 383))
+
+=================Prediction=================
+0 :  (0, (87, 393), (131, 416), 0.9028266)
+1 :  (0, (113, 375), (161, 416), 0.94822294)
+2 :  (0, (142, 357), (189, 402), 0.95469326)
+3 :  (0, (171, 343), (209, 385), 0.94786006)
+
+image 1/1 /kaggle/input/satellite-aisg/data/test/images/solarpanels_native_1__x0_952_y0_7237_dxdy_416.tif: 640x640 9 highs, 36.8ms
+Speed: 2.2ms preprocess, 36.8ms inference, 1.3ms postprocess per image at shape (1, 3, 640, 640)
+=================Original=================
+0 :  (0.0, (0, 387), (12, 415))
+1 :  (0.0, (24, 343), (52, 375))
+2 :  (0.0, (56, 349), (86, 375))
+3 :  (0.0, (115, 389), (133, 407))
+4 :  (0.0, (135, 203), (175, 247))
+5 :  (0.0, (254, 183), (266, 203))
+6 :  (0.0, (260, 375), (278, 389))
+7 :  (0.0, (269, 156), (285, 178))
+8 :  (0.0, (334, 246), (362, 274))
+
+=================Prediction=================
+0 :  (0, (0, 388), (12, 415), 0.7338248)
+1 :  (0, (23, 342), (52, 375), 0.91112626)
+2 :  (0, (56, 349), (87, 375), 0.92065483)
+3 :  (0, (115, 389), (132, 407), 0.9094248)
+4 :  (0, (135, 203), (175, 247), 0.94141084)
+5 :  (0, (254, 182), (266, 202), 0.8727226)
+6 :  (0, (260, 374), (277, 390), 0.9055449)
+7 :  (0, (268, 156), (286, 178), 0.9094533)
+8 :  (0, (334, 246), (362, 275), 0.9247226)
+
+image 1/1 /kaggle/input/satellite-aisg/data/test/images/solarpanels_native_1__x0_8414_y0_8045_dxdy_416.tif: 640x640 7 highs, 36.9ms
+Speed: 2.2ms preprocess, 36.9ms inference, 1.3ms postprocess per image at shape (1, 3, 640, 640)
+=================Original=================
+0 :  (0.0, (98, 49), (112, 63))
+1 :  (0.0, (153, 150), (177, 168))
+2 :  (0.0, (172, 167), (198, 185))
+3 :  (0.0, (262, 133), (290, 161))
+4 :  (0.0, (276, 171), (326, 199))
+5 :  (0.0, (313, 180), (325, 188))
+6 :  (0.0, (393, 235), (415, 265))
+
+=================Prediction=================
+0 :  (0, (97, 49), (112, 63), 0.8967054)
+1 :  (0, (153, 149), (178, 167), 0.9131068)
+2 :  (0, (172, 166), (197, 184), 0.89771825)
+3 :  (0, (261, 132), (290, 160), 0.9377756)
+4 :  (0, (276, 170), (326, 198), 0.9228279)
+5 :  (0, (312, 179), (326, 188), 0.7773091)
+6 :  (0, (393, 234), (415, 261), 0.7554551)
+
+image 1/1 /kaggle/input/satellite-aisg/data/test/images/solarpanels_native_3__x0_5801_y0_11021_dxdy_416.tif: 640x640 10 highs, 36.8ms
+Speed: 2.2ms preprocess, 36.8ms inference, 1.3ms postprocess per image at shape (1, 3, 640, 640)
+=================Original=================
+0 :  (0.0, (207, 176), (249, 224))
+1 :  (0.0, (234, 36), (274, 76))
+2 :  (0.0, (238, 185), (280, 231))
+3 :  (0.0, (267, 44), (307, 90))
+4 :  (0.0, (270, 196), (310, 242))
+5 :  (0.0, (299, 53), (337, 97))
+6 :  (0.0, (300, 206), (338, 250))
+7 :  (0.0, (328, 65), (364, 109))
+8 :  (0.0, (329, 213), (371, 259))
+9 :  (0.0, (356, 72), (398, 120))
+
+=================Prediction=================
+0 :  (0, (204, 176), (247, 220), 0.94101)
+1 :  (0, (234, 35), (275, 76), 0.9451292)
+2 :  (0, (236, 186), (280, 230), 0.94371045)
+3 :  (0, (266, 45), (307, 90), 0.940802)
+4 :  (0, (268, 196), (310, 239), 0.944066)
+5 :  (0, (297, 55), (336, 99), 0.9412768)
+6 :  (0, (299, 204), (339, 248), 0.9478587)
+7 :  (0, (326, 64), (366, 108), 0.9431655)
+8 :  (0, (328, 214), (370, 259), 0.9376521)
+9 :  (0, (355, 73), (397, 118), 0.94564205)
+
+image 1/1 /kaggle/input/satellite-aisg/data/test/images/solarpanels_native_2__x0_4083_y0_5890_dxdy_416.tif: 640x640 4 highs, 36.9ms
+Speed: 2.2ms preprocess, 36.9ms inference, 1.3ms postprocess per image at shape (1, 3, 640, 640)
+=================Original=================
+0 :  (0.0, (87, 166), (127, 216))
+1 :  (0.0, (103, 112), (135, 154))
+2 :  (0.0, (114, 120), (148, 162))
+3 :  (0.0, (117, 220), (141, 236))
+
+=================Prediction=================
+0 :  (0, (86, 166), (128, 215), 0.93831295)
+1 :  (0, (102, 112), (136, 154), 0.93050265)
+2 :  (0, (114, 119), (147, 162), 0.94694984)
+3 :  (0, (117, 220), (140, 236), 0.9001826)
+
+image 1/1 /kaggle/input/satellite-aisg/data/test/images/solarpanels_native_3__x0_8472_y0_11412_dxdy_416.tif: 640x640 3 highs, 36.9ms
+Speed: 2.2ms preprocess, 36.9ms inference, 1.4ms postprocess per image at shape (1, 3, 640, 640)
+=================Original=================
+0 :  (0.0, (61, 121), (95, 137))
+1 :  (0.0, (122, 70), (146, 86))
+2 :  (0.0, (128, 94), (144, 100))
+3 :  (0.0, (174, 204), (194, 214))
+4 :  (0.0, (191, 200), (215, 222))
+
+=================Prediction=================
+0 :  (0, (62, 120), (96, 137), 0.917692)
+1 :  (0, (121, 68), (145, 77), 0.28038117)
+2 :  (0, (172, 201), (214, 220), 0.8776862)</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="satelliteimage_files/figure-html/cell-19-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="satelliteimage_files/figure-html/cell-19-output-3.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="satelliteimage_files/figure-html/cell-19-output-4.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="satelliteimage_files/figure-html/cell-19-output-5.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="satelliteimage_files/figure-html/cell-19-output-6.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="satelliteimage_files/figure-html/cell-19-output-7.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="satelliteimage_files/figure-html/cell-19-output-8.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="satelliteimage_files/figure-html/cell-19-output-9.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="satelliteimage_files/figure-html/cell-19-output-10.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="satelliteimage_files/figure-html/cell-19-output-11.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="satelliteimage_files/figure-html/cell-19-output-12.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="satelliteimage_files/figure-html/cell-19-output-13.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="satelliteimage_files/figure-html/cell-19-output-14.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="satelliteimage_files/figure-html/cell-19-output-15.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="satelliteimage_files/figure-html/cell-19-output-16.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="satelliteimage_files/figure-html/cell-19-output-17.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="satelliteimage_files/figure-html/cell-19-output-18.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="satelliteimage_files/figure-html/cell-19-output-19.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="satelliteimage_files/figure-html/cell-19-output-20.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="satelliteimage_files/figure-html/cell-19-output-21.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="using-supervision.metrics" class="level1">
+<h1>Using <code>supervision.metrics</code></h1>
+<div id="cell-25" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-24T05:11:48.954115Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-24T05:11:48.953540Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-24T05:11:48.995431Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-24T05:11:48.994677Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-02-24T05:11:48.954083Z&quot;}" data-trusted="true" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>img <span class="op">=</span> cv2.imread(<span class="st">"/kaggle/input/satellite-aisg/data/test/images/solarpanels_native_1__x0_9671_y0_10745_dxdy_416.tif"</span>)</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>img_shape <span class="op">=</span> img.shape</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(img_shape)</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>img_shape <span class="op">=</span> img_shape[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>(416, 416, 3)</code></pre>
+</div>
+</div>
+<div id="cell-26" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-24T05:12:32.599260Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-24T05:12:32.598952Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-24T05:12:54.761806Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-24T05:12:54.760808Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-02-24T05:12:32.599232Z&quot;}" data-trusted="true" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>test_images <span class="op">=</span> glob.glob(<span class="ss">f"</span><span class="sc">{</span>dataset_location<span class="sc">}</span><span class="ss">/test/images/*.tif"</span>)</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>predictions <span class="op">=</span> []</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> img_path <span class="kw">in</span> <span class="bu">sorted</span>(test_images):</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>    results <span class="op">=</span> model.predict(img_path, verbose <span class="op">=</span> <span class="va">False</span>)</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> result <span class="kw">in</span> results:</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>        boxes <span class="op">=</span> result.boxes.xyxy.cpu().numpy()</span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>        scores <span class="op">=</span> result.boxes.conf.cpu().numpy()</span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>        labels <span class="op">=</span> result.boxes.cls.cpu().numpy().astype(<span class="bu">int</span>)</span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>        predictions.append(</span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>            sv.Detections(</span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>                xyxy<span class="op">=</span>boxes,</span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a>                confidence<span class="op">=</span>scores,</span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a>                class_id<span class="op">=</span>labels</span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a>            )</span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a>        )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-27" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-24T05:12:54.763340Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-24T05:12:54.763042Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-24T05:12:57.540182Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-24T05:12:57.539276Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-02-24T05:12:54.763316Z&quot;}" data-trusted="true" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>test_labels <span class="op">=</span> glob.glob(<span class="ss">f"</span><span class="sc">{</span>dataset_location<span class="sc">}</span><span class="ss">/test/labels/*.txt"</span>)</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>ground_truths <span class="op">=</span> []</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> label_path <span class="kw">in</span> <span class="bu">sorted</span>(test_labels):</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> <span class="bu">open</span>(label_path, <span class="st">"r"</span>) <span class="im">as</span> f:</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>        lines <span class="op">=</span> f.readlines()</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>    boxes, labels <span class="op">=</span> [], []</span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> line <span class="kw">in</span> lines:</span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>        class_id, x_center, y_center, w, h <span class="op">=</span> <span class="bu">map</span>(<span class="bu">float</span>, line.strip().split())</span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>        x_min <span class="op">=</span> (x_center <span class="op">-</span> w <span class="op">/</span> <span class="dv">2</span>) <span class="op">*</span> img_shape</span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>        y_min <span class="op">=</span> (y_center <span class="op">-</span> h <span class="op">/</span> <span class="dv">2</span>) <span class="op">*</span> img_shape</span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>        x_max <span class="op">=</span> (x_center <span class="op">+</span> w <span class="op">/</span> <span class="dv">2</span>) <span class="op">*</span> img_shape</span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a>        y_max <span class="op">=</span> (y_center <span class="op">+</span> h <span class="op">/</span> <span class="dv">2</span>) <span class="op">*</span> img_shape</span>
+<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a>        boxes.append([x_min, y_min, x_max, y_max])</span>
+<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a>        labels.append(<span class="bu">int</span>(class_id))</span>
+<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a>    ground_truths.append(</span>
+<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a>        sv.Detections(</span>
+<span id="cb29-20"><a href="#cb29-20" aria-hidden="true" tabindex="-1"></a>            xyxy<span class="op">=</span>np.array(boxes),</span>
+<span id="cb29-21"><a href="#cb29-21" aria-hidden="true" tabindex="-1"></a>            class_id<span class="op">=</span>np.array(labels)</span>
+<span id="cb29-22"><a href="#cb29-22" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb29-23"><a href="#cb29-23" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-28" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-24T05:12:57.541813Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-24T05:12:57.541538Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-24T05:12:57.547278Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-24T05:12:57.546449Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-02-24T05:12:57.541793Z&quot;}" data-trusted="true" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(predictions), <span class="bu">len</span>(ground_truths)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<pre><code>(508, 508)</code></pre>
+</div>
+</div>
+</section>
+<section id="map50" class="level1">
+<h1>mAP50</h1>
+<div id="cell-30" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-23T14:04:32.695739Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-23T14:04:32.695442Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-23T14:04:33.052530Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-23T14:04:33.051648Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-02-23T14:04:32.695716Z&quot;}" data-trusted="true" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>map_metric <span class="op">=</span> sv.MeanAveragePrecision.from_detections(</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    predictions<span class="op">=</span>predictions,</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>    targets<span class="op">=</span>ground_truths</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-31" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-23T14:04:34.051847Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-23T14:04:34.051558Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-23T14:04:34.058176Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-23T14:04:34.057422Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-02-23T14:04:34.051824Z&quot;}" data-trusted="true" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>map_metric.map50</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="23">
+<pre><code>0.9485268573382882</code></pre>
+</div>
+</div>
+<div id="cell-32" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-23T14:04:34.922798Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-23T14:04:34.922528Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-23T14:04:34.928662Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-23T14:04:34.928010Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-02-23T14:04:34.922777Z&quot;}" data-trusted="true" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>map_metric.map75</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="24">
+<pre><code>0.9350079176632121</code></pre>
+</div>
+</div>
+<div id="cell-33" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-23T14:04:35.649912Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-23T14:04:35.649629Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-23T14:04:35.655693Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-23T14:04:35.654942Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-02-23T14:04:35.649892Z&quot;}" data-trusted="true" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>map_metric.map50_95</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="25">
+<pre><code>0.9011177774270568</code></pre>
+</div>
+</div>
+<div id="cell-34" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-23T14:04:37.075994Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-23T14:04:37.075716Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-23T14:04:37.081913Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-23T14:04:37.081273Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-02-23T14:04:37.075973Z&quot;}" data-trusted="true" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>map_metric.per_class_ap50_95</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="26">
+<pre><code>array([[    0.98213,     0.98064,     0.97864,     0.97693,     0.97125,     0.96309,     0.94876,     0.92028,     0.85802,      0.6562],
+       [    0.94436,     0.94436,     0.92285,     0.92285,     0.92285,     0.92285,     0.92285,     0.92285,     0.92285,     0.75432],
+       [    0.91909,     0.91909,     0.91909,     0.91909,     0.91909,     0.91909,     0.91909,     0.91909,     0.85269,     0.48922]])</code></pre>
+</div>
+</div>
+</section>
+<section id="precision-recall-f1-score" class="level1">
+<h1>Precision, Recall, F1 Score</h1>
+<section id="confusion-matrix-with-background-class-predictions-along-horizontal-axis-and-ground-truth-on-the-vertical-axis" class="level2">
+<h2 class="anchored" data-anchor-id="confusion-matrix-with-background-class-predictions-along-horizontal-axis-and-ground-truth-on-the-vertical-axis">Confusion Matrix with Background Class [Predictions along horizontal axis and Ground Truth on the vertical axis]</h2>
+<div id="cell-37" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-23T14:10:12.996768Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-23T14:10:12.996451Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-23T14:10:13.567977Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-23T14:10:13.567213Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-02-23T14:10:12.996745Z&quot;}" data-trusted="true" data-execution_count="35">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>cm <span class="op">=</span> sv.ConfusionMatrix.from_detections(</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>            predictions<span class="op">=</span>predictions,</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>            targets<span class="op">=</span>ground_truths,</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>            classes<span class="op">=</span>[<span class="st">"high"</span>, <span class="st">"moderate"</span>, <span class="st">"low"</span>]</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>confusion_matrix <span class="op">=</span> cm.matrix</span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Confusion Matrix:"</span>)</span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(confusion_matrix)</span>
+<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a>class_labels <span class="op">=</span> cm.classes <span class="op">+</span> [<span class="st">"background"</span>]</span>
+<span id="cb41-13"><a href="#cb41-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-14"><a href="#cb41-14" aria-hidden="true" tabindex="-1"></a>sns.<span class="bu">set</span>(style<span class="op">=</span><span class="st">"whitegrid"</span>, palette<span class="op">=</span><span class="st">"viridis"</span>, font_scale<span class="op">=</span><span class="fl">1.2</span>)</span>
+<span id="cb41-15"><a href="#cb41-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-16"><a href="#cb41-16" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
+<span id="cb41-17"><a href="#cb41-17" aria-hidden="true" tabindex="-1"></a>sns.heatmap(</span>
+<span id="cb41-18"><a href="#cb41-18" aria-hidden="true" tabindex="-1"></a>    confusion_matrix,</span>
+<span id="cb41-19"><a href="#cb41-19" aria-hidden="true" tabindex="-1"></a>    annot<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb41-20"><a href="#cb41-20" aria-hidden="true" tabindex="-1"></a>    cmap<span class="op">=</span><span class="st">"viridis"</span>,</span>
+<span id="cb41-21"><a href="#cb41-21" aria-hidden="true" tabindex="-1"></a>    fmt <span class="op">=</span> <span class="st">"g"</span>,</span>
+<span id="cb41-22"><a href="#cb41-22" aria-hidden="true" tabindex="-1"></a>    xticklabels<span class="op">=</span>class_labels,</span>
+<span id="cb41-23"><a href="#cb41-23" aria-hidden="true" tabindex="-1"></a>    yticklabels<span class="op">=</span>class_labels,</span>
+<span id="cb41-24"><a href="#cb41-24" aria-hidden="true" tabindex="-1"></a>    cbar<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb41-25"><a href="#cb41-25" aria-hidden="true" tabindex="-1"></a>    square<span class="op">=</span><span class="va">True</span></span>
+<span id="cb41-26"><a href="#cb41-26" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb41-27"><a href="#cb41-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-28"><a href="#cb41-28" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Predicted Class"</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb41-29"><a href="#cb41-29" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Ground Truth Class"</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb41-30"><a href="#cb41-30" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Confusion Matrix"</span>, fontsize<span class="op">=</span><span class="dv">16</span>, pad<span class="op">=</span><span class="dv">20</span>)</span>
+<span id="cb41-31"><a href="#cb41-31" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">45</span>, ha<span class="op">=</span><span class="st">"right"</span>)</span>
+<span id="cb41-32"><a href="#cb41-32" aria-hidden="true" tabindex="-1"></a>plt.yticks(rotation<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb41-33"><a href="#cb41-33" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb41-34"><a href="#cb41-34" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Confusion Matrix:
+[[       5661           0           0         182]
+ [          1          25           0           2]
+ [          3           0          40           4]
+ [        213           1           3           0]]</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="satelliteimage_files/figure-html/cell-29-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-38" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-23T14:04:57.848330Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-23T14:04:57.848028Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-23T14:05:02.895128Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-23T14:05:02.894305Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-02-23T14:04:57.848307Z&quot;}" data-trusted="true" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>iou_thresholds <span class="op">=</span> [<span class="fl">0.1</span>, <span class="fl">0.3</span>, <span class="fl">0.5</span>, <span class="fl">0.7</span>, <span class="fl">0.9</span>]</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>conf_thresholds <span class="op">=</span> [<span class="fl">0.1</span>, <span class="fl">0.3</span>, <span class="fl">0.5</span>, <span class="fl">0.7</span>, <span class="fl">0.9</span>]</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>classes <span class="op">=</span> [<span class="st">"high"</span>, <span class="st">"moderate"</span>, <span class="st">"low"</span>]</span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>metrics_table <span class="op">=</span> {</span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"IoU"</span>: [],</span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Conf"</span>: [],</span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Class"</span>: [],</span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Precision"</span>: [],</span>
+<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Recall"</span>: [],</span>
+<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"F1"</span>: []</span>
+<span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb43-13"><a href="#cb43-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-14"><a href="#cb43-14" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> iou_th <span class="kw">in</span> iou_thresholds:</span>
+<span id="cb43-15"><a href="#cb43-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> conf_th <span class="kw">in</span> conf_thresholds:</span>
+<span id="cb43-16"><a href="#cb43-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-17"><a href="#cb43-17" aria-hidden="true" tabindex="-1"></a>        filtered_preds <span class="op">=</span> [</span>
+<span id="cb43-18"><a href="#cb43-18" aria-hidden="true" tabindex="-1"></a>            sv.Detections(</span>
+<span id="cb43-19"><a href="#cb43-19" aria-hidden="true" tabindex="-1"></a>                xyxy<span class="op">=</span>p.xyxy[p.confidence <span class="op">&gt;=</span> conf_th],</span>
+<span id="cb43-20"><a href="#cb43-20" aria-hidden="true" tabindex="-1"></a>                confidence<span class="op">=</span>p.confidence[p.confidence <span class="op">&gt;=</span> conf_th],</span>
+<span id="cb43-21"><a href="#cb43-21" aria-hidden="true" tabindex="-1"></a>                class_id<span class="op">=</span>p.class_id[p.confidence <span class="op">&gt;=</span> conf_th]</span>
+<span id="cb43-22"><a href="#cb43-22" aria-hidden="true" tabindex="-1"></a>            )</span>
+<span id="cb43-23"><a href="#cb43-23" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> p <span class="kw">in</span> predictions</span>
+<span id="cb43-24"><a href="#cb43-24" aria-hidden="true" tabindex="-1"></a>        ]</span>
+<span id="cb43-25"><a href="#cb43-25" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb43-26"><a href="#cb43-26" aria-hidden="true" tabindex="-1"></a>        cm <span class="op">=</span> sv.ConfusionMatrix.from_detections(</span>
+<span id="cb43-27"><a href="#cb43-27" aria-hidden="true" tabindex="-1"></a>            predictions<span class="op">=</span>filtered_preds,</span>
+<span id="cb43-28"><a href="#cb43-28" aria-hidden="true" tabindex="-1"></a>            targets<span class="op">=</span>ground_truths,</span>
+<span id="cb43-29"><a href="#cb43-29" aria-hidden="true" tabindex="-1"></a>            classes<span class="op">=</span>classes,</span>
+<span id="cb43-30"><a href="#cb43-30" aria-hidden="true" tabindex="-1"></a>            iou_threshold<span class="op">=</span>iou_th,</span>
+<span id="cb43-31"><a href="#cb43-31" aria-hidden="true" tabindex="-1"></a>            conf_threshold <span class="op">=</span> conf_th</span>
+<span id="cb43-32"><a href="#cb43-32" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb43-33"><a href="#cb43-33" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb43-34"><a href="#cb43-34" aria-hidden="true" tabindex="-1"></a>        confusion_matrix <span class="op">=</span> cm.matrix</span>
+<span id="cb43-35"><a href="#cb43-35" aria-hidden="true" tabindex="-1"></a>        n_classes <span class="op">=</span> <span class="bu">len</span>(classes)  <span class="co"># 3 classes, excluding background</span></span>
+<span id="cb43-36"><a href="#cb43-36" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb43-37"><a href="#cb43-37" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Per-class TP, FP, FN</span></span>
+<span id="cb43-38"><a href="#cb43-38" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> class_idx, class_name <span class="kw">in</span> <span class="bu">enumerate</span>(classes):</span>
+<span id="cb43-39"><a href="#cb43-39" aria-hidden="true" tabindex="-1"></a>            tp <span class="op">=</span> confusion_matrix[class_idx, class_idx]</span>
+<span id="cb43-40"><a href="#cb43-40" aria-hidden="true" tabindex="-1"></a>            fp <span class="op">=</span> confusion_matrix[:, class_idx].<span class="bu">sum</span>() <span class="op">-</span> tp</span>
+<span id="cb43-41"><a href="#cb43-41" aria-hidden="true" tabindex="-1"></a>            fn <span class="op">=</span> confusion_matrix[class_idx, :].<span class="bu">sum</span>() <span class="op">-</span> tp</span>
+<span id="cb43-42"><a href="#cb43-42" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb43-43"><a href="#cb43-43" aria-hidden="true" tabindex="-1"></a>            precision <span class="op">=</span> tp <span class="op">/</span> (tp <span class="op">+</span> fp) <span class="cf">if</span> (tp <span class="op">+</span> fp) <span class="op">&gt;</span> <span class="dv">0</span> <span class="cf">else</span> <span class="dv">0</span></span>
+<span id="cb43-44"><a href="#cb43-44" aria-hidden="true" tabindex="-1"></a>            recall <span class="op">=</span> tp <span class="op">/</span> (tp <span class="op">+</span> fn) <span class="cf">if</span> (tp <span class="op">+</span> fn) <span class="op">&gt;</span> <span class="dv">0</span> <span class="cf">else</span> <span class="dv">0</span></span>
+<span id="cb43-45"><a href="#cb43-45" aria-hidden="true" tabindex="-1"></a>            f1 <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> (precision <span class="op">*</span> recall) <span class="op">/</span> (precision <span class="op">+</span> recall) <span class="cf">if</span> (precision <span class="op">+</span> recall) <span class="op">&gt;</span> <span class="dv">0</span> <span class="cf">else</span> <span class="dv">0</span></span>
+<span id="cb43-46"><a href="#cb43-46" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb43-47"><a href="#cb43-47" aria-hidden="true" tabindex="-1"></a>            metrics_table[<span class="st">"IoU"</span>].append(iou_th)</span>
+<span id="cb43-48"><a href="#cb43-48" aria-hidden="true" tabindex="-1"></a>            metrics_table[<span class="st">"Conf"</span>].append(conf_th)</span>
+<span id="cb43-49"><a href="#cb43-49" aria-hidden="true" tabindex="-1"></a>            metrics_table[<span class="st">"Class"</span>].append(class_name)</span>
+<span id="cb43-50"><a href="#cb43-50" aria-hidden="true" tabindex="-1"></a>            metrics_table[<span class="st">"Precision"</span>].append(precision)</span>
+<span id="cb43-51"><a href="#cb43-51" aria-hidden="true" tabindex="-1"></a>            metrics_table[<span class="st">"Recall"</span>].append(recall)</span>
+<span id="cb43-52"><a href="#cb43-52" aria-hidden="true" tabindex="-1"></a>            metrics_table[<span class="st">"F1"</span>].append(f1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-39" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-23T14:06:31.384362Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-23T14:06:31.384036Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-23T14:06:37.543455Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-23T14:06:37.542610Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-02-23T14:06:31.384338Z&quot;}" data-trusted="true" data-execution_count="31">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(metrics_table)</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>sns.<span class="bu">set</span>(style<span class="op">=</span><span class="st">"whitegrid"</span>, palette<span class="op">=</span><span class="st">"viridis"</span>, font_scale<span class="op">=</span><span class="fl">1.2</span>)</span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>metrics <span class="op">=</span> [<span class="st">"Precision"</span>, <span class="st">"Recall"</span>, <span class="st">"F1"</span>]</span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="bu">len</span>(metrics), ncols<span class="op">=</span><span class="bu">len</span>(classes), figsize<span class="op">=</span>(<span class="dv">18</span>, <span class="dv">12</span>), sharey<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, metric <span class="kw">in</span> <span class="bu">enumerate</span>(metrics):</span>
+<span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j, class_name <span class="kw">in</span> <span class="bu">enumerate</span>(classes):</span>
+<span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a>        class_df <span class="op">=</span> df[df[<span class="st">"Class"</span>] <span class="op">==</span> class_name]</span>
+<span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a>        pivot <span class="op">=</span> class_df.pivot(index<span class="op">=</span><span class="st">"IoU"</span>, columns<span class="op">=</span><span class="st">"Conf"</span>, values<span class="op">=</span>metric)</span>
+<span id="cb44-12"><a href="#cb44-12" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb44-13"><a href="#cb44-13" aria-hidden="true" tabindex="-1"></a>        ax <span class="op">=</span> axes[i, j]</span>
+<span id="cb44-14"><a href="#cb44-14" aria-hidden="true" tabindex="-1"></a>        sns.heatmap(</span>
+<span id="cb44-15"><a href="#cb44-15" aria-hidden="true" tabindex="-1"></a>            pivot,</span>
+<span id="cb44-16"><a href="#cb44-16" aria-hidden="true" tabindex="-1"></a>            annot<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb44-17"><a href="#cb44-17" aria-hidden="true" tabindex="-1"></a>            fmt<span class="op">=</span><span class="st">".4f"</span>,</span>
+<span id="cb44-18"><a href="#cb44-18" aria-hidden="true" tabindex="-1"></a>            cmap<span class="op">=</span><span class="st">"viridis"</span>,</span>
+<span id="cb44-19"><a href="#cb44-19" aria-hidden="true" tabindex="-1"></a>            vmin<span class="op">=</span><span class="dv">0</span>, vmax<span class="op">=</span><span class="dv">1</span>,</span>
+<span id="cb44-20"><a href="#cb44-20" aria-hidden="true" tabindex="-1"></a>            cbar<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb44-21"><a href="#cb44-21" aria-hidden="true" tabindex="-1"></a>            ax<span class="op">=</span>ax</span>
+<span id="cb44-22"><a href="#cb44-22" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb44-23"><a href="#cb44-23" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb44-24"><a href="#cb44-24" aria-hidden="true" tabindex="-1"></a>        ax.set_title(<span class="ss">f"</span><span class="sc">{</span>metric<span class="sc">}</span><span class="ss"> - </span><span class="sc">{</span>class_name<span class="sc">}</span><span class="ss">"</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
+<span id="cb44-25"><a href="#cb44-25" aria-hidden="true" tabindex="-1"></a>        ax.set_xlabel(<span class="st">"Confidence Threshold"</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb44-26"><a href="#cb44-26" aria-hidden="true" tabindex="-1"></a>        ax.set_ylabel(<span class="st">"IoU Threshold"</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb44-27"><a href="#cb44-27" aria-hidden="true" tabindex="-1"></a>        ax.invert_yaxis()</span>
+<span id="cb44-28"><a href="#cb44-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-29"><a href="#cb44-29" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb44-30"><a href="#cb44-30" aria-hidden="true" tabindex="-1"></a>plt.suptitle(<span class="st">"Per-Class Metrics Across IoU and Confidence Thresholds"</span>, fontsize<span class="op">=</span><span class="dv">16</span>, y<span class="op">=</span><span class="fl">1.05</span>)</span>
+<span id="cb44-31"><a href="#cb44-31" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="satelliteimage_files/figure-html/cell-31-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="bonus-part---for-india" class="level1">
+<h1>BONUS PART - FOR INDIA!!!</h1>
+</section>
+<section id="scraped-out-images" class="level1">
+<h1><a href="https://www.kaggle.com/datasets/guntassinghsaran/satellite-iitgn/data">Scraped out Images</a></h1>
+<section id="iit-delhi-campus" class="level3">
+<h3 class="anchored" data-anchor-id="iit-delhi-campus">IIT Delhi Campus</h3>
+<div id="cell-42" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-24T10:15:02.227802Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-24T10:15:02.227428Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-24T10:15:02.874900Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-24T10:15:02.873882Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-02-24T10:15:02.227774Z&quot;}" data-trusted="true" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>test_img <span class="op">=</span> <span class="st">"/kaggle/input/satellite-iitgn/satellite111.tif"</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>give_image(test_img, model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+image 1/1 /kaggle/input/satellite-iitgn/satellite111.tif: 640x640 11 highs, 37.0ms
+Speed: 2.7ms preprocess, 37.0ms inference, 1.7ms postprocess per image at shape (1, 3, 640, 640)
+
+=================Prediction=================
+0 :  (0, (0, 169), (145, 237), 0.69796187)
+1 :  (0, (1, 148), (141, 208), 0.3556217)
+2 :  (0, (47, 282), (210, 367), 0.53225076)
+3 :  (0, (55, 360), (113, 396), 0.79543567)
+4 :  (0, (119, 313), (238, 371), 0.79104906)
+5 :  (0, (194, 73), (321, 133), 0.8784478)
+6 :  (0, (197, 125), (263, 160), 0.8648629)
+7 :  (0, (233, 202), (416, 288), 0.5922109)
+8 :  (0, (265, 245), (416, 313), 0.79896784)
+9 :  (0, (271, 73), (394, 134), 0.8813107)
+10 :  (0, (310, 43), (395, 87), 0.81960315)</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="satelliteimage_files/figure-html/cell-32-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-43" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-24T10:22:19.030125Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-24T10:22:19.029787Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-24T10:22:19.669361Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-24T10:22:19.668431Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-02-24T10:22:19.030104Z&quot;}" data-trusted="true" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>test_img <span class="op">=</span> <span class="st">"/kaggle/input/satellite-iitgn/satellite112.tif"</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>give_image(test_img, model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+image 1/1 /kaggle/input/satellite-iitgn/satellite112.tif: 640x640 16 highs, 36.9ms
+Speed: 2.6ms preprocess, 36.9ms inference, 1.5ms postprocess per image at shape (1, 3, 640, 640)
+
+=================Prediction=================
+0 :  (0, (0, 134), (49, 169), 0.6199024)
+1 :  (0, (0, 293), (97, 348), 0.40826547)
+2 :  (0, (30, 180), (305, 283), 0.53711134)
+3 :  (0, (43, 100), (136, 150), 0.7958224)
+4 :  (0, (88, 199), (312, 308), 0.275484)
+5 :  (0, (144, 42), (292, 110), 0.37931374)
+6 :  (0, (298, 175), (404, 230), 0.8580297)
+7 :  (0, (317, 83), (355, 111), 0.8759239)
+8 :  (0, (326, 107), (365, 136), 0.8962102)
+9 :  (0, (337, 325), (410, 367), 0.8127885)
+10 :  (0, (345, 350), (416, 391), 0.83959335)
+11 :  (0, (357, 202), (393, 230), 0.86347866)
+12 :  (0, (366, 223), (406, 252), 0.8853983)
+13 :  (0, (376, 246), (415, 274), 0.82266474)
+14 :  (0, (392, 172), (415, 215), 0.39176798)
+15 :  (0, (392, 187), (416, 215), 0.56139797)</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="satelliteimage_files/figure-html/cell-33-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-44" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-24T10:22:34.249438Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-24T10:22:34.249151Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-24T10:22:34.905570Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-24T10:22:34.904609Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-02-24T10:22:34.249417Z&quot;}" data-trusted="true" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>test_img <span class="op">=</span> <span class="st">"/kaggle/input/satellite-iitgn/satellite113.tif"</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>give_image(test_img, model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+image 1/1 /kaggle/input/satellite-iitgn/satellite113.tif: 640x640 13 highs, 36.9ms
+Speed: 2.3ms preprocess, 36.9ms inference, 1.3ms postprocess per image at shape (1, 3, 640, 640)
+
+=================Prediction=================
+0 :  (0, (25, 294), (150, 361), 0.89824724)
+1 :  (0, (29, 137), (114, 193), 0.89257306)
+2 :  (0, (45, 345), (117, 384), 0.91098535)
+3 :  (0, (63, 290), (97, 316), 0.86593735)
+4 :  (0, (94, 0), (171, 17), 0.33050603)
+5 :  (0, (118, 267), (164, 296), 0.8997595)
+6 :  (0, (140, 254), (260, 320), 0.93814665)
+7 :  (0, (146, 0), (175, 19), 0.8199589)
+8 :  (0, (175, 250), (209, 274), 0.88507164)
+9 :  (0, (191, 288), (270, 331), 0.9204761)
+10 :  (0, (335, 150), (398, 185), 0.64745086)
+11 :  (0, (335, 150), (403, 198), 0.87129277)
+12 :  (0, (355, 179), (416, 222), 0.8064501)</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="satelliteimage_files/figure-html/cell-34-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="kochin-airport-parking-false-solar-panels-sheds" class="level3">
+<h3 class="anchored" data-anchor-id="kochin-airport-parking-false-solar-panels-sheds">Kochin Airport Parking (false solar panels sheds)</h3>
+<div id="cell-46" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-24T10:22:40.457331Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-24T10:22:40.457046Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-24T10:22:41.214054Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-24T10:22:41.213040Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-02-24T10:22:40.457311Z&quot;}" data-trusted="true" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>test_img <span class="op">=</span> <span class="st">"/kaggle/input/satellite-iitgn/satellite91.tif"</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>give_image(test_img, model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+image 1/1 /kaggle/input/satellite-iitgn/satellite91.tif: 640x640 1 high, 36.9ms
+Speed: 2.4ms preprocess, 36.9ms inference, 2.0ms postprocess per image at shape (1, 3, 640, 640)
+
+=================Prediction=================
+0 :  (0, (41, 0), (174, 10), 0.3882681)</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="satelliteimage_files/figure-html/cell-35-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="iitgn-hostel" class="level3">
+<h3 class="anchored" data-anchor-id="iitgn-hostel">IITGN Hostel</h3>
+<div id="cell-48" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-24T10:26:11.835867Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-24T10:26:11.835559Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-24T10:26:12.492191Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-24T10:26:12.491328Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-02-24T10:26:11.835846Z&quot;}" data-trusted="true" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>test_img <span class="op">=</span> <span class="st">"/kaggle/input/satellite-iitgn/satellite61.tif"</span></span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>give_image(test_img, model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+image 1/1 /kaggle/input/satellite-iitgn/satellite61.tif: 640x640 45 highs, 36.9ms
+Speed: 2.6ms preprocess, 36.9ms inference, 1.5ms postprocess per image at shape (1, 3, 640, 640)
+
+=================Prediction=================
+0 :  (0, (15, 45), (40, 55), 0.84567404)
+1 :  (0, (15, 55), (40, 65), 0.8434714)
+2 :  (0, (16, 68), (47, 80), 0.8116959)
+3 :  (0, (16, 79), (48, 90), 0.8525983)
+4 :  (0, (16, 100), (48, 110), 0.8722573)
+5 :  (0, (16, 111), (48, 121), 0.8819438)
+6 :  (0, (16, 239), (62, 271), 0.3535932)
+7 :  (0, (17, 90), (48, 100), 0.859771)
+8 :  (0, (17, 122), (48, 132), 0.89285135)
+9 :  (0, (17, 134), (35, 142), 0.70277154)
+10 :  (0, (17, 143), (33, 152), 0.670646)
+11 :  (0, (22, 305), (48, 315), 0.46820238)
+12 :  (0, (22, 316), (48, 325), 0.627322)
+13 :  (0, (24, 327), (48, 335), 0.6518885)
+14 :  (0, (24, 337), (49, 346), 0.75482994)
+15 :  (0, (26, 347), (49, 355), 0.745662)
+16 :  (0, (28, 357), (49, 366), 0.8486412)
+17 :  (0, (29, 368), (49, 376), 0.8574175)
+18 :  (0, (41, 33), (62, 43), 0.85815907)
+19 :  (0, (50, 238), (68, 249), 0.81415915)
+20 :  (0, (60, 367), (93, 376), 0.8323675)
+21 :  (0, (61, 377), (93, 386), 0.73596495)
+22 :  (0, (65, 32), (89, 51), 0.43205005)
+23 :  (0, (67, 250), (111, 261), 0.8501934)
+24 :  (0, (68, 158), (104, 169), 0.4725128)
+25 :  (0, (70, 238), (88, 249), 0.8630836)
+26 :  (0, (73, 356), (93, 365), 0.80169517)
+27 :  (0, (86, 158), (104, 169), 0.45335168)
+28 :  (0, (91, 238), (108, 248), 0.7830065)
+29 :  (0, (106, 159), (125, 171), 0.59261966)
+30 :  (0, (118, 144), (141, 157), 0.4102707)
+31 :  (0, (127, 174), (148, 183), 0.6098757)
+32 :  (0, (135, 163), (157, 173), 0.69877917)
+33 :  (0, (253, 94), (271, 105), 0.6264269)
+34 :  (0, (264, 103), (285, 115), 0.34349173)
+35 :  (0, (294, 165), (320, 176), 0.74341255)
+36 :  (0, (324, 168), (366, 180), 0.7608152)
+37 :  (0, (325, 157), (369, 168), 0.7916961)
+38 :  (0, (328, 146), (370, 158), 0.7790936)
+39 :  (0, (372, 160), (394, 170), 0.69749284)
+40 :  (0, (372, 171), (392, 180), 0.80438226)
+41 :  (0, (375, 125), (394, 135), 0.8084506)
+42 :  (0, (375, 136), (408, 147), 0.30907607)
+43 :  (0, (388, 136), (407, 146), 0.6491956)
+44 :  (0, (388, 151), (405, 160), 0.72592366)</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="satelliteimage_files/figure-html/cell-36-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="iitgn-acad-area" class="level3">
+<h3 class="anchored" data-anchor-id="iitgn-acad-area">IITGN Acad Area</h3>
+<div id="cell-50" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-24T10:29:09.062441Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-24T10:29:09.062159Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-24T10:29:09.714060Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-24T10:29:09.713081Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-02-24T10:29:09.062419Z&quot;}" data-trusted="true" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>test_img <span class="op">=</span> <span class="st">"/kaggle/input/satellite-iitgn/satellite81.tif"</span></span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>give_image(test_img, model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+image 1/1 /kaggle/input/satellite-iitgn/satellite81.tif: 640x640 21 highs, 37.0ms
+Speed: 2.7ms preprocess, 37.0ms inference, 1.8ms postprocess per image at shape (1, 3, 640, 640)
+
+=================Prediction=================
+0 :  (0, (21, 364), (45, 379), 0.39681324)
+1 :  (0, (25, 378), (45, 385), 0.36306438)
+2 :  (0, (25, 382), (45, 394), 0.32389072)
+3 :  (0, (33, 327), (170, 347), 0.590639)
+4 :  (0, (52, 362), (66, 371), 0.2851217)
+5 :  (0, (71, 363), (93, 375), 0.7010867)
+6 :  (0, (72, 297), (95, 319), 0.42990538)
+7 :  (0, (72, 381), (92, 395), 0.7021544)
+8 :  (0, (82, 216), (159, 236), 0.6496576)
+9 :  (0, (104, 237), (125, 261), 0.6028382)
+10 :  (0, (110, 360), (130, 374), 0.49113607)
+11 :  (0, (113, 215), (214, 236), 0.29370114)
+12 :  (0, (177, 237), (216, 260), 0.7645278)
+13 :  (0, (217, 101), (244, 114), 0.81983024)
+14 :  (0, (248, 102), (302, 114), 0.54451287)
+15 :  (0, (303, 99), (331, 113), 0.8042275)
+16 :  (0, (335, 98), (363, 112), 0.8387266)
+17 :  (0, (379, 4), (415, 15), 0.81636465)
+18 :  (0, (380, 15), (415, 26), 0.82774484)
+19 :  (0, (381, 0), (416, 5), 0.74452955)
+20 :  (0, (403, 26), (415, 36), 0.7605009)</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="satelliteimage_files/figure-html/cell-37-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="honolulu-hawaii" class="level3">
+<h3 class="anchored" data-anchor-id="honolulu-hawaii">Honolulu, Hawaii</h3>
+<div id="cell-52" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-24T10:49:16.336055Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-24T10:49:16.335754Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-24T10:49:17.012107Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-24T10:49:17.011071Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-02-24T10:49:16.336036Z&quot;}" data-trusted="true" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>test_img <span class="op">=</span> <span class="st">"/kaggle/input/satellite-iitgn/satellite121.tif"</span></span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>give_image(test_img, model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+image 1/1 /kaggle/input/satellite-iitgn/satellite121.tif: 640x640 9 highs, 37.2ms
+Speed: 2.5ms preprocess, 37.2ms inference, 1.6ms postprocess per image at shape (1, 3, 640, 640)
+
+=================Prediction=================
+0 :  (0, (40, 33), (67, 63), 0.65175974)
+1 :  (0, (103, 259), (124, 289), 0.4581612)
+2 :  (0, (113, 342), (134, 366), 0.7254093)
+3 :  (0, (120, 273), (135, 285), 0.45154345)
+4 :  (0, (135, 295), (163, 316), 0.8786329)
+5 :  (0, (244, 0), (271, 14), 0.3058125)
+6 :  (0, (258, 392), (273, 408), 0.8060521)
+7 :  (0, (313, 294), (337, 321), 0.6329956)
+8 :  (0, (334, 296), (350, 310), 0.6137146)</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="satelliteimage_files/figure-html/cell-38-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-53" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-24T10:49:23.390024Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-24T10:49:23.389703Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-24T10:49:24.081686Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-24T10:49:24.080802Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-02-24T10:49:23.389996Z&quot;}" data-trusted="true" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>test_img <span class="op">=</span> <span class="st">"/kaggle/input/satellite-iitgn/satellite122.tif"</span></span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>give_image(test_img, model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+image 1/1 /kaggle/input/satellite-iitgn/satellite122.tif: 640x640 25 highs, 36.9ms
+Speed: 2.4ms preprocess, 36.9ms inference, 1.3ms postprocess per image at shape (1, 3, 640, 640)
+
+=================Prediction=================
+0 :  (0, (2, 158), (44, 180), 0.8508636)
+1 :  (0, (5, 404), (29, 416), 0.48672867)
+2 :  (0, (20, 46), (40, 62), 0.63159984)
+3 :  (0, (22, 100), (44, 119), 0.5312379)
+4 :  (0, (44, 50), (55, 66), 0.55692136)
+5 :  (0, (50, 382), (78, 414), 0.68954265)
+6 :  (0, (64, 9), (102, 29), 0.6190773)
+7 :  (0, (74, 10), (102, 29), 0.5660406)
+8 :  (0, (109, 14), (144, 35), 0.90509677)
+9 :  (0, (121, 201), (164, 220), 0.8615894)
+10 :  (0, (168, 32), (192, 46), 0.7666579)
+11 :  (0, (169, 47), (181, 58), 0.49264297)
+12 :  (0, (212, 379), (224, 384), 0.35831884)
+13 :  (0, (220, 155), (251, 176), 0.850907)
+14 :  (0, (221, 330), (235, 361), 0.84106284)
+15 :  (0, (224, 163), (254, 180), 0.66724575)
+16 :  (0, (229, 172), (259, 192), 0.82893676)
+17 :  (0, (232, 186), (254, 201), 0.30542535)
+18 :  (0, (236, 329), (259, 358), 0.7055986)
+19 :  (0, (289, 381), (295, 396), 0.34102872)
+20 :  (0, (292, 382), (306, 399), 0.55330163)
+21 :  (0, (307, 202), (323, 214), 0.7968213)
+22 :  (0, (314, 176), (338, 202), 0.8270645)
+23 :  (0, (327, 9), (342, 28), 0.7079902)
+24 :  (0, (344, 260), (354, 270), 0.2749449)</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="satelliteimage_files/figure-html/cell-39-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-54" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-24T10:49:32.523744Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-24T10:49:32.523402Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-24T10:49:33.235948Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-24T10:49:33.235002Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-02-24T10:49:32.523718Z&quot;}" data-trusted="true" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>test_img <span class="op">=</span> <span class="st">"/kaggle/input/satellite-iitgn/satellite123.tif"</span></span>
+<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>give_image(test_img, model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+image 1/1 /kaggle/input/satellite-iitgn/satellite123.tif: 640x640 13 highs, 2 lows, 36.9ms
+Speed: 2.3ms preprocess, 36.9ms inference, 1.4ms postprocess per image at shape (1, 3, 640, 640)
+
+=================Prediction=================
+0 :  (0, (42, 400), (71, 416), 0.45259023)
+1 :  (0, (124, 251), (142, 271), 0.44781804)
+2 :  (0, (145, 29), (170, 55), 0.85732025)
+3 :  (0, (153, 184), (190, 212), 0.65863043)
+4 :  (0, (166, 43), (191, 75), 0.74180627)
+5 :  (0, (188, 251), (202, 266), 0.3252571)
+6 :  (0, (257, 314), (275, 333), 0.3642158)
+7 :  (0, (262, 140), (295, 185), 0.65746665)
+8 :  (0, (277, 320), (299, 341), 0.851315)
+9 :  (0, (278, 175), (299, 195), 0.8949093)
+10 :  (0, (286, 149), (312, 177), 0.8909152)
+11 :  (0, (306, 185), (330, 213), 0.81172514)
+12 :  (0, (339, 162), (365, 192), 0.8276817)
+13 :  (2, (306, 184), (330, 213), 0.3032376)
+14 :  (2, (340, 162), (364, 192), 0.51279026)</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="satelliteimage_files/figure-html/cell-40-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Made with <a href="https://quarto.org/">Quarto</a> © 2025 Digvijay | Guntas | Hrriday | Prathmesh</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
