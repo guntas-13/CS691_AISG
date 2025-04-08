@@ -18,7 +18,7 @@ about:
       href: https://github.com/Prath-Maharshi
 ---
 
-Rendered notebooks for AISG 2025 Assignment 1 :)
+Rendered notebooks for AISG 2025 Assignments 1 & 2 :)
 
 Digvijay Singh Parihar
 

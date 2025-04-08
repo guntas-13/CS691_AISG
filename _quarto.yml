@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "AISG 2025 Assignment 1"
+  title: "AISG 2025 Assignment 1 & 2"
   favicon: "icon.png"
   page-footer:
     left: "Made with [Quarto](https://quarto.org/) © 2025 Digvijay | Guntas | Hrriday | Prathmesh"
