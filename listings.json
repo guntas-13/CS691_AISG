@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/llm/LLMPrompting.html",
       "/posts/data_analysis/analysis.html",
       "/posts/iou/part2.html",
       "/posts/map/Bonus.html",

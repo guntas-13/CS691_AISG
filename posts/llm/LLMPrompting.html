@@ -1,0 +1,2163 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.549">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Guntas Singh Saran">
+<meta name="author" content="Prathmesh Maharshi">
+<meta name="dcterms.date" content="2025-04-09">
+
+<title>AISG 2025 Assignment 1 &amp; 2 - Question1 &amp; 2: Zero-Shot and Few-Shot Prompting in Healthcare</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../icon.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+<script src="https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">AISG 2025 Assignment 1 &amp; 2</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">अप्राकृतिक बुद्धिमत्ता 4 सामाजिक भलाई</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/guntas-13/CS691_AISG"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Question1 &amp; 2: Zero-Shot and Few-Shot Prompting in Healthcare</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Authors</div>
+      <div class="quarto-title-meta-contents">
+               <p>Guntas Singh Saran </p>
+               <p>Prathmesh Maharshi </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">April 9, 2025</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#load-dataset" id="toc-load-dataset" class="nav-link active" data-scroll-target="#load-dataset">Load Dataset</a></li>
+  <li><a href="#get-the-unique-classes-of-medical_speciality" id="toc-get-the-unique-classes-of-medical_speciality" class="nav-link" data-scroll-target="#get-the-unique-classes-of-medical_speciality">Get the Unique Classes of <code>medical_speciality</code></a></li>
+  <li><a href="#load-the-model-using-huggingface-pipeline" id="toc-load-the-model-using-huggingface-pipeline" class="nav-link" data-scroll-target="#load-the-model-using-huggingface-pipeline">Load the Model using <code>huggingface</code> <code>pipeline</code></a></li>
+  <li><a href="#zero-shot-prompt-template" id="toc-zero-shot-prompt-template" class="nav-link" data-scroll-target="#zero-shot-prompt-template">Zero-Shot Prompt Template</a></li>
+  <li><a href="#demo-of-the-workflow-ahead" id="toc-demo-of-the-workflow-ahead" class="nav-link" data-scroll-target="#demo-of-the-workflow-ahead">Demo of the workflow ahead</a></li>
+  <li><a href="#classical-way-slow" id="toc-classical-way-slow" class="nav-link" data-scroll-target="#classical-way-slow">Classical Way: Slow</a></li>
+  <li><a href="#optimised-way-applying-maps-over-datasets" id="toc-optimised-way-applying-maps-over-datasets" class="nav-link" data-scroll-target="#optimised-way-applying-maps-over-datasets">Optimised Way: Applying Maps over <code>datasets</code></a></li>
+  <li><a href="#few-shot-prompting" id="toc-few-shot-prompting" class="nav-link" data-scroll-target="#few-shot-prompting">Few-Shot Prompting</a></li>
+  <li><a href="#generate-random-examples-of-a-superset-of-unique-labels-atleast" id="toc-generate-random-examples-of-a-superset-of-unique-labels-atleast" class="nav-link" data-scroll-target="#generate-random-examples-of-a-superset-of-unique-labels-atleast">Generate Random Examples of a superset of Unique Labels atleast</a></li>
+  <li><a href="#example-workflow" id="toc-example-workflow" class="nav-link" data-scroll-target="#example-workflow">Example Workflow</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<div id="cell-1" class="cell" data-trusted="true">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install <span class="op">-</span>U transformers</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>::: {#cell-2 .cell _cell_guid=‘b1076dfc-b9ad-4769-8c92-a6c4dae69d19’ _uuid=‘8f2839f25d086af736a60e9eeb907d3b93b6e0e5’ execution=‘{“iopub.execute_input”:“2025-04-08T22:17:54.501848Z”,“iopub.status.busy”:“2025-04-08T22:17:54.501390Z”,“iopub.status.idle”:“2025-04-08T22:18:17.158547Z”,“shell.execute_reply”:“2025-04-08T22:18:17.157493Z”,“shell.execute_reply.started”:“2025-04-08T22:17:54.501806Z”}’ trusted=‘true’ execution_count=2}</p>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> transformers <span class="im">import</span> pipeline</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> precision_recall_fscore_support, confusion_matrix</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datasets <span class="im">import</span> load_dataset</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tqdm <span class="im">import</span> tqdm</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>:::</p>
+<div id="cell-3" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-04-08T22:18:18.351234Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-04-08T22:18:18.350590Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-04-08T22:18:18.354943Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-04-08T22:18:18.354045Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-04-08T22:18:18.351203Z&quot;}" data-trusted="true" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>os.environ[<span class="st">"CUDA_LAUNCH_BLOCKING"</span>] <span class="op">=</span> <span class="st">"1"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="load-dataset" class="level1">
+<h1>Load Dataset</h1>
+<div id="cell-5" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-04-08T22:18:21.163907Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-04-08T22:18:21.163565Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-04-08T22:18:23.262059Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-04-08T22:18:23.261348Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-04-08T22:18:21.163881Z&quot;}" data-trusted="true" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>ds <span class="op">=</span> load_dataset(<span class="st">"hpe-ai/medical-cases-classification-tutorial"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>ds</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"c9f5c497d78f447fbf57d462d01a4ca5","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Repo card metadata block was not found. Setting CardData to empty.</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"c2620b0195d0409285fc0d042c755249","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"786611e584f5491cb4cd3f8275574760","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"796fc06a29e24b90ad1e9bbe0bfabdb1","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"96f10f574c884f1c9db458ae87e63b60","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"dc7bad3fbc024509b19133fb063519db","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"755c6363557d40779a5e1ea6d24aea29","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<pre><code>DatasetDict({
+    train: Dataset({
+        features: ['description', 'transcription', 'sample_name', 'medical_specialty', 'keywords'],
+        num_rows: 1724
+    })
+    validation: Dataset({
+        features: ['description', 'transcription', 'sample_name', 'medical_specialty', 'keywords'],
+        num_rows: 370
+    })
+    test: Dataset({
+        features: ['description', 'transcription', 'sample_name', 'medical_specialty', 'keywords'],
+        num_rows: 370
+    })
+})</code></pre>
+</div>
+</div>
+<div id="cell-6" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-04-08T22:18:23.263330Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-04-08T22:18:23.263102Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-04-08T22:18:23.368786Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-04-08T22:18:23.368054Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-04-08T22:18:23.263310Z&quot;}" data-trusted="true" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(ds[<span class="st">"train"</span>])</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">description</th>
+<th data-quarto-table-cell-role="th">transcription</th>
+<th data-quarto-table-cell-role="th">sample_name</th>
+<th data-quarto-table-cell-role="th">medical_specialty</th>
+<th data-quarto-table-cell-role="th">keywords</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Pacemaker ICD interrogation. Severe nonischem...</td>
+<td>PROCEDURE NOTE: , Pacemaker ICD interrogation....</td>
+<td>Pacemaker Interrogation</td>
+<td>Cardiovascular / Pulmonary</td>
+<td>cardiovascular / pulmonary, cardiomyopathy, ve...</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Erythema of the right knee and leg, possible s...</td>
+<td>PREOPERATIVE DIAGNOSES: , Erythema of the righ...</td>
+<td>Aspiration - Knee Joint</td>
+<td>Orthopedic</td>
+<td>orthopedic, knee and leg, anterolateral portal...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Left cardiac catheterization with selective ri...</td>
+<td>PREOPERATIVE DIAGNOSIS: , Post infarct angina....</td>
+<td>Cardiac Cath &amp; Selective Coronary Angiography</td>
+<td>Cardiovascular / Pulmonary</td>
+<td>cardiovascular / pulmonary, selective, angiogr...</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>Patient with a history of coronary artery dise...</td>
+<td>REASON FOR VISIT: , Acute kidney failure.,HIST...</td>
+<td>Acute Kidney Failure</td>
+<td>Nephrology</td>
+<td>None</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Cardiac evaluation and treatment in a patient ...</td>
+<td>REASON FOR REFERRAL: , Cardiac evaluation and ...</td>
+<td>Cardiac Consultation - 6</td>
+<td>Cardiovascular / Pulmonary</td>
+<td>None</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1719</td>
+<td>Arthroscopy of the left knee, left arthroscopi...</td>
+<td>PREOPERATIVE DIAGNOSIS:, Medial meniscal tear...</td>
+<td>Arthroscopy, Meniscoplasty, &amp; Chondroplasty</td>
+<td>Orthopedic</td>
+<td>orthopedic, medial meniscoplasty, arthroscopic...</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1720</td>
+<td>Normal awake and drowsy (stage I sleep) EEG fo...</td>
+<td>DESCRIPTION OF RECORD: ,This tracing was obta...</td>
+<td>Electroencephalogram</td>
+<td>Neurology</td>
+<td>neurology, gold-plated surface disc electrodes...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1721</td>
+<td>MRI of the brain without contrast to evaluate ...</td>
+<td>EXAM: , MRI of the brain without contrast.,HIS...</td>
+<td>MRI of Brain w/o Contrast.</td>
+<td>Neurology</td>
+<td>neurology, mri, diffusion, posterior fossa, ax...</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1722</td>
+<td>The patient comes for three-week postpartum ch...</td>
+<td>CHIEF COMPLAINT:, The patient comes for three...</td>
+<td>Three-Week Postpartum Checkup</td>
+<td>Obstetrics / Gynecology</td>
+<td>obstetrics / gynecology, checkup, allergies, p...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1723</td>
+<td>Laparoscopic cholecystectomy. Gallstone pancr...</td>
+<td>PREOPERATIVE DIAGNOSIS: ,Gallstone pancreatiti...</td>
+<td>Cholecystectomy Laparoscopic</td>
+<td>Gastroenterology</td>
+<td>gastroenterology, gallstone, gallbladder, panc...</td>
+</tr>
+</tbody>
+</table>
+
+<p>1724 rows × 5 columns</p>
+</div>
+</div>
+</div>
+</section>
+<section id="get-the-unique-classes-of-medical_speciality" class="level1">
+<h1>Get the Unique Classes of <code>medical_speciality</code></h1>
+<div id="cell-8" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-04-08T22:18:26.242292Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-04-08T22:18:26.241952Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-04-08T22:18:26.264168Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-04-08T22:18:26.263270Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-04-08T22:18:26.242267Z&quot;}" data-trusted="true" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>cls <span class="op">=</span> [df.loc[i, <span class="st">"medical_specialty"</span>] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(df))]</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>classes <span class="op">=</span> <span class="bu">list</span>(<span class="bu">set</span>(cls))</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>classes, <span class="bu">len</span>(classes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>(['Hematology - Oncology',
+  'Radiology',
+  'Gastroenterology',
+  'Neurology',
+  'Nephrology',
+  'Neurosurgery',
+  'Cardiovascular / Pulmonary',
+  'Orthopedic',
+  'Obstetrics / Gynecology',
+  'ENT - Otolaryngology',
+  'Psychiatry / Psychology',
+  'Ophthalmology',
+  'Pediatrics - Neonatal'],
+ 13)</code></pre>
+</div>
+</div>
+</section>
+<section id="load-the-model-using-huggingface-pipeline" class="level1">
+<h1>Load the Model using <code>huggingface</code> <code>pipeline</code></h1>
+<div id="cell-10" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-04-08T22:18:26.799668Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-04-08T22:18:26.799331Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-04-08T22:18:27.497006Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-04-08T22:18:27.495709Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-04-08T22:18:26.799636Z&quot;}" data-trusted="true">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>huggingface<span class="op">-</span>cli login <span class="op">--</span>token <span class="op">&lt;</span>TOKEN<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-11" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-04-08T22:18:27.499103Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-04-08T22:18:27.498657Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-04-08T22:18:43.066632Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-04-08T22:18:43.065610Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-04-08T22:18:27.499061Z&quot;}" data-trusted="true" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> <span class="st">"google/gemma-3-1b-it"</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>classifier <span class="op">=</span> pipeline(<span class="st">"text-generation"</span>, model<span class="op">=</span>model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"d6310eda76824c528486fab54fea8ed5","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"67b89810a1f944b2ad1e782ec179d06f","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"deda3202a1d84961888901408f12679a","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"5a41f951f4014c94aa949a93b5272473","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"968e861daa074699bdd30709cda1a4de","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"50972048255c45fdbd6b8669643c76e0","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"41f330008bf04ad89f3ce75296d3aadc","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"7863376c542b457795cc0d090000d6a2","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Device set to use cuda:0</code></pre>
+</div>
+</div>
+<div id="cell-12" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-04-08T22:18:43.068481Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-04-08T22:18:43.068183Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-04-08T22:18:43.075033Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-04-08T22:18:43.073897Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-04-08T22:18:43.068460Z&quot;}" data-trusted="true" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>cls_str <span class="op">=</span> <span class="st">", "</span>.join(classes)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>cls_str</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<pre><code>'Hematology - Oncology, Radiology, Gastroenterology, Neurology, Nephrology, Neurosurgery, Cardiovascular / Pulmonary, Orthopedic, Obstetrics / Gynecology, ENT - Otolaryngology, Psychiatry / Psychology, Ophthalmology, Pediatrics - Neonatal'</code></pre>
+</div>
+</div>
+</section>
+<section id="zero-shot-prompt-template" class="level1">
+<h1>Zero-Shot Prompt Template</h1>
+<div id="cell-14" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-04-08T22:18:43.076746Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-04-08T22:18:43.076375Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-04-08T22:18:50.559842Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-04-08T22:18:50.558774Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-04-08T22:18:43.076655Z&quot;}" data-trusted="true" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>prompt_template <span class="op">=</span> <span class="st">"""</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="st">You are a medical expert tasked with classifying a disease description into one of these medical specialties: </span><span class="sc">{cls_str}</span><span class="st">. Analyze the description carefully, focusing on symptoms, conditions, and medical terms. Select the most appropriate specialty from the list and output ONLY the specialty name inside brackets, like [Specialty Name]. Do not repeat the prompt or add extra text—just the prediction in this format: [Specialty Name].</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="st">Description: </span><span class="sc">{description}</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="st">Predicted Medical Specialty: </span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="demo-of-the-workflow-ahead" class="level1">
+<h1>Demo of the workflow ahead</h1>
+<div id="cell-16" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-04-08T22:18:50.561309Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-04-08T22:18:50.560933Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-04-08T22:18:53.712322Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-04-08T22:18:53.711340Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-04-08T22:18:50.561275Z&quot;}" data-trusted="true" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>dscrp <span class="op">=</span> df.loc[<span class="dv">285</span>, <span class="st">"description"</span>]</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>tr_cls <span class="op">=</span> df.loc[<span class="dv">285</span>, <span class="st">"medical_specialty"</span>]</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tr_cls)</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"="</span><span class="op">*</span><span class="dv">50</span>)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>prompt <span class="op">=</span> prompt_template.<span class="bu">format</span>(cls_str<span class="op">=</span>cls_str, description<span class="op">=</span>dscrp)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> classifier(prompt, max_new_tokens<span class="op">=</span><span class="dv">20</span>, do_sample<span class="op">=</span><span class="va">False</span>)[<span class="dv">0</span>][<span class="st">'generated_text'</span>]</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result)</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>generated_text <span class="op">=</span> result[<span class="bu">len</span>(prompt):].strip()</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>pred_specialty <span class="op">=</span> generated_text.split(<span class="st">"["</span>)[<span class="dv">1</span>].split(<span class="st">"]"</span>)[<span class="dv">0</span>].strip()</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"="</span><span class="op">*</span><span class="dv">50</span>)</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pred_specialty)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Cardiovascular / Pulmonary
+==================================================
+
+You are a medical expert tasked with classifying a disease description into one of these medical specialties: Hematology - Oncology, Radiology, Gastroenterology, Neurology, Nephrology, Neurosurgery, Cardiovascular / Pulmonary, Orthopedic, Obstetrics / Gynecology, ENT - Otolaryngology, Psychiatry / Psychology, Ophthalmology, Pediatrics - Neonatal. Analyze the description carefully, focusing on symptoms, conditions, and medical terms. Select the most appropriate specialty from the list and output ONLY the specialty name inside brackets, like [Specialty Name]. Do not repeat the prompt or add extra text—just the prediction in this format: [Specialty Name].
+
+Description: Problem of essential hypertension.  Symptoms that suggested intracranial pathology.
+
+Predicted Medical Specialty: 
+[Neurology]
+
+Explanation: The description mentions "essential hypertension" (high blood pressure) and
+==================================================
+Neurology</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>/usr/local/lib/python3.10/dist-packages/transformers/generation/configuration_utils.py:636: UserWarning: `do_sample` is set to `False`. However, `top_p` is set to `0.95` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_p`.
+  warnings.warn(
+/usr/local/lib/python3.10/dist-packages/transformers/generation/configuration_utils.py:653: UserWarning: `do_sample` is set to `False`. However, `top_k` is set to `64` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_k`.
+  warnings.warn(</code></pre>
+</div>
+</div>
+</section>
+<section id="classical-way-slow" class="level1">
+<h1>Classical Way: Slow</h1>
+<div id="cell-18" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-04-08T22:18:53.713393Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-04-08T22:18:53.713169Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-04-08T22:18:53.717285Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-04-08T22:18:53.716174Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-04-08T22:18:53.713374Z&quot;}" data-trusted="true" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># df = pd.DataFrame(ds["test"])</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-19" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-04-08T22:18:53.719626Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-04-08T22:18:53.719308Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-04-08T22:18:53.730488Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-04-08T22:18:53.729598Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-04-08T22:18:53.719601Z&quot;}" data-trusted="true" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># true_labels = []</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co"># pred_labels = []</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co"># for index, row in tqdm(df.iterrows()):</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="co">#     description = row["description"]</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="co">#     true_label = row["medical_specialty"]</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="co">#     true_labels.append(true_label)</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a><span class="co">#     prompt = prompt_template.format(cls_str=cls_str, description=description)</span></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a><span class="co">#     result = classifier(prompt, max_new_tokens=10, do_sample=False)[0]['generated_text']</span></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a><span class="co">#     generated_text = result[len(prompt):].strip()</span></span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a><span class="co">#     pred_specialty = generated_text.split("[")[1].split("]")[0].strip() if "[" in generated_text else generated_text</span></span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a><span class="co">#     pred_labels.append(pred_specialty)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-20" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-04-08T22:18:53.731989Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-04-08T22:18:53.731643Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-04-08T22:18:53.745305Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-04-08T22:18:53.744570Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-04-08T22:18:53.731937Z&quot;}" data-trusted="true" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># precision, recall, f1, _ = precision_recall_fscore_support(true_labels, pred_labels, average="weighted", zero_division=0)</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co"># conf_matrix = confusion_matrix(true_labels, pred_labels, labels=classes)</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co"># print(f"\nFew-Shot Learning Metrics ({num_shots} Shots):")</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="co"># print(f"Precision: {precision:.3f}")</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="co"># print(f"Recall: {recall:.3f}")</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="co"># print(f"F1 Score: {f1:.3f}")</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="co"># print("Confusion Matrix:")</span></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a><span class="co"># print(conf_matrix)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="optimised-way-applying-maps-over-datasets" class="level1">
+<h1>Optimised Way: Applying Maps over <code>datasets</code></h1>
+<div id="cell-22" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-04-08T22:18:53.746415Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-04-08T22:18:53.746087Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-04-08T22:18:58.590442Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-04-08T22:18:58.589576Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-04-08T22:18:53.746371Z&quot;}" data-trusted="true" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>classifier <span class="op">=</span> pipeline(<span class="st">"text-generation"</span>, model<span class="op">=</span>model, device<span class="op">=</span><span class="dv">0</span>, batch_size<span class="op">=</span><span class="dv">16</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Device set to use cuda:0</code></pre>
+</div>
+</div>
+<div id="cell-23" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-04-08T22:18:58.593542Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-04-08T22:18:58.593275Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-04-08T22:18:58.598632Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-04-08T22:18:58.597785Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-04-08T22:18:58.593521Z&quot;}" data-trusted="true" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> ds[<span class="st">"test"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-24" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-04-08T22:18:58.599510Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-04-08T22:18:58.599257Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-04-08T22:18:58.674550Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-04-08T22:18:58.673537Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-04-08T22:18:58.599486Z&quot;}" data-trusted="true" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> format_prompts(example):</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    example[<span class="st">"prompt"</span>] <span class="op">=</span> prompt_template.<span class="bu">format</span>(cls_str<span class="op">=</span>cls_str, description<span class="op">=</span>example[<span class="st">"description"</span>])</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    example[<span class="st">"true_label"</span>] <span class="op">=</span> example[<span class="st">"medical_specialty"</span>]</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> example</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> dataset.<span class="bu">map</span>(format_prompts)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"0616a4fe8593472193a4c316e27553ae","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+</div>
+<div id="cell-25" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-04-08T22:18:58.675603Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-04-08T22:18:58.675364Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-04-08T22:20:07.097331Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-04-08T22:20:07.096426Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-04-08T22:18:58.675582Z&quot;}" data-trusted="true" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> predict_batch(examples):</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    prompts <span class="op">=</span> examples[<span class="st">"prompt"</span>]</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    results <span class="op">=</span> classifier(prompts, max_new_tokens<span class="op">=</span><span class="dv">10</span>, do_sample<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    predictions <span class="op">=</span> [result[<span class="dv">0</span>][<span class="st">"generated_text"</span>][<span class="bu">len</span>(prompt):].strip() <span class="cf">for</span> prompt, result <span class="kw">in</span> <span class="bu">zip</span>(prompts, results)]</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>    examples[<span class="st">"prediction"</span>] <span class="op">=</span> [pred.split(<span class="st">"["</span>)[<span class="dv">1</span>].split(<span class="st">"]"</span>)[<span class="dv">0</span>].strip() <span class="cf">if</span> <span class="st">"["</span> <span class="kw">in</span> pred <span class="cf">else</span> pred <span class="cf">for</span> pred <span class="kw">in</span> predictions]</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> examples</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> dataset.<span class="bu">map</span>(predict_batch, batched<span class="op">=</span><span class="va">True</span>, batch_size<span class="op">=</span><span class="dv">16</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"5522f86194bb47649ac05efa52effe2f","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>You seem to be using the pipelines sequentially on GPU. In order to maximize efficiency please use a dataset</code></pre>
+</div>
+</div>
+<div id="cell-26" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-04-08T22:20:14.063464Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-04-08T22:20:14.063137Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-04-08T22:20:14.832925Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-04-08T22:20:14.832017Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-04-08T22:20:14.063434Z&quot;}" data-trusted="true" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>df_results <span class="op">=</span> dataset.to_pandas()</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>true_labels <span class="op">=</span> df_results[<span class="st">"true_label"</span>].tolist()</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>pred_labels <span class="op">=</span> df_results[<span class="st">"prediction"</span>].tolist()</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>precision, recall, f1, _ <span class="op">=</span> precision_recall_fscore_support(true_labels, pred_labels, average<span class="op">=</span><span class="st">"weighted"</span>, zero_division<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>conf_matrix <span class="op">=</span> confusion_matrix(true_labels, pred_labels, labels<span class="op">=</span>classes)</span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Zero-Shot Learning Metrics:"</span>)</span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Precision: </span><span class="sc">{</span>precision<span class="sc">:.3f}</span><span class="ss">"</span>)</span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Recall: </span><span class="sc">{</span>recall<span class="sc">:.3f}</span><span class="ss">"</span>)</span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"F1 Score: </span><span class="sc">{</span>f1<span class="sc">:.3f}</span><span class="ss">"</span>)</span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Confusion Matrix:"</span>)</span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">8</span>))</span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a>sns.heatmap(conf_matrix, annot<span class="op">=</span><span class="va">True</span>, fmt<span class="op">=</span><span class="st">"d"</span>, cmap<span class="op">=</span><span class="st">"Blues"</span>, </span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a>            xticklabels<span class="op">=</span>classes, yticklabels<span class="op">=</span>classes, </span>
+<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a>            cbar_kws<span class="op">=</span>{<span class="st">'label'</span>: <span class="st">'Count'</span>})</span>
+<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="ss">f"Confusion Matrix for Zero-Shot Prompting</span><span class="ch">\n</span><span class="ss">Precision:</span><span class="sc">{</span>precision<span class="sc">:.3f}</span><span class="ss"> | Recall:</span><span class="sc">{</span>recall<span class="sc">:.3f}</span><span class="ss"> | F1 Score:</span><span class="sc">{</span>f1<span class="sc">:.3f}</span><span class="ss">"</span>, fontsize<span class="op">=</span><span class="dv">16</span>, pad<span class="op">=</span><span class="dv">20</span>)</span>
+<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Predicted Specialty"</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"True Specialty"</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb28-21"><a href="#cb28-21" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">45</span>, ha<span class="op">=</span><span class="st">"right"</span>)</span>
+<span id="cb28-22"><a href="#cb28-22" aria-hidden="true" tabindex="-1"></a>plt.yticks(rotation<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb28-23"><a href="#cb28-23" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb28-24"><a href="#cb28-24" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Zero-Shot Learning Metrics:
+Precision: 0.613
+Recall: 0.414
+F1 Score: 0.421
+Confusion Matrix:</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="LLMPrompting_files/figure-html/cell-20-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-27" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-04-08T22:20:18.039164Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-04-08T22:20:18.038805Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-04-08T22:20:18.101971Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-04-08T22:20:18.101102Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-04-08T22:20:18.039134Z&quot;}" data-trusted="true" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> tr, pr <span class="kw">in</span> <span class="bu">zip</span>(true_labels, pred_labels):</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>((tr, pr))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>('Orthopedic', 'Neurology')
+('Cardiovascular / Pulmonary', 'Gastroenterology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Orthopedic', 'Neurology')
+('Neurology', 'Neurology')
+('ENT - Otolaryngology', 'Gastroenterology')
+('Neurology', 'Neurology')
+('Gastroenterology', 'Gastroenterology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Gastroenterology', 'Hematology - Oncology')
+('Obstetrics / Gynecology', 'Gastroenterology')
+('Cardiovascular / Pulmonary', 'Radiology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Orthopedic', 'Orthopedic')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Neurology', 'Neurology')
+('Obstetrics / Gynecology', 'Gastroenterology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Neurology', 'Gastroenterology')
+('Neurosurgery', 'Gastroenterology')
+('Orthopedic', 'Neurology')
+('Cardiovascular / Pulmonary', 'Gastroenterology')
+('Cardiovascular / Pulmonary', 'Gastroenterology')
+('Obstetrics / Gynecology', 'Gastroenterology')
+('Ophthalmology', 'Gastroenterology')
+('Cardiovascular / Pulmonary', 'Radiology')
+('Orthopedic', 'Neurology')
+('Hematology - Oncology', 'Gastroenterology')
+('Cardiovascular / Pulmonary', 'Carcinoma')
+('Obstetrics / Gynecology', 'Gastroenterology')
+('Gastroenterology', 'Gastroenterology')
+('Gastroenterology', 'Gastroenterology')
+('Neurology', 'Neurology')
+('Cardiovascular / Pulmonary', 'Radiology')
+('Obstetrics / Gynecology', 'Gastroenterology')
+('Cardiovascular / Pulmonary', 'Neurology')
+('Neurosurgery', 'Orthopedic')
+('Gastroenterology', 'Gastroenterology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Neurology', 'Neurology')
+('Gastroenterology', 'Gastroenterology')
+('Neurology', 'Neurology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Gastroenterology', 'Gastroenterology')
+('Obstetrics / Gynecology', 'Gastroenterology')
+('Neurosurgery', 'Neurology')
+('ENT - Otolaryngology', 'Gastroenterology')
+('Cardiovascular / Pulmonary', 'Thoracic Surgery')
+('Cardiovascular / Pulmonary', 'Pulmonary Medicine')
+('Gastroenterology', 'Gastroenterology')
+('Orthopedic', 'Orthopedic')
+('Neurosurgery', 'Cardiovascular / Pulmonary')
+('ENT - Otolaryngology', 'Gastroenterology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Neurology', 'Orthopedic')
+('Neurology', 'Neurology')
+('Hematology - Oncology', 'Hematology/Oncology')
+('Orthopedic', 'Orthopedic')
+('Gastroenterology', 'Gastroenterology')
+('Psychiatry / Psychology', 'Psychiatry / Psychology')
+('Gastroenterology', 'Gastroenterology')
+('Gastroenterology', 'Cardiovascular / Pulmonary')
+('Orthopedic', 'Orthopedic')
+('Orthopedic', 'Orthopedic')
+('Neurosurgery', 'Orthopedic')
+('Obstetrics / Gynecology', 'Gastroenterology')
+('Neurology', 'Neurology')
+('Obstetrics / Gynecology', 'Hematology - Oncology')
+('Cardiovascular / Pulmonary', 'Endovascular')
+('Orthopedic', 'Neurology')
+('Neurology', 'Neurology')
+('Psychiatry / Psychology', 'Psychiatry/Psychology')
+('Neurology', 'Neurology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Orthopedic', 'Orthopedic')
+('Cardiovascular / Pulmonary', 'Gastroenterology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('ENT - Otolaryngology', 'Gastroenterology')
+('Ophthalmology', 'Gastroenterology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Cardiovascular / Pulmonary', 'Radiology')
+('Orthopedic', 'Gastroenterology')
+('Hematology - Oncology', 'Gastroenterology')
+('Cardiovascular / Pulmonary', 'Gastroenterology')
+('Cardiovascular / Pulmonary', 'Gastroenterology')
+('Orthopedic', 'Orthopedic')
+('Neurology', 'Neurology')
+('Hematology - Oncology', 'Gastroenterology')
+('Orthopedic', 'Gastroenterology')
+('Cardiovascular / Pulmonary', 'Pulmonary/Respiratory')
+('Obstetrics / Gynecology', 'Gastroenterology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Neurology', 'Cardiovascular / Pulmonary')
+('Obstetrics / Gynecology', 'Radiology')
+('Cardiovascular / Pulmonary', 'Radiology\n\n**Description:** The patient presents with')
+('Cardiovascular / Pulmonary', 'Radiology')
+('Obstetrics / Gynecology', 'Gastroenterology')
+('Neurology', 'Cerebral Angiography')
+('Neurology', 'Endoscopy')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Orthopedic', 'Orthopedic')
+('Orthopedic', 'Gastroenterology')
+('Orthopedic', 'Orthopedic')
+('Cardiovascular / Pulmonary', 'Gastroenterology')
+('Neurosurgery', 'Neurology')
+('Ophthalmology', 'Cardiovascular / Pulmonary')
+('Orthopedic', 'Neurology')
+('Nephrology', 'Psychiatry / Psychology')
+('Orthopedic', 'Neurology')
+('Neurology', 'Neurology')
+('Psychiatry / Psychology', 'Psychiatry / Psychology')
+('ENT - Otolaryngology', 'Gastroenterology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Obstetrics / Gynecology', 'Gastroenterology')
+('Hematology - Oncology', 'Gastroenterology')
+('Neurology', 'Neurology')
+('Ophthalmology', 'Gastroenterology')
+('Neurology', 'Cardiovascular / Pulmonary')
+('Neurology', 'Neurology')
+('Psychiatry / Psychology', 'Neurology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Orthopedic', 'Orthopedic')
+('Orthopedic', 'Radiology')
+('Gastroenterology', 'Gastroenterology')
+('Neurosurgery', 'Gastroenterology')
+('Neurosurgery', 'Neurology')
+('ENT - Otolaryngology', 'Gastroenterology')
+('Obstetrics / Gynecology', 'Gastroenterology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Neurosurgery', 'Orthopedic')
+('Hematology - Oncology', 'Hematology - Oncology')
+('Cardiovascular / Pulmonary', 'Pulmonary/Respiratory')
+('Neurology', 'Cardiovascular / Pulmonary')
+('Obstetrics / Gynecology', 'Gastroenterology')
+('Orthopedic', 'Gastroenterology')
+('Ophthalmology', 'Gastroenterology')
+('Orthopedic', 'Orthopedic')
+('Neurology', 'Neurology')
+('Cardiovascular / Pulmonary', 'Radiology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Cardiovascular / Pulmonary', 'Pulmonary/Respiratory')
+('Gastroenterology', 'Gastroenterology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Gastroenterology', 'Neurology')
+('Gastroenterology', 'Gastroenterology')
+('Cardiovascular / Pulmonary', 'Gastroenterology')
+('Cardiovascular / Pulmonary', 'Gastroenterology')
+('Orthopedic', 'Orthopedic')
+('Hematology - Oncology', 'Hematology - Oncology\nRadiology\nGastro')
+('Neurosurgery', 'Gastroenterology')
+('Neurology', 'Neurology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Neurology', 'Neurology')
+('Cardiovascular / Pulmonary', 'Angiology/Cardiology')
+('Cardiovascular / Pulmonary', 'Gastroenterology')
+('Obstetrics / Gynecology', 'Gastroenterology')
+('Neurology', 'Neurology')
+('Cardiovascular / Pulmonary', 'Radiology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Nephrology', 'Nephrology')
+('Orthopedic', 'Neurology')
+('Ophthalmology', 'Gastroenterology')
+('Nephrology', 'Gastroenterology')
+('Orthopedic', 'Neurology')
+('Cardiovascular / Pulmonary', 'Radiology')
+('Obstetrics / Gynecology', 'Obstetrics / Gynecology')
+('Hematology - Oncology', 'Cardiovascular / Pulmonary')
+('Orthopedic', 'Orthopedic')
+('Gastroenterology', 'Hematology - Oncology')
+('Neurosurgery', 'Neurology')
+('ENT - Otolaryngology', 'Gastroenterology')
+('Nephrology', 'Gastroenterology')
+('Ophthalmology', 'Blepharology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Orthopedic', 'Neurology')
+('Cardiovascular / Pulmonary', 'Gastroenterology')
+('Gastroenterology', 'Gastroenterology')
+('ENT - Otolaryngology', 'Nasal Surgery')
+('Orthopedic', 'Orthopedic')
+('Gastroenterology', 'Radiology')
+('Obstetrics / Gynecology', 'Gastroenterology')
+('Nephrology', 'Gastroenterology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Cardiovascular / Pulmonary', 'Gastroenterology')
+('Cardiovascular / Pulmonary', 'Gastroenterology')
+('Neurology', 'Cardiovascular / Pulmonary')
+('Orthopedic', 'Orthopedic')
+('Orthopedic', 'Neurology')
+('Gastroenterology', 'Colonoscopy')
+('Orthopedic', 'Orthopedic')
+('Neurology', 'Neurology')
+('Orthopedic', 'Orthopedic')
+('Gastroenterology', 'Gastroenterology')
+('Nephrology', 'Gastroenterology')
+('Gastroenterology', 'Radiology')
+('Orthopedic', 'Gastroenterology')
+('Hematology - Oncology', 'Gastroenterology')
+('Neurology', 'Gastroenterology')
+('Orthopedic', 'Orthopedic')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Ophthalmology', 'Ophthalmology')
+('Ophthalmology', 'Gastroenterology')
+('Cardiovascular / Pulmonary', 'Radiology')
+('Neurology', 'Neurology')
+('Obstetrics / Gynecology', 'Gastroenterology')
+('Cardiovascular / Pulmonary', 'Gastroenterology')
+('Gastroenterology', 'Gastroenterology')
+('Gastroenterology', 'Gastroenterology')
+('ENT - Otolaryngology', 'Neurology')
+('ENT - Otolaryngology', 'Gastroenterology')
+('Neurology', 'Neurology')
+('Gastroenterology', 'Gastroenterology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Hematology - Oncology', 'Hematology - Oncology\nRadiology\nGastro')
+('Orthopedic', 'Gastroenterology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Orthopedic', 'Gastroenterology')
+('Neurology', 'Gastroenterology')
+('Neurology', 'Gastroenterology')
+('Nephrology', 'Radiology')
+('Cardiovascular / Pulmonary', 'Radiology')
+('Cardiovascular / Pulmonary', 'Gastroenterology')
+('Neurosurgery', 'Hematology - Oncology')
+('Neurology', 'Cardiovascular / Pulmonary')
+('Neurology', 'Gastroenterology')
+('Cardiovascular / Pulmonary', 'Cardiology')
+('Hematology - Oncology', 'Radiation Oncology')
+('Psychiatry / Psychology', 'Psychiatry / Psychology')
+('Neurology', 'Gastroenterology')
+('Cardiovascular / Pulmonary', 'Gastroenterology')
+('Cardiovascular / Pulmonary', 'Neurology')
+('Gastroenterology', 'Gastroenterology')
+('Neurology', 'Neurology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Radiology', 'Cardiovascular / Pulmonary')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Neurology', 'Neurology')
+('Neurology', 'Neurology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Orthopedic', 'Orthopedic')
+('Neurology', 'Neurology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Pediatrics - Neonatal', 'Gastroenterology')
+('Neurosurgery', 'Neurology')
+('Orthopedic', 'Neurology')
+('Cardiovascular / Pulmonary', 'Gastroenterology')
+('Orthopedic', 'Orthopedic')
+('Gastroenterology', 'Gastroenterology')
+('Orthopedic', 'Orthopedic')
+('Hematology - Oncology', 'Gastroenterology')
+('Cardiovascular / Pulmonary', 'Gastroenterology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Cardiovascular / Pulmonary', 'Radiology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Obstetrics / Gynecology', 'Gastroenterology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Neurosurgery', 'Neurology')
+('Orthopedic', 'Orthopedic')
+('Orthopedic', 'Neurology')
+('Cardiovascular / Pulmonary', 'Gastroenterology')
+('Nephrology', 'Cardiovascular / Pulmonary')
+('Cardiovascular / Pulmonary', 'Radiology')
+('Hematology - Oncology', 'Hematology/Oncology')
+('Gastroenterology', 'Gastroenterology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Neurology', 'Neurology')
+('Cardiovascular / Pulmonary', 'Gastroenterology')
+('Cardiovascular / Pulmonary', 'Gastroenterology')
+('Cardiovascular / Pulmonary', 'Radiology')
+('Orthopedic', 'Orthopedic')
+('Neurosurgery', 'Orthopedic')
+('Orthopedic', 'Orthopedic')
+('Neurosurgery', 'Cardiovascular / Pulmonary')
+('Ophthalmology', 'Gastroenterology')
+('Pediatrics - Neonatal', 'Gastroenterology')
+('Obstetrics / Gynecology', 'Gastroenterology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Obstetrics / Gynecology', 'Cervical')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Orthopedic', 'Orthopedic')
+('Obstetrics / Gynecology', 'Gastroenterology')
+('Orthopedic', 'Gastroenterology')
+('Hematology - Oncology', 'Gastroenterology')
+('Neurosurgery', 'Cardiovascular / Pulmonary')
+('Cardiovascular / Pulmonary', 'Radiology')
+('Neurology', 'Radiology')
+('Gastroenterology', 'Gastroenterology')
+('Gastroenterology', 'Gastroenterology')
+('Psychiatry / Psychology', 'Neurology')
+('Cardiovascular / Pulmonary', 'Gastroenterology')
+('Cardiovascular / Pulmonary', 'Cardiology')
+('Orthopedic', 'Gastroenterology')
+('Cardiovascular / Pulmonary', 'Gastroenterology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Cardiovascular / Pulmonary', 'Radiology')
+('Neurology', 'Radiology')
+('Gastroenterology', 'Gastroenterology')
+('Gastroenterology', 'Gastroenterology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Gastroenterology', 'Gastroenterology')
+('Cardiovascular / Pulmonary', 'Radiology')
+('Obstetrics / Gynecology', 'Gastroenterology')
+('Gastroenterology', 'Cardiovascular / Pulmonary')
+('Hematology - Oncology', 'Neurology')
+('Neurology', 'Gastroenterology')
+('Obstetrics / Gynecology', 'Gastroenterology')
+('Orthopedic', 'Orthopedic')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Neurology', 'Neurology')
+('Gastroenterology', 'Gastroenterology')
+('Cardiovascular / Pulmonary', 'Gastroenterology')
+('Neurology', 'Neurology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Obstetrics / Gynecology', 'Gastroenterology')
+('Orthopedic', 'Orthopedic')
+('Obstetrics / Gynecology', 'Gastroenterology')
+('Gastroenterology', 'Cardiovascular / Pulmonary')
+('Psychiatry / Psychology', 'Psychiatry / Psychology')
+('Obstetrics / Gynecology', 'Gastroenterology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Orthopedic', 'Gastroenterology')
+('ENT - Otolaryngology', 'Cosmetic Surgery')
+('Gastroenterology', 'Gastroenterology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Gastroenterology', 'Gastroenterology')
+('Gastroenterology', 'Gastroenterology')
+('Neurology', 'Gastroenterology')
+('Pediatrics - Neonatal', 'Neurology')
+('Obstetrics / Gynecology', 'Gastroenterology')
+('Psychiatry / Psychology', 'Neurology')
+('Cardiovascular / Pulmonary', 'Neurology')
+('Obstetrics / Gynecology', 'Gastroenterology')
+('Neurosurgery', 'Orthopedic')
+('Obstetrics / Gynecology', 'Gastroenterology')
+('Orthopedic', 'Orthopedic')
+('Radiology', 'Neurology')
+('Obstetrics / Gynecology', 'Gastroenterology')
+('ENT - Otolaryngology', 'Neurology')
+('Nephrology', 'Gastroenterology')
+('Orthopedic', 'Neurology')
+('Gastroenterology', 'Laparoscopic')
+('Gastroenterology', 'Gastroenterology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Orthopedic', 'Oncology')
+('Cardiovascular / Pulmonary', 'Radiology')
+('Ophthalmology', 'Neurology')
+('ENT - Otolaryngology', 'Gastroenterology')
+('Neurosurgery', 'Endoscopy')
+('Obstetrics / Gynecology', 'Gastroenterology')
+('Cardiovascular / Pulmonary', 'Gastroenterology')
+('Orthopedic', 'Gastroenterology')
+('Orthopedic', 'Orthopedic')
+('Orthopedic', 'Orthopedic')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Neurosurgery', 'Neurology')
+('Gastroenterology', 'Gastroenterology')
+('Neurology', 'Neurology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Psychiatry / Psychology', 'Psychiatry / Psychology')
+('Nephrology', 'Nephrology')
+('ENT - Otolaryngology', 'Gastroenterology')</code></pre>
+</div>
+</div>
+</section>
+<section id="few-shot-prompting" class="level1">
+<h1>Few-Shot Prompting</h1>
+<div id="cell-29" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-04-08T22:20:28.570156Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-04-08T22:20:28.569844Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-04-08T22:20:28.573864Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-04-08T22:20:28.572894Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-04-08T22:20:28.570133Z&quot;}" data-trusted="true" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>few_shot_template <span class="op">=</span> <span class="st">"""</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="st">You are a medical expert classifying disease descriptions into medical specialties. Below are </span><span class="sc">{num_shots}</span><span class="st"> randomly selected examples to guide you. Each example includes a description and its medical specialty. Based on these examples, classify the new description into one of these specialties: </span><span class="sc">{cls_str}</span><span class="st">. Analyze the new description by comparing it to the examples, focusing on symptoms, conditions, and medical terms. Output ONLY the specialty name inside brackets, like [Specialty Name]. Do not repeat the prompt or add extra text—just the prediction in this format: [Specialty Name].</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="st">Examples:</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="sc">{examples}</span></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="st">New Description: </span><span class="sc">{description}</span></span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a><span class="st">Predicted Medical Specialty:</span></span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-30" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-04-08T22:20:30.394033Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-04-08T22:20:30.393682Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-04-08T22:20:30.397847Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-04-08T22:20:30.396870Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-04-08T22:20:30.394003Z&quot;}" data-trusted="true" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>dataset_train <span class="op">=</span> ds[<span class="st">"train"</span>]</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>dataset_test <span class="op">=</span> ds[<span class="st">"test"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="generate-random-examples-of-a-superset-of-unique-labels-atleast" class="level1">
+<h1>Generate Random Examples of a superset of Unique Labels atleast</h1>
+<div id="cell-32" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-04-08T22:20:36.012937Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-04-08T22:20:36.012555Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-04-08T22:20:36.018996Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-04-08T22:20:36.017881Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-04-08T22:20:36.012893Z&quot;}" data-trusted="true" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> create_random_examples(dataset, num_shots):</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># indices = np.random.choice(len(dataset), min(num_shots, len(dataset)), replace=False)</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># examples = ""</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># for i, idx in enumerate(indices, 1):</span></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">#     row = dataset[int(idx)]</span></span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">#     examples += f"{i}. Description: {row['description']}\n   Medical Specialty: {row['medical_specialty']}\n"</span></span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># return examples</span></span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> pd.DataFrame(dataset)</span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>    unique_labels <span class="op">=</span> df[<span class="st">"medical_specialty"</span>].unique()</span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a>    num_unique <span class="op">=</span> <span class="bu">len</span>(unique_labels)</span>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a>    selected_indices <span class="op">=</span> []</span>
+<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> label <span class="kw">in</span> unique_labels:</span>
+<span id="cb34-14"><a href="#cb34-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="bu">len</span>(selected_indices) <span class="op">&gt;=</span> num_shots:</span>
+<span id="cb34-15"><a href="#cb34-15" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span></span>
+<span id="cb34-16"><a href="#cb34-16" aria-hidden="true" tabindex="-1"></a>        label_indices <span class="op">=</span> df[df[<span class="st">"medical_specialty"</span>] <span class="op">==</span> label].index.tolist()</span>
+<span id="cb34-17"><a href="#cb34-17" aria-hidden="true" tabindex="-1"></a>        selected_indices.append(np.random.choice(label_indices))</span>
+<span id="cb34-18"><a href="#cb34-18" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb34-19"><a href="#cb34-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> num_shots <span class="op">&gt;</span> num_unique:</span>
+<span id="cb34-20"><a href="#cb34-20" aria-hidden="true" tabindex="-1"></a>        remaining <span class="op">=</span> num_shots <span class="op">-</span> num_unique</span>
+<span id="cb34-21"><a href="#cb34-21" aria-hidden="true" tabindex="-1"></a>        additional_indices <span class="op">=</span> np.random.choice(<span class="bu">len</span>(dataset), remaining, replace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb34-22"><a href="#cb34-22" aria-hidden="true" tabindex="-1"></a>        selected_indices.extend(additional_indices)</span>
+<span id="cb34-23"><a href="#cb34-23" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb34-24"><a href="#cb34-24" aria-hidden="true" tabindex="-1"></a>    selected_indices <span class="op">=</span> selected_indices[:num_shots]</span>
+<span id="cb34-25"><a href="#cb34-25" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb34-26"><a href="#cb34-26" aria-hidden="true" tabindex="-1"></a>    examples <span class="op">=</span> <span class="st">""</span></span>
+<span id="cb34-27"><a href="#cb34-27" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i, idx <span class="kw">in</span> <span class="bu">enumerate</span>(selected_indices, <span class="dv">1</span>):</span>
+<span id="cb34-28"><a href="#cb34-28" aria-hidden="true" tabindex="-1"></a>        row <span class="op">=</span> dataset[<span class="bu">int</span>(idx)]</span>
+<span id="cb34-29"><a href="#cb34-29" aria-hidden="true" tabindex="-1"></a>        examples <span class="op">+=</span> <span class="ss">f"</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">. Description:</span><span class="ch">\n</span><span class="sc">{</span>row[<span class="st">'description'</span>]<span class="sc">}</span><span class="ch">\n</span><span class="ss">Medical Specialty:</span><span class="ch">\n</span><span class="sc">{</span>row[<span class="st">'medical_specialty'</span>]<span class="sc">}</span><span class="ch">\n\n</span><span class="ss">"</span></span>
+<span id="cb34-30"><a href="#cb34-30" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> examples</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="example-workflow" class="level1">
+<h1>Example Workflow</h1>
+<div id="cell-34" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-04-08T22:20:42.995864Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-04-08T22:20:42.995545Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-04-08T22:20:43.089584Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-04-08T22:20:43.088789Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-04-08T22:20:42.995840Z&quot;}" data-trusted="true" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>num_shots <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>exs <span class="op">=</span> create_random_examples(dataset_train, num_shots)</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(exs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1. Description:
+Chest tube talc pleurodesis of the right chest.
+Medical Specialty:
+Cardiovascular / Pulmonary
+
+2. Description:
+Repeat irrigation and debridement of Right distal femoral subperiosteal abscess.
+Medical Specialty:
+Orthopedic
+
+3. Description:
+Acute renal failure, suspected, likely due to multi-organ system failure syndrome.
+Medical Specialty:
+Nephrology
+
+4. Description:
+Artificial rupture of membrane was performed for clear fluid.  She did receive epidural anesthesia.  She progressed to complete and pushing.
+Medical Specialty:
+Obstetrics / Gynecology
+
+5. Description:
+Pars plana vitrectomy, pars plana lensectomy, exploration of exit wound, closure of perforating corneal scleral laceration involving uveal tissue, air-fluid exchange, C3F8 gas, and scleral buckling, right eye.
+Medical Specialty:
+Ophthalmology
+
+6. Description:
+Esophagoscopy with removal of foreign body.   Esophageal foreign body, no associated comorbidities are noted.
+Medical Specialty:
+Gastroenterology
+
+7. Description:
+A neuropsychological evaluation to assess neuropsychological factors, clarify areas of strength and weakness, and to assist in therapeutic program planning in light of episodes of syncope.
+Medical Specialty:
+Neurology
+
+8. Description:
+Ethmoidectomy, antrostomy with polyp removal, turbinectomy, and septoplasty.
+Medical Specialty:
+ENT - Otolaryngology
+
+9. Description:
+Falls at home.  Anxiety and depression.  The patient had been increasingly anxious and freely admitted that she was depressed at home.
+Medical Specialty:
+Psychiatry / Psychology
+
+10. Description:
+1-month-old for a healthy checkup - Well child check
+Medical Specialty:
+Pediatrics - Neonatal
+
+</code></pre>
+</div>
+</div>
+<div id="cell-35" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-04-08T22:20:46.056089Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-04-08T22:20:46.055737Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-04-08T22:20:47.287355Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-04-08T22:20:47.286374Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-04-08T22:20:46.056060Z&quot;}" data-trusted="true" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>df_test <span class="op">=</span> pd.DataFrame(dataset_test)</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>dscrp <span class="op">=</span> df_test.loc[<span class="dv">54</span>, <span class="st">"description"</span>]</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>tr_cls <span class="op">=</span> df_test.loc[<span class="dv">54</span>, <span class="st">"medical_specialty"</span>]</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tr_cls)</span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"="</span><span class="op">*</span><span class="dv">50</span>)</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>prompt <span class="op">=</span> few_shot_template.<span class="bu">format</span>(num_shots<span class="op">=</span>num_shots, cls_str<span class="op">=</span>cls_str, examples<span class="op">=</span>exs, description<span class="op">=</span>dscrp)</span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> classifier(prompt, max_new_tokens<span class="op">=</span><span class="dv">10</span>, do_sample<span class="op">=</span><span class="va">False</span>)[<span class="dv">0</span>][<span class="st">'generated_text'</span>]</span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result)</span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>intermed_result <span class="op">=</span> result[<span class="bu">len</span>(prompt):]</span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a>generated_text <span class="op">=</span> intermed_result.strip().split(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)[<span class="dv">0</span>] <span class="cf">if</span> <span class="st">"</span><span class="ch">\n</span><span class="st">"</span> <span class="kw">in</span> intermed_result <span class="cf">else</span> intermed_result.strip()</span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>pred_specialty <span class="op">=</span> generated_text.split(<span class="st">"["</span>)[<span class="dv">1</span>].split(<span class="st">"]"</span>)[<span class="dv">0</span>].strip() <span class="cf">if</span> <span class="st">"["</span> <span class="kw">in</span> generated_text <span class="cf">else</span> generated_text</span>
+<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"="</span><span class="op">*</span><span class="dv">50</span>)</span>
+<span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pred_specialty)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Cardiovascular / Pulmonary
+==================================================
+
+You are a medical expert classifying disease descriptions into medical specialties. Below are 10 randomly selected examples to guide you. Each example includes a description and its medical specialty. Based on these examples, classify the new description into one of these specialties: Hematology - Oncology, Radiology, Gastroenterology, Neurology, Nephrology, Neurosurgery, Cardiovascular / Pulmonary, Orthopedic, Obstetrics / Gynecology, ENT - Otolaryngology, Psychiatry / Psychology, Ophthalmology, Pediatrics - Neonatal. Analyze the new description by comparing it to the examples, focusing on symptoms, conditions, and medical terms. Output ONLY the specialty name inside brackets, like [Specialty Name]. Do not repeat the prompt or add extra text—just the prediction in this format: [Specialty Name].
+
+Examples:
+1. Description:
+Chest tube talc pleurodesis of the right chest.
+Medical Specialty:
+Cardiovascular / Pulmonary
+
+2. Description:
+Repeat irrigation and debridement of Right distal femoral subperiosteal abscess.
+Medical Specialty:
+Orthopedic
+
+3. Description:
+Acute renal failure, suspected, likely due to multi-organ system failure syndrome.
+Medical Specialty:
+Nephrology
+
+4. Description:
+Artificial rupture of membrane was performed for clear fluid.  She did receive epidural anesthesia.  She progressed to complete and pushing.
+Medical Specialty:
+Obstetrics / Gynecology
+
+5. Description:
+Pars plana vitrectomy, pars plana lensectomy, exploration of exit wound, closure of perforating corneal scleral laceration involving uveal tissue, air-fluid exchange, C3F8 gas, and scleral buckling, right eye.
+Medical Specialty:
+Ophthalmology
+
+6. Description:
+Esophagoscopy with removal of foreign body.   Esophageal foreign body, no associated comorbidities are noted.
+Medical Specialty:
+Gastroenterology
+
+7. Description:
+A neuropsychological evaluation to assess neuropsychological factors, clarify areas of strength and weakness, and to assist in therapeutic program planning in light of episodes of syncope.
+Medical Specialty:
+Neurology
+
+8. Description:
+Ethmoidectomy, antrostomy with polyp removal, turbinectomy, and septoplasty.
+Medical Specialty:
+ENT - Otolaryngology
+
+9. Description:
+Falls at home.  Anxiety and depression.  The patient had been increasingly anxious and freely admitted that she was depressed at home.
+Medical Specialty:
+Psychiatry / Psychology
+
+10. Description:
+1-month-old for a healthy checkup - Well child check
+Medical Specialty:
+Pediatrics - Neonatal
+
+
+
+New Description: Subxiphoid pericardiotomy.  Symptomatic pericardial effusion.  The patient had the appropriate inflammatory workup for pericardial effusion, however, it was nondiagnostic.
+
+Predicted Medical Specialty:
+Cardiovascular / Pulmonary
+
+Explanation:
+The description
+==================================================
+Cardiovascular / Pulmonary</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>/usr/local/lib/python3.10/dist-packages/transformers/generation/configuration_utils.py:636: UserWarning: `do_sample` is set to `False`. However, `top_p` is set to `0.95` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_p`.
+  warnings.warn(
+/usr/local/lib/python3.10/dist-packages/transformers/generation/configuration_utils.py:653: UserWarning: `do_sample` is set to `False`. However, `top_k` is set to `64` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_k`.
+  warnings.warn(</code></pre>
+</div>
+</div>
+<div id="cell-36" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-04-08T22:20:56.668267Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-04-08T22:20:56.667872Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-04-08T22:20:56.672701Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-04-08T22:20:56.671742Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-04-08T22:20:56.668239Z&quot;}" data-trusted="true" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> format_few_shot_prompts(examples_str, num_shots):</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> _format(example):</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>        example[<span class="st">"prompt"</span>] <span class="op">=</span> few_shot_template.<span class="bu">format</span>(num_shots<span class="op">=</span>num_shots, cls_str<span class="op">=</span>cls_str, examples<span class="op">=</span>examples_str, description<span class="op">=</span>example[<span class="st">"description"</span>])</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>        example[<span class="st">"true_label"</span>] <span class="op">=</span> example[<span class="st">"medical_specialty"</span>]</span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> example</span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> _format</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-37" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-04-08T22:20:59.297878Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-04-08T22:20:59.297378Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-04-08T22:20:59.303139Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-04-08T22:20:59.302237Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-04-08T22:20:59.297844Z&quot;}" data-trusted="true" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> predict_batch(examples):</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>    prompts <span class="op">=</span> examples[<span class="st">"prompt"</span>]</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>    results <span class="op">=</span> classifier(prompts, max_new_tokens<span class="op">=</span><span class="dv">10</span>, do_sample<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>    predictions <span class="op">=</span> [result[<span class="dv">0</span>][<span class="st">"generated_text"</span>][<span class="bu">len</span>(prompt):].strip().split(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)[<span class="dv">0</span>] <span class="cf">if</span> <span class="st">"</span><span class="ch">\n</span><span class="st">"</span> <span class="kw">in</span> result[<span class="dv">0</span>][<span class="st">"generated_text"</span>][<span class="bu">len</span>(prompt):] <span class="cf">else</span> result[<span class="dv">0</span>][<span class="st">"generated_text"</span>][<span class="bu">len</span>(prompt):].strip() <span class="cf">for</span> prompt, result <span class="kw">in</span> <span class="bu">zip</span>(prompts, results)]</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>    examples[<span class="st">"prediction"</span>] <span class="op">=</span> [pred.split(<span class="st">"["</span>)[<span class="dv">1</span>].split(<span class="st">"]"</span>)[<span class="dv">0</span>].strip() <span class="cf">if</span> <span class="st">"["</span> <span class="kw">in</span> pred <span class="cf">else</span> pred <span class="cf">for</span> pred <span class="kw">in</span> predictions]</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> examples</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-38" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-04-08T22:21:06.699962Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-04-08T22:21:06.699541Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-04-08T22:24:19.142020Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-04-08T22:24:19.141114Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-04-08T22:21:06.699912Z&quot;}" data-trusted="true" data-execution_count="28">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># shot_counts = [10, 15, 20]</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>num_shots <span class="op">=</span> <span class="dv">15</span></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="co"># for num_shots in shot_counts:</span></span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="co"># provide train dataset examples for few-shot</span></span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>examples_str <span class="op">=</span> create_random_examples(dataset_train, num_shots)</span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a><span class="co"># infer on the test dataset</span></span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>formatted_dataset <span class="op">=</span> dataset_test.<span class="bu">map</span>(format_few_shot_prompts(examples_str, num_shots))</span>
+<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a>formatted_dataset <span class="op">=</span> formatted_dataset.<span class="bu">map</span>(predict_batch, batched<span class="op">=</span><span class="va">True</span>, batch_size<span class="op">=</span><span class="dv">16</span>)</span>
+<span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-13"><a href="#cb42-13" aria-hidden="true" tabindex="-1"></a>df_results <span class="op">=</span> formatted_dataset.to_pandas()</span>
+<span id="cb42-14"><a href="#cb42-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-15"><a href="#cb42-15" aria-hidden="true" tabindex="-1"></a>true_labels <span class="op">=</span> df_results[<span class="st">"true_label"</span>].tolist()</span>
+<span id="cb42-16"><a href="#cb42-16" aria-hidden="true" tabindex="-1"></a>pred_labels <span class="op">=</span> df_results[<span class="st">"prediction"</span>].tolist()</span>
+<span id="cb42-17"><a href="#cb42-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-18"><a href="#cb42-18" aria-hidden="true" tabindex="-1"></a>precision, recall, f1, _ <span class="op">=</span> precision_recall_fscore_support(true_labels, pred_labels, average<span class="op">=</span><span class="st">"weighted"</span>, zero_division<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb42-19"><a href="#cb42-19" aria-hidden="true" tabindex="-1"></a>conf_matrix <span class="op">=</span> confusion_matrix(true_labels, pred_labels, labels<span class="op">=</span>classes)</span>
+<span id="cb42-20"><a href="#cb42-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-21"><a href="#cb42-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Few-Shot Learning Metrics (</span><span class="sc">{</span>num_shots<span class="sc">}</span><span class="ss"> Shots):"</span>)</span>
+<span id="cb42-22"><a href="#cb42-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Precision: </span><span class="sc">{</span>precision<span class="sc">:.3f}</span><span class="ss">"</span>)</span>
+<span id="cb42-23"><a href="#cb42-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Recall: </span><span class="sc">{</span>recall<span class="sc">:.3f}</span><span class="ss">"</span>)</span>
+<span id="cb42-24"><a href="#cb42-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"F1 Score: </span><span class="sc">{</span>f1<span class="sc">:.3f}</span><span class="ss">"</span>)</span>
+<span id="cb42-25"><a href="#cb42-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Confusion Matrix:"</span>)</span>
+<span id="cb42-26"><a href="#cb42-26" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(conf_matrix)</span>
+<span id="cb42-27"><a href="#cb42-27" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">8</span>))</span>
+<span id="cb42-28"><a href="#cb42-28" aria-hidden="true" tabindex="-1"></a>sns.heatmap(conf_matrix, annot<span class="op">=</span><span class="va">True</span>, fmt<span class="op">=</span><span class="st">"d"</span>, cmap<span class="op">=</span><span class="st">"Blues"</span>, </span>
+<span id="cb42-29"><a href="#cb42-29" aria-hidden="true" tabindex="-1"></a>            xticklabels<span class="op">=</span>classes, yticklabels<span class="op">=</span>classes, </span>
+<span id="cb42-30"><a href="#cb42-30" aria-hidden="true" tabindex="-1"></a>            cbar_kws<span class="op">=</span>{<span class="st">'label'</span>: <span class="st">'Count'</span>})</span>
+<span id="cb42-31"><a href="#cb42-31" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="ss">f"Confusion Matrix for Few-Shot Learning (</span><span class="sc">{</span>num_shots<span class="sc">}</span><span class="ss"> Shots)</span><span class="ch">\n</span><span class="ss">Precision:</span><span class="sc">{</span>precision<span class="sc">:.3f}</span><span class="ss"> | Recall:</span><span class="sc">{</span>recall<span class="sc">:.3f}</span><span class="ss"> | F1 Score:</span><span class="sc">{</span>f1<span class="sc">:.3f}</span><span class="ss">"</span>, fontsize<span class="op">=</span><span class="dv">16</span>, pad<span class="op">=</span><span class="dv">20</span>)</span>
+<span id="cb42-32"><a href="#cb42-32" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Predicted Specialty"</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb42-33"><a href="#cb42-33" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"True Specialty"</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb42-34"><a href="#cb42-34" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">45</span>, ha<span class="op">=</span><span class="st">"right"</span>)</span>
+<span id="cb42-35"><a href="#cb42-35" aria-hidden="true" tabindex="-1"></a>plt.yticks(rotation<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb42-36"><a href="#cb42-36" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb42-37"><a href="#cb42-37" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"0801322198b84214a064bdf5b7c0d921","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"2502436486a146a6843bd7243c870252","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Few-Shot Learning Metrics (15 Shots):
+Precision: 0.769
+Recall: 0.557
+F1 Score: 0.607
+Confusion Matrix:
+[[11  2  0  0  0  0  0  0  0  0  0  1  0]
+ [ 0  1  0  0  0  0  1  0  0  0  0  0  0]
+ [12  1 17  0  1  0  0  0  0  0  0  0  0]
+ [ 7  3  0 29  1  2  2  2  0  0  1  0  0]
+ [ 1  0  0  0  6  0  1  0  0  0  1  0  0]
+ [ 2  0  0  5  1  1  2  8  0  0  0  0  0]
+ [ 9  7  0  3  0  2 71  0  0  0  0  1  0]
+ [ 2  1  0 11  0  0  1 39  0  0  0  0  0]
+ [15  0  0  0  0  0  0  0 10  0  0  2  0]
+ [ 0  0  0  3  0  0  1  2  0  3  0  0  0]
+ [ 0  0  0  1  0  0  0  0  0  0  8  0  0]
+ [ 0  0  0  1  0  0  0  0  0  0  0  9  0]
+ [ 0  0  0  0  0  0  1  0  0  0  0  0  1]]</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="LLMPrompting_files/figure-html/cell-29-output-4.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-39" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-04-08T22:24:25.615745Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-04-08T22:24:25.615391Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-04-08T22:24:25.619468Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-04-08T22:24:25.618623Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-04-08T22:24:25.615666Z&quot;}" data-trusted="true" data-execution_count="29">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>torch.cuda.synchronize()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-40" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-04-08T22:24:27.192986Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-04-08T22:24:27.192635Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-04-08T22:24:27.299240Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-04-08T22:24:27.298430Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-04-08T22:24:27.192950Z&quot;}" data-trusted="true" data-execution_count="30">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>torch.cuda.empty_cache()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-41" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-04-08T22:25:23.999277Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-04-08T22:25:23.998931Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-04-08T22:25:24.063546Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-04-08T22:25:24.062626Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2025-04-08T22:25:23.999254Z&quot;}" data-trusted="true" data-execution_count="31">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> tr, pr <span class="kw">in</span> <span class="bu">zip</span>(true_labels, pred_labels):</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>((tr, pr))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>('Orthopedic', 'Orthopedic')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Orthopedic', 'Orthopedic')
+('Neurology', 'Hematology - Oncology')
+('ENT - Otolaryngology', 'ENT - Otolaryngology')
+('Neurology', 'Neurology')
+('Gastroenterology', 'Hematology - Oncology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Gastroenterology', 'Hematology - Oncology')
+('Obstetrics / Gynecology', 'Gynecology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Orthopedic', 'Orthopedic')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Neurology', 'Psychiatry / Psychology')
+('Obstetrics / Gynecology', 'Obstetrics / Gynecology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Neurology', 'Hematology - Oncology')
+('Neurosurgery', 'Nephrology')
+('Orthopedic', 'Neurology')
+('Cardiovascular / Pulmonary', 'Pulmonary / Gastroenterology')
+('Cardiovascular / Pulmonary', 'Hematology - Oncology')
+('Obstetrics / Gynecology', 'Hematology - Oncology')
+('Ophthalmology', 'Ophthalmology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Orthopedic', 'Orthopedic')
+('Hematology - Oncology', 'Radiology')
+('Cardiovascular / Pulmonary', 'Pulmonary / Oncology')
+('Obstetrics / Gynecology', 'Hematology - Oncology')
+('Gastroenterology', 'Hematology - Oncology')
+('Gastroenterology', 'Hematology - Oncology')
+('Neurology', 'Neurology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Obstetrics / Gynecology', 'Obstetrics / Gynecology')
+('Cardiovascular / Pulmonary', 'Pulmonary / Cardiology')
+('Neurosurgery', 'Neurosurgery')
+('Gastroenterology', 'Gastroenterology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Neurology', 'Neurology')
+('Gastroenterology', 'Surgery')
+('Neurology', 'Neurology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Cardiovascular / Pulmonary', 'Hematology - Oncology')
+('Gastroenterology', 'Gastroenterology')
+('Obstetrics / Gynecology', 'Hematology - Oncology')
+('Neurosurgery', 'Neurology')
+('ENT - Otolaryngology', 'Neurology')
+('Cardiovascular / Pulmonary', 'Hematology - Oncology')
+('Cardiovascular / Pulmonary', 'Pulmonary Medicine')
+('Gastroenterology', 'Hematology - Oncology')
+('Orthopedic', 'Orthopedic')
+('Neurosurgery', 'Orthopedic')
+('ENT - Otolaryngology', 'Specialty Name')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Neurology', 'Orthopedic')
+('Neurology', 'Neurology')
+('Hematology - Oncology', 'Hematology - Oncology')
+('Orthopedic', 'Orthopedic')
+('Gastroenterology', 'Gastroenterology')
+('Psychiatry / Psychology', 'Psychiatry / Psychology')
+('Gastroenterology', 'Gastroenterology')
+('Gastroenterology', 'Nephrology')
+('Orthopedic', 'Orthopedic')
+('Orthopedic', 'Orthopedic')
+('Neurosurgery', 'Orthopedic')
+('Obstetrics / Gynecology', 'Obstetrics / Gynecology')
+('Neurology', 'Neurology')
+('Obstetrics / Gynecology', 'Hematology - Oncology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Orthopedic', 'Neurology')
+('Neurology', 'Neurology')
+('Psychiatry / Psychology', 'Psychiatry / Psychology')
+('Neurology', 'Neurology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Orthopedic', 'Orthopedic')
+('Cardiovascular / Pulmonary', 'Radiology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('ENT - Otolaryngology', 'ENT - Otolaryngology')
+('Ophthalmology', 'Ophthalmology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Orthopedic', 'Neurology')
+('Hematology - Oncology', 'Ophthalmology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Cardiovascular / Pulmonary', 'Hematology - Oncology')
+('Orthopedic', 'Orthopedic')
+('Neurology', 'Neurology')
+('Hematology - Oncology', 'Hematology - Oncology')
+('Orthopedic', 'Neurology')
+('Cardiovascular / Pulmonary', 'Pulmonary / Cardiology')
+('Obstetrics / Gynecology', 'Hematology - Oncology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Neurology', 'Neurology')
+('Obstetrics / Gynecology', 'Hematology - Oncology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Cardiovascular / Pulmonary', 'Radiology')
+('Obstetrics / Gynecology', 'Hematology - Oncology')
+('Neurology', 'Radiology')
+('Neurology', 'Neurosurgery')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Orthopedic', 'Orthopedic')
+('Orthopedic', 'Neurology')
+('Orthopedic', 'Orthopedic')
+('Cardiovascular / Pulmonary', 'Pulmonary')
+('Neurosurgery', 'Orthopedic')
+('Ophthalmology', 'Ophthalmology')
+('Orthopedic', 'Neurology')
+('Nephrology', 'Psychiatry / Psychology')
+('Orthopedic', 'Neurology')
+('Neurology', 'Neurology')
+('Psychiatry / Psychology', 'Psychiatry / Psychology')
+('ENT - Otolaryngology', 'Respiratory / Otolaryngology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Obstetrics / Gynecology', 'Obstetrics / Gynecology')
+('Hematology - Oncology', 'Hematology - Oncology')
+('Neurology', 'Neurology')
+('Ophthalmology', 'Specialty Name')
+('Neurology', 'Radiology')
+('Neurology', 'Neurology')
+('Psychiatry / Psychology', 'Neurology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Orthopedic', 'Orthopedic')
+('Orthopedic', 'Radiology')
+('Gastroenterology', 'Gastroenterology')
+('Neurosurgery', 'Hematology - Oncology')
+('Neurosurgery', 'Neurology')
+('ENT - Otolaryngology', 'ENT - Otolaryngology')
+('Obstetrics / Gynecology', 'Obstetrics / Gynecology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Neurosurgery', 'Orthopedic')
+('Hematology - Oncology', 'Hematology - Oncology')
+('Cardiovascular / Pulmonary', 'Pulmonary / Cardiology')
+('Neurology', 'Neurology')
+('Obstetrics / Gynecology', 'Neonatal')
+('Orthopedic', 'Orthopedic')
+('Ophthalmology', 'Ophthalmology')
+('Orthopedic', 'Orthopedic')
+('Neurology', 'Neurology')
+('Cardiovascular / Pulmonary', 'Hematology - Oncology')
+('Cardiovascular / Pulmonary', 'Neurosurgery')
+('Cardiovascular / Pulmonary', 'Pulmonary / Cardiology')
+('Gastroenterology', 'Surgery')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Gastroenterology', 'Gastroenterology')
+('Gastroenterology', 'Hematology - Oncology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Orthopedic', 'Orthopedic')
+('Hematology - Oncology', 'Hematology - Oncology')
+('Neurosurgery', 'Neurology')
+('Neurology', 'Orthopedic')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Neurology', 'Neurology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Cardiovascular / Pulmonary', 'Neurology')
+('Obstetrics / Gynecology', 'Gynecology / Obstetrics / Gynecology')
+('Neurology', 'Hematology - Oncology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Nephrology', 'Nephrology')
+('Orthopedic', 'Hematology - Oncology')
+('Ophthalmology', 'Ophthalmology')
+('Nephrology', 'Diabetes - Endocrinology')
+('Orthopedic', 'Neurology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Obstetrics / Gynecology', 'Obstetrics / Gynecology')
+('Hematology - Oncology', 'Hematology - Oncology')
+('Orthopedic', 'Orthopedic')
+('Gastroenterology', 'Hematology - Oncology')
+('Neurosurgery', 'Orthopedic')
+('ENT - Otolaryngology', 'Cardiovascular / Pulmonary')
+('Nephrology', 'Nephrology')
+('Ophthalmology', 'Ophthalmology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Orthopedic', 'Neurology')
+('Cardiovascular / Pulmonary', 'Surgery')
+('Gastroenterology', 'Pediatrics - Gastroenterology')
+('ENT - Otolaryngology', 'Orthopedic')
+('Orthopedic', 'Orthopedic')
+('Gastroenterology', 'Hematology - Oncology')
+('Obstetrics / Gynecology', 'Oncology')
+('Nephrology', 'Cardiovascular / Pulmonary')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Cardiovascular / Pulmonary', 'Hematology - Oncology')
+('Cardiovascular / Pulmonary', 'Ophthalmology')
+('Neurology', 'Cardiovascular / Pulmonary')
+('Orthopedic', 'Cardiovascular / Pulmonary')
+('Orthopedic', 'Neurology')
+('Gastroenterology', 'Gastroenterology')
+('Orthopedic', 'Orthopedic')
+('Neurology', 'Neurology')
+('Orthopedic', 'Orthopedic')
+('Gastroenterology', 'Hematology - Oncology')
+('Nephrology', 'Nephrology')
+('Gastroenterology', 'Radiology')
+('Orthopedic', 'Orthopedic')
+('Hematology - Oncology', 'Oncology')
+('Neurology', 'Hematology - Oncology')
+('Orthopedic', 'Orthopedic')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Ophthalmology', 'Ophthalmology')
+('Ophthalmology', 'Ophthalmology')
+('Cardiovascular / Pulmonary', 'Radiology')
+('Neurology', 'Cardiovascular / Pulmonary')
+('Obstetrics / Gynecology', 'Hematology - Oncology')
+('Cardiovascular / Pulmonary', 'Cardiology')
+('Gastroenterology', 'Gastroenterology')
+('Gastroenterology', 'Gastroenterology')
+('ENT - Otolaryngology', 'Neurology')
+('ENT - Otolaryngology', 'Neurology')
+('Neurology', 'Neurology')
+('Gastroenterology', 'Surgery')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Hematology - Oncology', 'Hematology - Oncology')
+('Orthopedic', 'Orthopedic')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Orthopedic', 'Orthopedic')
+('Neurology', 'Neurosurgery')
+('Neurology', 'Neurology')
+('Nephrology', 'Hematology - Oncology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Cardiovascular / Pulmonary', 'Pulmonary / Gastroenterology')
+('Neurosurgery', 'Hematology - Oncology')
+('Neurology', 'Hematology - Oncology')
+('Neurology', 'Neurology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Hematology - Oncology', 'Radiology')
+('Psychiatry / Psychology', 'Psychiatry / Psychology')
+('Neurology', 'Hematology - Oncology')
+('Cardiovascular / Pulmonary', 'Pulmonary')
+('Cardiovascular / Pulmonary', 'Hematology - Oncology')
+('Gastroenterology', 'Gastroenterology')
+('Neurology', 'Hematology - Oncology')
+('Cardiovascular / Pulmonary', 'Surgery')
+('Radiology', 'Cardiovascular / Pulmonary')
+('Cardiovascular / Pulmonary', 'Neurosurgery')
+('Neurology', 'Neurology')
+('Neurology', 'Neurology')
+('Cardiovascular / Pulmonary', 'Hematology - Oncology')
+('Orthopedic', 'Orthopedic')
+('Neurology', 'Neurology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Pediatrics - Neonatal', 'Pulmonary')
+('Neurosurgery', 'Neurology')
+('Orthopedic', 'Hematology - Oncology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Orthopedic', 'Orthopedic')
+('Gastroenterology', 'Gastroenterology')
+('Orthopedic', 'Orthopedic')
+('Hematology - Oncology', 'Hematology - Oncology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Cardiovascular / Pulmonary', 'Neurology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Obstetrics / Gynecology', 'Obstetrics / Gynecology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Neurosurgery', 'Neurology')
+('Orthopedic', 'Orthopedic')
+('Orthopedic', 'Neurology')
+('Cardiovascular / Pulmonary', 'Radiology')
+('Nephrology', 'Nephrology')
+('Cardiovascular / Pulmonary', 'Radiology')
+('Hematology - Oncology', 'Hematology - Oncology')
+('Gastroenterology', 'Hematology - Oncology')
+('Cardiovascular / Pulmonary', 'Pulmonary / Cardiology')
+('Neurology', 'Neurology')
+('Cardiovascular / Pulmonary', 'Pulmonary / Cardiology')
+('Cardiovascular / Pulmonary', 'Radiology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Orthopedic', 'Orthopedic')
+('Neurosurgery', 'Orthopedic')
+('Orthopedic', 'Orthopedic')
+('Neurosurgery', 'Cardiovascular / Pulmonary')
+('Ophthalmology', 'Ophthalmology')
+('Pediatrics - Neonatal', 'Pediatrics - Neonatal')
+('Obstetrics / Gynecology', 'Hematology - Oncology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Obstetrics / Gynecology', 'Hematology - Oncology')
+('Cardiovascular / Pulmonary', 'Pulmonary / Oncology')
+('Orthopedic', 'Orthopedic')
+('Obstetrics / Gynecology', 'Hematology - Oncology')
+('Orthopedic', 'Rheumatology')
+('Hematology - Oncology', 'Hematology - Oncology')
+('Neurosurgery', 'Cardiovascular / Pulmonary')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Neurology', 'Radiology')
+('Gastroenterology', 'Gastroenterology')
+('Gastroenterology', 'Surgery')
+('Psychiatry / Psychology', 'Psychiatry / Psychology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Orthopedic', 'Physical Therapy')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Neurology', 'Neurology')
+('Gastroenterology', 'Gastroenterology')
+('Gastroenterology', 'Gastroenterology')
+('Cardiovascular / Pulmonary', 'Radiology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Gastroenterology', 'Hematology - Oncology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Obstetrics / Gynecology', 'Hematology - Oncology')
+('Gastroenterology', 'Surgery')
+('Hematology - Oncology', 'Hematology - Oncology')
+('Neurology', 'Nephrology')
+('Obstetrics / Gynecology', 'Hematology - Neonatal')
+('Orthopedic', 'Orthopedic')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Neurology', 'Neurology')
+('Gastroenterology', 'Hematology - Oncology')
+('Cardiovascular / Pulmonary', 'Neurology')
+('Neurology', 'Neurology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Obstetrics / Gynecology', 'Hematology - Oncology')
+('Orthopedic', 'Orthopedic')
+('Obstetrics / Gynecology', 'Ophthalmology')
+('Gastroenterology', 'Surgery')
+('Psychiatry / Psychology', 'Psychiatry / Psychology')
+('Obstetrics / Gynecology', 'Obstetrics / Gynecology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Orthopedic', 'Orthopedic')
+('ENT - Otolaryngology', 'Plastic Surgery')
+('Gastroenterology', 'Gastroenterology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Gastroenterology', 'Surgery')
+('Gastroenterology', 'Surgery')
+('Neurology', 'Neurology')
+('Pediatrics - Neonatal', 'Cardiovascular / Pulmonary')
+('Obstetrics / Gynecology', 'Hematology - Oncology')
+('Psychiatry / Psychology', 'Psychiatry / Psychology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Obstetrics / Gynecology', 'Obstetrics / Gynecology')
+('Neurosurgery', 'Orthopedic')
+('Obstetrics / Gynecology', 'Ophthalmology')
+('Orthopedic', 'Orthopedic')
+('Radiology', 'Radiology')
+('Obstetrics / Gynecology', 'Obstetrics / Gynecology')
+('ENT - Otolaryngology', 'Orthopedic')
+('Nephrology', 'Nephrology')
+('Orthopedic', 'Orthopedic')
+('Gastroenterology', 'Surgery')
+('Gastroenterology', 'Gastroenterology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Orthopedic', 'Oncology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Ophthalmology', 'Neurology')
+('ENT - Otolaryngology', 'Otolaryngology')
+('Neurosurgery', 'Neurodevelopment')
+('Obstetrics / Gynecology', 'Hematology - Oncology')
+('Cardiovascular / Pulmonary', 'Hematology - Oncology')
+('Orthopedic', 'Orthopedic')
+('Orthopedic', 'Orthopedic')
+('Orthopedic', 'Orthopedic')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Neurosurgery', 'Orthopedic')
+('Gastroenterology', 'Gastroenterology')
+('Neurology', 'Neurology')
+('Cardiovascular / Pulmonary', 'Cardiovascular / Pulmonary')
+('Psychiatry / Psychology', 'Psychiatry / Psychology')
+('Nephrology', 'Nephrology')
+('ENT - Otolaryngology', 'Otolaryngology')</code></pre>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Made with <a href="https://quarto.org/">Quarto</a> © 2025 Digvijay | Guntas | Hrriday | Prathmesh</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
