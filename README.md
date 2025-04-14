@@ -261,10 +261,7 @@ conf_matrix = confusion_matrix(true_labels, pred_labels, labels=classes)
 
 ## 3. Fine-Tuning
 
-### Overview
-Fine-tuning trains models on the dataset for task-specific performance.
-
-### Explanation and Rationale
+### Rationale
 - **Training**: 3 epochs with a small batch size (4) and FP16 optimize GPU usage; validation ensures the best model is saved.
 - **Metrics**: Precision, recall, and F1 are computed to evaluate performance.
 
