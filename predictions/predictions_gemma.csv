@@ -1,0 +1,1851 @@
+prompt,prediction,true_label
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Complete laminectomy, L4. and facetectomy, L3-L4 level.  A dural repair, right sided, on the lateral sheath, subarticular recess at the L4 pedicle level.  Posterior spinal instrumentation, L4 to S1, using Synthes Pangea System.  Posterior spinal fusion, L4 to S1.  Insertion of morselized autograft, L4 to S1.
+Specialty:
+",Neurosurgery,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Loculated left effusion, multilobar pneumonia.  Patient  had a diagnosis of multilobar pneumonia along with arrhythmia and heart failure as well as renal insufficiency.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Abnormal echocardiogram findings and followup.  Shortness of breath, congestive heart failure, and valvular insufficiency.   The patient complains of shortness of breath, which is worsening.  The patient underwent an echocardiogram, which shows severe mitral regurgitation and also large pleural effusion.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Application of PMT large halo crown and vest.  Cervical spondylosis, status post complex anterior cervical discectomy, corpectomy, decompression and fusion.
+Specialty:
+",Orthopedic,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: MRI Brain & MRI C-T spine: Multiple hemangioblastoma in Von Hippel Lindau Disease.
+Specialty:
+",Neurology,Neurology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Underwent tonsillectomy and adenoidectomy two weeks ago.
+Specialty:
+",ENT - Otolaryngology,ENT - Otolaryngology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: History of numbness in both big toes and up the lateral aspect of both calves.  She dose complain of longstanding low back pain, but no pain that radiates from her back into her legs.  She has had no associated weakness.
+Specialty:
+",Orthopedic,Neurology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Bleeding after transanal excision five days ago.  Exam under anesthesia with control of bleeding via cautery.  The patient is a 42-year-old gentleman who is five days out from transanal excision of a benign anterior base lesion.  He presents today with diarrhea and bleeding.
+Specialty:
+",Gastroenterology,Gastroenterology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Right common femoral artery cannulation, cnscious sedation using IV Versed and IV fentanyl, retrograde bilateral coronary angiography, abdominal aortogram with pelvic runoff, left external iliac angiogram with runoff to the patient's left foot, left external iliac angiogram with runoff to the patient's right leg, right common femoral artery angiogram runoff to the patient's right leg.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Colonoscopy due to hematochezia and personal history of colonic polyps.
+Specialty:
+",Gastroenterology,Gastroenterology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Pelvic Pain and vaginal discharge
+Specialty:
+",Obstetrics / Gynecology,Obstetrics / Gynecology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: CCTA with cardiac function and calcium scoring.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Left muscle sparing mini thoracotomy with left upper lobectomy and mediastinal lymph node dissection.  Intercostal nerve block for postoperative pain relief at five levels.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Diagnostic operative arthroscopy with repair and reconstruction of anterior cruciate ligament using autologous hamstring tendon, a 40 mm bioabsorbable femoral pin, and a 9 mm bioabsorbable tibial pin.  Repair of lateral meniscus using two fast fixed meniscal repair sutures.  Partial medial meniscectomy.  Partial chondroplasty of patella.  Lateral retinacular release.  Open medial plication as well of the right knee.
+Specialty:
+",Orthopedic,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Cerebrovascular accident (CVA) with right arm weakness and MRI indicating acute/subacute infarct involving the left posterior parietal lobe without mass effect.  2.  Old coronary infarct, anterior aspect of the right external capsule.  Acute bronchitis with reactive airway disease.
+Specialty:
+",Neurology,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Patient was referred for a neuropsychological evaluation after a recent hospitalization for possible transient ischemic aphasia.  Two years ago, a similar prolonged confusional spell was reported as well.  A comprehensive evaluation was requested to assess current cognitive functioning and assist with diagnostic decisions and treatment planning.
+Specialty:
+",Neurology,Neurology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Repeat low transverse cervical cesarean section with delivery of a viable female neonate.  Bilateral tubal ligation and partial salpingectomy.  Lysis of adhesions.
+Specialty:
+",Obstetrics / Gynecology,Obstetrics / Gynecology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Cardiomyopathy and hypotension.  A lady with dementia, coronary artery disease, prior bypass, reduced LV function, and recurrent admissions for diarrhea and hypotension several times.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Chest CT - Thymoma and history of ocular myasthenia gravis.
+Specialty:
+",Cardiovascular / Pulmonary,Neurology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Chronic venous hypertension with painful varicosities, lower extremities, bilaterally.  Greater saphenous vein stripping and stab phlebectomies requiring 10 to 20 incisions, bilaterally.
+Specialty:
+",Cardiovascular / Pulmonary,Neurosurgery
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Evaluation for right L4 selective nerve root block.
+Specialty:
+",Neurosurgery,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Bronchoscopy.  Atelectasis and mucous plugging.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Thoracentesis, left.   Malignant pleural effusion, left, with dyspnea.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Total abdominal hysterectomy (TAH) and left salpingo-oophorectomy.  Hypermenorrhea, uterine fibroids, pelvic pain, left adnexal mass, and pelvic adhesions.
+Specialty:
+",Obstetrics / Gynecology,Obstetrics / Gynecology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Complete eye examination - Normal eye and vision exam.
+Specialty:
+",Ophthalmology,Ophthalmology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Left heart catheterization and bilateral selective coronary angiography. Left ventriculogram was not performed.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Decompressive laminectomy at T12 with bilateral facetectomies, decompression of T11 and T12 nerve roots bilaterally with posterolateral fusion supplemented with allograft bone chips and pedicle screws and rods with crosslink Synthes ClickX System.
+Specialty:
+",Orthopedic,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Excision of right superior parathyroid adenoma, seen on sestamibi parathyroid scan and an ultrasound.
+Specialty:
+",Obstetrics / Gynecology,Hematology - Oncology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Bronchoscopy with aspiration and left upper lobectomy.  Carcinoma of the left upper lobe.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: A white female who presents for complete physical, Pap and breast exam.
+Specialty:
+",Obstetrics / Gynecology,Obstetrics / Gynecology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: She is a 79-year-old female who came in with acute cholecystitis and underwent attempted laparoscopic cholecystectomy 8 days ago.  The patient has required conversion to an open procedure due to difficult anatomy.  Her postoperative course has been lengthened due to a prolonged ileus, which resolved with tetracycline and Reglan.  The patient is starting to improve, gain more strength.  She is tolerating her regular diet.
+Specialty:
+",Obstetrics / Gynecology,Gastroenterology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: History of polyps.  Total colonoscopy and photography.  Normal colonoscopy, left colonic diverticular disease.  3+ benign prostatic hypertrophy.
+Specialty:
+",Gastroenterology,Gastroenterology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: EMG/Nerve Conduction Study showing sensory motor length-dependent neuropathy consistent with diabetes, severe left ulnar neuropathy, and moderate-to-severe left median neuropathy,
+Specialty:
+",Neurology,Neurology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Thallium stress test for chest pain.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Total abdominal hysterectomy (TAH).  Severe menometrorrhagia unresponsive to medical therapy, severe anemia, and symptomatic fibroid uterus.
+Specialty:
+",Obstetrics / Gynecology,Obstetrics / Gynecology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: The patient was admitted approximately 3 days ago with increasing shortness of breath secondary to pneumonia.  Pulmonary Medicine Associates have been contacted to consult in light of the ICU admission.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Right suboccipital craniectomy for resection of tumor using the microscope modifier 22 and cranioplasty.
+Specialty:
+",Neurology,Neurosurgery
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: The patient presented to the emergency room last evening with approximately 7- to 8-day history of abdominal pain which has been persistent.
+Specialty:
+",Gastroenterology,Gastroenterology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Right subclavian triple lumen central line placement
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: This is a 62-year-old woman with hypertension, diabetes mellitus, prior stroke who has what sounds like Guillain-Barre syndrome, likely the Miller-Fisher variant.
+Specialty:
+",Cardiovascular / Pulmonary,Neurology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Laparoscopic cholecystectomy with cholangiogram.  Acute gangrenous cholecystitis with cholelithiasis.  The patient had essentially a dead gallbladder with stones and positive wide bile/pus coming from the gallbladder.
+Specialty:
+",Cardiovascular / Pulmonary,Gastroenterology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Neurologic consultation was requested to assess and assist with seizure medication.
+Specialty:
+",Neurology,Neurology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Urgent cardiac catheterization with coronary angiogram.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: A middle-aged white female undergoing autologous stem cell transplant for multiple myeloma, now with paroxysmal atrial fibrillation.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Gastrointestinal Bleed.  An 81-year-old presented to the emergency room after having multiple black tarry stools and a weak spell.  She woke yesterday morning had a very dark and smelly bowel movement.
+Specialty:
+",Gastroenterology,Gastroenterology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Stage IIIC endometrial cancer.  Adjuvant chemotherapy with cisplatin, Adriamycin, and Abraxane.  The patient is a 47-year-old female who was noted to have abnormal vaginal bleeding in the fall of 2009.
+Specialty:
+",Obstetrics / Gynecology,Obstetrics / Gynecology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: C4-C5, C5-C6 anterior cervical discectomy and fusion.  The patient is a 62-year-old female who presents with neck pain as well as upper extremity symptoms.  Her MRI showed stenosis at portion of C4 to C6.
+Specialty:
+",Orthopedic,Neurosurgery
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: The patient's main complaint is vertigo. The patient is having recurrent attacks of vertigo and imbalance over the last few years with periods of free symptoms and no concurrent tinnitus or hearing impairment.
+Specialty:
+",Neurology,ENT - Otolaryngology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: The patient was undergoing a routine physical examination and was found to have right supraclavicular lymphadenopathy.  She returned for followup examination and again was noted to have right supraclavicular lymphadenopathy.  She is now referred to the thoracic surgery clinic for evaluation.
+Specialty:
+",Orthopedic,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Pulmonary Medicine Clinic for followup evaluation of interstitial disease secondary to lupus pneumonitis.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: A 10-year-old with a history of biliary atresia and status post orthotopic liver transplantation.
+Specialty:
+",Cardiovascular / Pulmonary,Gastroenterology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Torn rotator cuff and subacromial spur with impingement syndrome, right shoulder.  Diagnostic arthroscopy with subacromial decompression and open repair of rotator cuff using three Panalok suture anchors.
+Specialty:
+",Orthopedic,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Anterior cervical discectomy, removal of herniated disc and osteophytes, bilateral C4 nerve root decompression, harvesting of bone for autologous vertebral bodies for creation of arthrodesis, grafting of fibular allograft bone for creation of arthrodesis, creation of arthrodesis via an anterior technique with fibular allograft bone and autologous bone from the vertebral bodies, and placement of anterior spinal instrumentation using the operating microscope and microdissection technique.
+Specialty:
+",Orthopedic,Neurosurgery
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Persistent dysphagia.  Deviated nasal septum.  Inferior turbinate hypertrophy.  Chronic rhinitis. Conductive hearing loss.  Tympanosclerosis.
+Specialty:
+",ENT - Otolaryngology,ENT - Otolaryngology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Subxiphoid pericardiotomy.  Symptomatic pericardial effusion.  The patient had the appropriate inflammatory workup for pericardial effusion, however, it was nondiagnostic.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Right shoulder impingement syndrome, right suprascapular neuropathy.
+Specialty:
+",Orthopedic,Neurology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: CT Brain - unshunted hydrocephalus, Dandy-Walker Malformation.
+Specialty:
+",Neurology,Neurology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Newly diagnosed head and neck cancer.  The patient was recently diagnosed with squamous cell carcinoma of the base of the tongue bilaterally and down extension into the right tonsillar fossa.
+Specialty:
+",Hematology - Oncology,Hematology - Oncology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Right hallux abductovalgus deformity.  Right McBride bunionectomy.  Right basilar wedge osteotomy with OrthoPro screw fixation.
+Specialty:
+",Orthopedic,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Esophagogastroduodenoscopy, photography, and biopsy.  Gastroesophageal reflux disease, hiatal hernia, and enterogastritis.
+Specialty:
+",Gastroenterology,Gastroenterology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Admission Psychiatric Evaluation
+Specialty:
+",Psychiatry / Psychology,Psychiatry / Psychology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Esophagitis, minor stricture at the gastroesophageal junction, hiatal hernia.  Otherwise normal upper endoscopy to the transverse duodenum.
+Specialty:
+",Gastroenterology,Gastroenterology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Cholelithiasis; possible choledocholithiasis.  Laparoscopic cholecystectomy and intraoperative cholangiogram.  A small incision was made in the umbilicus, and a Veress needle was introduced into the abdomen.  CO2 insufflation was done to a maximum pressure of 15 mmHg, and a 12-mm VersaStep port was placed into the umbilicus.
+Specialty:
+",Gastroenterology,Gastroenterology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Austin & Youngswick bunionectomy with Biopro implant.  Screw fixation, left foot.
+Specialty:
+",Orthopedic,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Followup status post L4-L5 laminectomy and bilateral foraminotomies, and L4-L5 posterior spinal fusion with instrumentation.
+Specialty:
+",Orthopedic,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Anterior cervical discectomy and osteophytectomy.  Application of prosthetic interbody fusion device.  Anterior cervical interbody arthrodesis.  Anterior cervical instrumentation
+Specialty:
+",Orthopedic,Neurosurgery
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Total abdominal hysterectomy (TAH) with a uterosacral vault suspension.   Enlarged fibroid uterus and abnormal uterine bleeding.
+Specialty:
+",Obstetrics / Gynecology,Obstetrics / Gynecology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: The patient comes in for a neurology consultation regarding her difficult headaches, tunnel vision, and dizziness.
+Specialty:
+",Neurology,Neurology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Mammogram, bilateral full-field digital mammography FFDM (patient with positive history of breast cancer).
+Specialty:
+",Radiology,Obstetrics / Gynecology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Endovascular Brachytherapy (EBT)
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: MRI T-L spine - L2 conus medullaris lesion and syndrome secondary to Schistosomiasis.
+Specialty:
+",Neurosurgery,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Patient with a 1-year history of progressive anterograde amnesia
+Specialty:
+",Neurology,Neurology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Patient with a long history of depression and attention deficits.
+Specialty:
+",Psychiatry / Psychology,Psychiatry / Psychology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Patient reports a rotational sensation upon arising from the bed or chair that lasts for several minutes and requires her to sit back down and stay in one place.  She gets similar symptoms when she rolls over in bed.  At times, she also feels as though she is going to pass out.  These sensations stop if she just sits in one place or lies down for several minutes.
+Specialty:
+",Cardiovascular / Pulmonary,Neurology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Right carotid stenosis and prior cerebrovascular accident. Right carotid endarterectomy with patch angioplasty.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Right shoulder arthroscopy, subacromial decompression, distal clavicle excision, bursectomy, and coracoacromial ligament resection, carpal tunnel release, left knee arthroscopy, and partial medial and lateral meniscectomy.
+Specialty:
+",Orthopedic,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Flexible fiberoptic bronchoscopy diagnostic with right middle and upper lobe lavage and lower lobe transbronchial biopsies.  Mild tracheobronchitis with history of granulomatous disease and TB, rule out active TB/miliary TB.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Patient with chest pains, CAD, and cardiomyopathy.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Chronic adenotonsillitis with adenotonsillar hypertrophy.  Upper respiratory tract infection with mild acute laryngitis.
+Specialty:
+",ENT - Otolaryngology,ENT - Otolaryngology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Quad blepharoplasty for blepharochalasia and lower lid large primary and secondary bagging.
+Specialty:
+",Ophthalmology,Ophthalmology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Need for intravenous access.  Insertion of a right femoral triple lumen catheter.  he patient is also ventilator-dependent, respiratory failure with tracheostomy in place and dependent on parenteral nutrition secondary to dysphagia and also has history of protein-calorie malnutrition and the patient needs to receive total parenteral nutrition and therefore needs central venous access.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Left heart catheterization and bilateral selective coronary angiography. Left ventriculogram was not performed.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Consultation for finger triggering and locking.
+Specialty:
+",Orthopedic,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Excision of large basal cell carcinoma, right lower lid, and repaired with used dorsal conjunctival flap in the upper lid and a large preauricular skin graft.
+Specialty:
+",Ophthalmology,Hematology - Oncology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Seizure, hypoglycemia, anemia, dyspnea, edema. colon cancer status post right hemicolectomy, hospital-acquired pneumonia, and congestive heart failure.
+Specialty:
+",Hematology - Oncology,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Ash split venous port insertion. The right anterior chest and supraclavicular fossa area, neck, and left side of chest were prepped with Betadine and draped in a sterile fashion.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Decompressive left lumbar laminectomy C4-C5 and C5-C6 with neural foraminotomy. Posterior cervical fusion C4-C5.  Songer wire.  Right iliac bone graft.
+Specialty:
+",Neurosurgery,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Organic brain syndrome in the setting of multiple myeloma.  The patient is a 56-year-old male with the history of multiple myeloma, who has been admitted for complains of being dehydrated and was doing good until this morning, was found to be disoriented and confused, was not able to communicate properly, and having difficulty leaving out the words.
+Specialty:
+",Neurology,Neurology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: The patient is a 67-year-old white female with a history of uterine papillary serous carcinoma who is status post 6 cycles of carboplatin and Taxol, is here today for followup.
+Specialty:
+",Obstetrics / Gynecology,Hematology - Oncology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Herniated nucleus pulposus C5-C6.  Anterior cervical discectomy fusion C5-C6 followed by instrumentation C5-C6 with titanium dynamic plating system, Aesculap.  Operating microscope was used for both illumination and magnification.
+Specialty:
+",Neurosurgery,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Sample of Pulmonary Function Test
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: BPP of Gravida 1, para 0 at 33 weeks 5 days by early dating.  The patient is developing gestational diabetes.
+Specialty:
+",Obstetrics / Gynecology,Obstetrics / Gynecology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Selective coronary angiography of the right coronary artery, left main LAD, left circumflex artery, left ventricular catheterization, left ventricular angiography, angioplasty of totally occluded mid RCA, arthrectomy using 6-French catheter, stenting of the mid RCA, stenting of the proximal RCA, femoral angiography and Perclose hemostasis.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Dual chamber generator replacement.  The patient is a pleasant patient who presented to the office, recently was found to be at ERI and she has been referred for generator replacement.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Right frontotemporal craniotomy and evacuation of hematoma, biopsy of membranes, microtechniques.
+Specialty:
+",Hematology - Oncology,Neurology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Diagnostic mammogram, full-field digital, ultrasound of the breast and mammotome core biopsy of the left breast.
+Specialty:
+",Obstetrics / Gynecology,Obstetrics / Gynecology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Insertion of subclavian dual-port Port-A-Cath and surgeon-interpreted fluoroscopy.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: CT chest with contrast.
+Specialty:
+",Radiology,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: First Pap smear, complaining of irregular periods.  - Menorrhagia, pelvic pain, dysmenorrhea, and irregular periods.
+Specialty:
+",Obstetrics / Gynecology,Obstetrics / Gynecology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Cerebral Angiogram - moyamoya disease.
+Specialty:
+",Cardiovascular / Pulmonary,Neurology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Endoscopic-assisted transsphenoidal exploration and radical excision of pituitary adenoma.  Endoscopic exposure of sphenoid sinus with removal of tissue from within the sinus.
+Specialty:
+",Neurosurgery,Neurology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: A routine return appointment for a 71-year-old woman with chronic atrial fibrillation.  Chief complaint today is shortness of breath.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Echocardiographic Examination Report.   Angina and coronary artery disease.  Mild biatrial enlargement, normal thickening of the left ventricle with mildly dilated ventricle and EF of 40%, mild mitral regurgitation, diastolic dysfunction grade 2, mild pulmonary hypertension.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Orthopedic progress note for follow up of osteoarthritis, knees.
+Specialty:
+",Orthopedic,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: New patient consultation - Low back pain, degenerative disc disease, spinal stenosis, diabetes, and history of prostate cancer status post radiation.
+Specialty:
+",Orthopedic,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Arthroscopic irrigation and debridement of same with partial synovectomy.  Septic left total knee arthroplasty.
+Specialty:
+",Orthopedic,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Patient with worsening shortness of breath and cough.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Application of PMT large halo crown and vest.  Cervical spondylosis, status post complex anterior cervical discectomy, corpectomy, decompression and fusion.
+Specialty:
+",Orthopedic,Neurosurgery
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Excision of right upper eyelid squamous cell carcinoma with frozen section and full-thickness skin grafting from the opposite eyelid.
+Specialty:
+",Ophthalmology,Ophthalmology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Low back pain and right lower extremity pain - Lumbar spine herniated nucleus pulposus.
+Specialty:
+",Orthopedic,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Psychosocial donor evaluation.  Following questions are mostly involved in a psychosocial donor evaluation.
+Specialty:
+",Psychiatry / Psychology,Nephrology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Patient status post vehicular trauma.  Low Back syndrome and Cervicalgia.
+Specialty:
+",Orthopedic,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: EEG during wakefulness, drowsiness, and sleep with synchronous video monitoring demonstrated no evidence of focal or epileptogenic activity.
+Specialty:
+",Neurology,Neurology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Psychiatric Assessment of a patient with bipolar and anxiety disorder having posttraumatic stress syndrome.
+Specialty:
+",Psychiatry / Psychology,Psychiatry / Psychology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Acute supraglottitis with airway obstruction and parapharyngeal cellulitis and peritonsillar cellulitis.
+Specialty:
+",ENT - Otolaryngology,ENT - Otolaryngology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Chest, Single view post OP for ASD (Atrial Septal Defect).
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: A 37 year-old female with twin pregnancy with threatened premature labor.
+Specialty:
+",Obstetrics / Gynecology,Obstetrics / Gynecology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Newly diagnosed cholangiocarcinoma.  The patient is noted to have an increase in her liver function tests on routine blood work.  Ultrasound of the abdomen showed gallbladder sludge and gallbladder findings consistent with adenomyomatosis.
+Specialty:
+",Obstetrics / Gynecology,Hematology - Oncology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Dysarthria.  Probable brainstem glioma.
+Specialty:
+",Neurology,Neurology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Difficulty with both distance vision and with fine print at near.
+Specialty:
+",Ophthalmology,Ophthalmology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: MRI - Arteriovenous malformation with hemorrhage.
+Specialty:
+",Neurosurgery,Neurology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: A 6-year-old male who is a former 27-week premature infant, suffered an intraventricular hemorrhage requiring shunt placement, and as a result, has developmental delay and left hemiparesis.
+Specialty:
+",Neurology,Neurology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Patient demonstrated mild cognitive deficits on a neuropsychological screening evaluation during a followup appointment for stroke.
+Specialty:
+",Neurology,Psychiatry / Psychology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Patient with right-sided chest pain, borderline elevated high blood pressure, history of hyperlipidemia, and obesity.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Right distal both-bone forearm fracture.  Closed reduction under conscious sedation and application of a splint was warranted.
+Specialty:
+",Orthopedic,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Sample Radiology report of knee (growth arrest lines).
+Specialty:
+",Orthopedic,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Flexible sigmoidoscopy due to rectal bleeding.
+Specialty:
+",Gastroenterology,Gastroenterology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Patient returns for his first followup after shunt surgery.
+Specialty:
+",Nephrology,Neurosurgery
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Right frontotemporoparietal craniotomy, evacuation of acute subdural hematoma.   Acute subdural hematoma, right, with herniation syndrome.
+Specialty:
+",Neurology,Neurosurgery
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Sample normal ear, nose, mouth, and throat exam.
+Specialty:
+",ENT - Otolaryngology,ENT - Otolaryngology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Pregnant female with nausea, vomiting, and diarrhea.  OB ultrasound less than 14 weeks, transvaginal.
+Specialty:
+",Obstetrics / Gynecology,Obstetrics / Gynecology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Nuclear cardiac stress report.  Recurrent angina pectoris in a patient with documented ischemic heart disease and underlying ischemic cardiomyopathy.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Anterior cervical discectomy with decompression, C5-C6, arthrodesis with anterior interbody fusion, C5-C6, spinal instrumentation, C5-C6 using Pioneer 18-mm plate and four 14 x 4.0 mm screws (all titanium), implant using PEEK 7 mm, and Allograft using Vitoss.
+Specialty:
+",Orthopedic,Neurosurgery
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Consultation for evaluation of thrombocytopenia.
+Specialty:
+",Hematology - Oncology,Hematology - Oncology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Pulmonary function test.  Mild-to-moderate obstructive ventilatory impairment.  Some improvement in the airflows after bronchodilator therapy.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: MRI T-spine and CXR - Aortic Dissection.
+Specialty:
+",Orthopedic,Neurology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Twin pregnancy with threatened preterm labor.
+Specialty:
+",Obstetrics / Gynecology,Obstetrics / Gynecology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: A woman presenting to our clinic for the first time for evaluation of hip pain, right greater than left, of greater than 2 years duration.  The pain is located laterally as well as anteriorly into the groin.
+Specialty:
+",Orthopedic,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Patient  follows up for cataract extraction with lens implant 2 weeks ago.   Recovering well from her cataract operation in the right eye with residual corneal swelling, which should resolve in the next 2 to 3 weeks.
+Specialty:
+",Ophthalmology,Ophthalmology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Radical anterior discectomy with removal of posterior osteophytes, foraminotomies, and decompression of the spinal canal.  Anterior cervical fusion.  Utilization of allograft for purposes of spinal fusion.  Application of anterior cervical locking plate.
+Specialty:
+",Orthopedic,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: MRI Spine - T12-L5 epidural lipoma and thoracic spinal cord infarction vs. transverse myelitis.
+Specialty:
+",Neurology,Neurology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Insertion of a double lumen port through the left femoral vein, radiological guidance.  Open exploration of the left subclavian and axillary vein.  Metastatic glossal carcinoma, needing chemotherapy and a port.
+Specialty:
+",Hematology - Oncology,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Left metastasectomy of metastatic renal cell carcinoma with additional mediastinal lymph node dissection and additional fiberoptic bronchoscopy.
+Specialty:
+",Nephrology,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Pulmonary function test.  Mild-to-moderate obstructive ventilatory impairment.  Some improvement in the airflows after bronchodilator therapy.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Laparoscopic cholecystectomy with cholangiogram.
+Specialty:
+",Gastroenterology,Gastroenterology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Dementia and aortoiliac occlusive disease bilaterally.  Aortobifemoral bypass surgery utilizing a bifurcated Hemashield graft.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Esophagogastroduodenoscopy with photo.  Insertion of a percutaneous endoscopic gastrostomy tube.  Neuromuscular dysphagia.  Protein-calorie malnutrition.
+Specialty:
+",Gastroenterology,Gastroenterology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: EGD with photos and biopsies.  This is a 75-year-old female who presents with difficulty swallowing, occasional choking, and odynophagia.  She has a previous history of hiatal hernia.  She was on Prevacid currently.
+Specialty:
+",Gastroenterology,Gastroenterology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Mediastinal exploration and delayed primary chest closure.  The patient is a 12-day-old infant who has undergone a modified stage I Norwood procedure with a Sano modification.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: A lady was admitted to the hospital with chest pain and respiratory insufficiency.  She has chronic lung disease with bronchospastic angina.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Status post left hip fracture and hemiarthroplasty.   Rehab transfer as soon as medically cleared.
+Specialty:
+",Orthopedic,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: MGUS.  His bone marrow biopsy showed a normal cellular bone marrow; however, there were 10% plasma cells and we proceeded with the workup for a plasma cell dyscrasia.  All his tests came back as consistent with an MGUS.
+Specialty:
+",Hematology - Oncology,Hematology - Oncology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Subcutaneous ulnar nerve transposition.  A curvilinear incision was made over the medial elbow, starting proximally at the medial intermuscular septum, curving posterior to the medial epicondyle, then curving anteriorly along the path of the ulnar nerve.  Dissection was carried down to the ulnar nerve.
+Specialty:
+",Orthopedic,Neurosurgery
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Left third digit numbness and wrist pain.
+Specialty:
+",Orthopedic,Neurology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: A 62-year-old male with a history of ischemic cardiomyopathy and implanted defibrillator.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Phenol neurolysis right obturator nerve, botulinum toxin injection right rectus femoris and vastus medialis intermedius and right pectoralis major muscles.
+Specialty:
+",Neurosurgery,Neurology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: A sample note on Angina.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Tilt table test.  A patient with past medical history of syncope.  The patient is also complaining of dizziness.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Laparotomy and myomectomy.   Enlarged fibroid uterus and blood loss anemia.  On bimanual exam, the patient has an enlarged, approximately 14-week sized uterus that is freely mobile and anteverted with no adnexal masses.  Surgically, the patient has an enlarged fibroid uterus with a large fundal/anterior fibroids.
+Specialty:
+",Obstetrics / Gynecology,Obstetrics / Gynecology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: The patient is an 11-month-old with a diagnosis of stage 2 neuroblastoma of the right adrenal gland with favorable Shimada histology and history of stage 2 left adrenal neuroblastoma, status post gross total resection.
+Specialty:
+",Hematology - Oncology,Neurology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Resting Myoview perfusion scan and gated myocardial scan.  Findings consistent with an inferior non-transmural scar
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Coronary artery bypass grafting (CABG) x4.  Progressive exertional angina, three-vessel coronary artery disease, left main disease, preserved left ventricular function.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Left laparoscopic hand-assisted nephrectomy.
+Specialty:
+",Nephrology,Nephrology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Excision of mass, left second toe and distal Symes amputation, left hallux with excisional biopsy.  Mass, left second toe.  Tumor.  Left hallux bone invasion of the distal phalanx.
+Specialty:
+",Orthopedic,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Combined closed vitrectomy with membrane peeling, fluid-air exchange, and endolaser, right eye.
+Specialty:
+",Neurology,Ophthalmology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Type 1 diabetes mellitus, insulin pump requiring.  Chronic kidney disease, stage III.  Sweet syndrome, hypertension, and dyslipidemia.
+Specialty:
+",Cardiovascular / Pulmonary,Nephrology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: MRI L-S-Spine for Cauda Equina Syndrome secondary to L3-4 disc herniation - Low Back Pain (LBP) with associated BLE weakness.
+Specialty:
+",Neurology,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Left heart catheterization with coronary angiography, vein graft angiography and left ventricular pressure measurement and angiography.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: OB Ultrasound - A 29-year-old female requests for size and date of pregnancy.
+Specialty:
+",Obstetrics / Gynecology,Obstetrics / Gynecology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Biopsy-proven mesothelioma - Placement of Port-A-Cath, left subclavian vein with fluoroscopy.
+Specialty:
+",Cardiovascular / Pulmonary,Hematology - Oncology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: MRI of elbow - A middle-aged female with moderate pain, severe swelling and a growth on the arm.
+Specialty:
+",Orthopedic,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Dysphagia and hematemesis while vomiting.  Diffuse esophageal dilatation/hematemesis
+Specialty:
+",Gastroenterology,Gastroenterology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Left C5-6 hemilaminotomy and foraminotomy with medial facetectomy for microscopic decompression of nerve root.
+Specialty:
+",Neurosurgery,Neurosurgery
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Removal of the old right pressure equalizing tube.  Myringotomy with placement of a left pressure equalizing tube.
+Specialty:
+",ENT - Otolaryngology,ENT - Otolaryngology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Cystourethroscopy, bilateral retrograde pyelogram, and transurethral resection of bladder tumor of 1.5 cm in size.  Recurrent bladder tumor and history of bladder carcinoma.
+Specialty:
+",Nephrology,Nephrology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Blepharoplasty procedure
+Specialty:
+",Ophthalmology,Ophthalmology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Left muscle sparing mini thoracotomy with left upper lobectomy and mediastinal lymph node dissection.  Intercostal nerve block for postoperative pain relief at five levels.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Cervical spondylosis and kyphotic deformity.  She had a nerve conduction study and a diagnosis of radiculopathy was made.  She had an MRI of lumbosacral spine, which was within normal limits.  She then developed a tingling sensation in the right middle toe.
+Specialty:
+",Neurology,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Left lower lobectomy.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Pediatric Gastroenterology - Rectal Bleeding Consult.
+Specialty:
+",Gastroenterology,Gastroenterology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Open reduction, nasal fracture with nasal septoplasty.
+Specialty:
+",ENT - Otolaryngology,ENT - Otolaryngology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Decreased ability to perform daily living activities secondary to right knee surgery.
+Specialty:
+",Orthopedic,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Percutaneous liver biopsy.   With the patient lying in the supine position and the right hand underneath the head, an area of maximal dullness was identified in the mid-axillary location by percussion.
+Specialty:
+",Nephrology,Gastroenterology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Breast radiation therapy followup note. Left breast adenocarcinoma stage T3 N1b M0, stage IIIA.
+Specialty:
+",Radiology,Obstetrics / Gynecology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Patient with a diagnosis of pancreatitis, developed hypotension and possible sepsis and respiratory, as well as renal failure.
+Specialty:
+",Gastroenterology,Nephrology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Cardioversion.  Unsuccessful direct current cardioversion with permanent atrial fibrillation.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Left heart catheterization with left ventriculography and selective coronary angiography.  A 50% distal left main and two-vessel coronary artery disease with normal left ventricular systolic function.  Frequent PVCs.  Metabolic syndrome.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: The right upper lobe wedge biopsy shows a poorly differentiated non-small cell carcinoma with a solid growth pattern and without definite glandular differentiation by light microscopy.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Direct laryngoscopy and bronchoscopy.
+Specialty:
+",Gastroenterology,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Stroke in distribution of recurrent artery of Huebner (left)
+Specialty:
+",Cardiovascular / Pulmonary,Neurology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Hemarthrosis, left knee, status post total knee replacement, rule out infection.  Arthrotomy, irrigation and debridement, and polyethylene exchange, left knee.  No complications were encountered throughout the procedure.
+Specialty:
+",Orthopedic,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Redo L4-5 diskectomy, left - recurrent herniation L4-5 disk with left radiculopathy.
+Specialty:
+",Neurology,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Total colonoscopy and polypectomy
+Specialty:
+",Gastroenterology,Gastroenterology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Superior labrum anterior and posterior lesion repair.
+Specialty:
+",Orthopedic,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: This is a 62-year-old woman with hypertension, diabetes mellitus, prior stroke who has what sounds like Guillain-Barre syndrome, likely the Miller-Fisher variant.
+Specialty:
+",Neurology,Neurology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Ankle sprain, left ankle.  The patient tripped over her dog toy and fell with her left foot inverted.  The patient states that she received a series of x-rays and MRIs that were unremarkable.  After approximately 1 month, the patient continued to have significant debilitating pain in her left ankle.  She then received a walking boot and has been in the boot for the past month.
+Specialty:
+",Orthopedic,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Reason for ICU followup today is acute anemia secondary to upper GI bleeding with melena with dropping hemoglobin from 11 to 8, status post transfusion of 2 units PRBCs with EGD performed earlier today by Dr. X of Gastroenterology confirming diagnosis of ulcerative esophagitis, also for continuing chronic obstructive pulmonary disease exacerbation with productive cough, infection and shortness of breath.
+Specialty:
+",Hematology - Oncology,Gastroenterology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Followup on chronic kidney disease.
+Specialty:
+",Nephrology,Nephrology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: CT scan of the abdomen and pelvis with contrast to evaluate abdominal pan.
+Specialty:
+",Radiology,Gastroenterology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Carpal tunnel syndrome.  Open carpal tunnel release.  A longitudinal incision was made in line with the 4th ray.  The dissection was carried down to the superficial aponeurosis, which was cut.  The distal edge of the transverse carpal ligament was identified with a hemostat.
+Specialty:
+",Neurology,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Left breast cancer.  Nuclear medicine lymphatic scan.  A 16-hour left anterior oblique imaging was performed with and without shielding of the original injection site.
+Specialty:
+",Radiology,Hematology - Oncology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: A male with known alcohol cirrhosis who presented to the emergency room after an accidental fall in the bathroom.
+Specialty:
+",Cardiovascular / Pulmonary,Neurology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Unilateral transpedicular T11 vertebroplasty.
+Specialty:
+",Neurology,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Myocardial perfusion imaging - patient with history of MI, stents placement, and chest pain.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Ophthalmology followup visit note.
+Specialty:
+",Ophthalmology,Ophthalmology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Phacoemulsification with posterior chamber intraocular lens insertion.
+Specialty:
+",Ophthalmology,Ophthalmology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Bilateral carotid ultrasound to evaluate pain.
+Specialty:
+",Neurology,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Cerebrovascular accident (CVA).  The patient presents to the emergency room after awakening at 2:30 a.m. this morning with trouble swallowing, trouble breathing, and left-sided numbness and weakness.
+Specialty:
+",Neurology,Neurology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: A 27-year-old female with a size and date discrepancy.
+Specialty:
+",Pediatrics - Neonatal,Obstetrics / Gynecology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Dobutrex stress test for abnormal EKG
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Intermittent rectal bleeding with abdominal pain.
+Specialty:
+",Hematology - Oncology,Gastroenterology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Patient seen initially with epigastric and right upper quadrant abdominal pain, nausea, dizziness, and bloating.
+Specialty:
+",Cardiovascular / Pulmonary,Gastroenterology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: The patient is having recurrent attacks of imbalance rather than true vertigo following the history of head trauma and loss of consciousness.  Symptoms are not accompanied by tinnitus or deafness.
+Specialty:
+",Neurology,ENT - Otolaryngology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Chronic headaches and pulsatile tinnitus.
+Specialty:
+",Neurology,ENT - Otolaryngology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: The patient is a 74-year-old woman who presents for neurological consultation for possible adult hydrocephalus.  Mild gait impairment and mild cognitive slowing.
+Specialty:
+",Neurology,Neurology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Exploratory laparotomy, lysis of adhesions, and right hemicolectomy.  Right colon cancer, ascites, and adhesions.
+Specialty:
+",Gastroenterology,Gastroenterology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: The patient is a very pleasant 62-year-old African American female with a history of hypertension, hypercholesterolemia, and CVA, referred for evaluation and management of atrial fibrillation.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: MGUS.  His bone marrow biopsy showed a normal cellular bone marrow; however, there were 10% plasma cells and we proceeded with the workup for a plasma cell dyscrasia.  All his tests came back as consistent with an MGUS.
+Specialty:
+",Hematology - Oncology,Hematology - Oncology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Carpal tunnel syndrome.  Endoscopic carpal tunnel release.  After administering appropriate antibiotics and MAC anesthesia, the upper extremity was prepped and draped in the usual standard fashion, the arm was exsanguinated with Esmarch, and the tourniquet inflated to 250 mmHg.
+Specialty:
+",Orthopedic,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Transesophageal echocardiogram due to vegetation and bacteremia. Normal left ventricular size and function.  Echodensity involving the aortic valve suggestive of endocarditis and vegetation. Doppler study as above most pronounced being moderate-to-severe aortic insufficiency.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Insertion of transvenous pacemaker for tachybrady syndrome
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Excision dorsal ganglion, right wrist.   The extensor retinaculum was then incised and the extensor tendon was dissected and retracted out of the operative field.
+Specialty:
+",Orthopedic,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Lumbar puncture with moderate sedation.
+Specialty:
+",Nephrology,Neurology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: He awoke one morning and had double vision.  He states when he closed each eye, the double vision dissipated.  The double vision entirely dissipated within one hour.   The next day he woke up and he had double vision again.
+Specialty:
+",Orthopedic,Neurology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Abnormal liver enzymes and diarrhea.  CT pelvis with contrast and ct abdomen with and without contrast.
+Specialty:
+",Radiology,Nephrology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: DDDR permanent pacemaker, insertion of a steroid-eluting screw in right atrial lead, insertion of a steroid-eluting screw in right ventricular apical lead, pulse generator insertion, model Sigma,
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Fiberoptic flexible bronchoscopy with lavage, brushings, and endobronchial mucosal biopsies of the right bronchus intermedius/right lower lobe.  Right hyoid mass, rule out carcinomatosis.  Chronic obstructive pulmonary disease.  Changes consistent with acute and chronic bronchitis.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Leukemic meningitis.   Right frontal side-inlet Ommaya reservoir.  The patient is a 49-year-old gentleman with leukemia and meningeal involvement, who was undergoing intrathecal chemotherapy.
+Specialty:
+",Hematology - Oncology,Neurosurgery
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Right burr hole craniotomy for evacuation of subdural hematoma and placement of subdural drain.
+Specialty:
+",Neurosurgery,Neurology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Headache and diplopia.
+Specialty:
+",Neurology,Neurology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Juxtaductal coarctation of the aorta, dilated cardiomyopathy, bicuspid aortic valve, patent foramen ovale.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Intensity-modulated radiation therapy simulation note.  The patient will receive intensity-modulated radiation therapy in order to deliver high-dose treatment to sensitive structures.
+Specialty:
+",Radiology,Hematology - Oncology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Psychiatric consultation for substance abuse.
+Specialty:
+",Psychiatry / Psychology,Psychiatry / Psychology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Left Iliopsoas hematoma.  Gait difficulty.
+Specialty:
+",Orthopedic,Neurology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: A 3-year-old abrupt onset of cough and increased work of breathing.
+Specialty:
+",Pediatrics - Neonatal,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: MRI: Right parietal metastatic adenocarcinoma (LUNG) metastasis.
+Specialty:
+",Neurology,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Foul-smelling urine and stomach pain after meals.
+Specialty:
+",Gastroenterology,Gastroenterology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: MRI Brain - Progressive Multifocal Leukoencephalopathy (PML) occurring in an immunosuppressed patient with polymyositis.
+Specialty:
+",Neurology,Neurology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Resection of left chest wall tumor, partial resection of left diaphragm, left lower lobe lung wedge resection, left chest wall reconstruction with Gore-Tex mesh.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: A 51-year-old male with chest pain and history of coronary artery disease.
+Specialty:
+",Cardiovascular / Pulmonary,Radiology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Left metastasectomy of metastatic renal cell carcinoma with additional mediastinal lymph node dissection and additional fiberoptic bronchoscopy.
+Specialty:
+",Nephrology,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Closed head injury with evidence of axonal injury vs. vascular injury to the left substantia nigra, right subdural hematoma and possible subarachnoid hemorrhage, vascular/ischemic injury in the right occipital lobe-right basal ganglia/caudate nucleus-right frontal lobe, and right temporal lobe contusion.
+Specialty:
+",Neurosurgery,Neurology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: CT Brain to evaluate episodic mental status change, RUE numbness, chorea, and calcification of Basal Ganglia (globus pallidi).
+Specialty:
+",Neurology,Neurology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Fogarty thrombectomy, left forearm arteriovenous Gore-Tex bridge fistula and revision of distal anastomosis with 7 mm interposition Gore-Tex graft.  Chronic renal failure and thrombosed left forearm arteriovenous Gore-Tex bridge fistula.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Trimalleolar ankle fracture and dislocation right ankle.  A comminuted fracture involving the lateral malleolus, as well as a medial and posterior malleolus fracture as well.  Closed open reduction and internal fixation of right ankle.
+Specialty:
+",Orthopedic,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: MRI T-spine: Metastatic Adenocarcinoma of the T3-T4 vertebrae and invading the spinal canal.
+Specialty:
+",Neurology,Neurology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Left and right coronary system cineangiography, cineangiography of SVG to OM and LIMA to LAD.  Left ventriculogram and aortogram.  Percutaneous intervention of the left circumflex and obtuse marginal branch with plano balloon angioplasty unable to pass stent.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Mother states he has been wheezing and coughing.
+Specialty:
+",Cardiovascular / Pulmonary,Pediatrics - Neonatal
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Phenol neurolysis right obturator nerve, botulinum toxin injection right rectus femoris and vastus medialis intermedius and right pectoralis major muscles.
+Specialty:
+",Neurology,Neurosurgery
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: MRI Brain & MRI C-T spine: Multiple hemangioblastoma in Von Hippel Lindau Disease.
+Specialty:
+",Neurology,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Loculated left effusion, multilobar pneumonia.  Patient  had a diagnosis of multilobar pneumonia along with arrhythmia and heart failure as well as renal insufficiency.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Anterior cervical discectomy, arthrodesis, partial corpectomy, Machine bone allograft, placement of anterior cervical plate with a Zephyr.7.  Microscopic dissection.
+Specialty:
+",Neurosurgery,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Nausea and abdominal pain after eating - Gall bladder disease - Laparoscopic cholecystectomy scheduled.
+Specialty:
+",Gastroenterology,Gastroenterology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Left knee arthroscopy with removal of the cartilage loose body and microfracture of the medial femoral condyle with chondroplasty.
+Specialty:
+",Orthopedic,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Left breast mass and hypertrophic scar of the left breast.  Excision of left breast mass and revision of scar.  The patient is status post left breast biopsy, which showed a fibrocystic disease with now a palpable mass just superior to the previous biopsy site.
+Specialty:
+",Obstetrics / Gynecology,Hematology - Oncology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Ligation and stripping of left greater saphenous vein to the level of the knee.  Stripping of multiple left lower extremity varicose veins.  Varicose veins.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Lightheaded, dizziness, and palpitation.  This morning, the patient experienced symptoms of lightheaded, dizziness, felt like passing out; however, there was no actual syncope.  During the episode, the patient describes symptoms of palpitation and fluttering of chest.  She relates the heart was racing.  By the time when she came into the Emergency Room, her EKG revealed normal sinus rhythm.  No evidence of arrhythmia.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Lexiscan Nuclear Myocardial Perfusion Scan.  Chest pain.  Patient unable to walk on a treadmill.  Nondiagnostic Lexiscan.  Normal nuclear myocardial perfusion scan.
+Specialty:
+",Radiology,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Nonischemic cardiomyopathy, branch vessel coronary artery disease, congestive heart failure - NYHA Class III, history of nonsustained ventricular tachycardia, hypertension, and hepatitis C.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Postpartum tubal ligation and removal of upper abdominal skin wall mass.
+Specialty:
+",Obstetrics / Gynecology,Obstetrics / Gynecology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Successful stenting of the left anterior descending.  Angina pectoris, tight lesion in left anterior descending.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Frontal craniotomy for placement of deep brain stimulator electrode.  Microelectrode recording of deep brain structures. Intraoperative programming and assessment of device.
+Specialty:
+",Neurology,Neurosurgery
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Open reduction internal fixation of the left supracondylar, intercondylar distal femur fracture.
+Specialty:
+",Orthopedic,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Microscopic lumbar discectomy, left L5-S1.   Extruded herniated disc, left L5-S1.  Left S1 radiculopathy (acute). Morbid obesity.
+Specialty:
+",Neurosurgery,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: A 68-year-old white male with recently diagnosed adenocarcinoma by sputum cytology.  An abnormal chest radiograph shows right middle lobe infiltrate and collapse.  Patient needs staging CT of chest with contrast.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: This is a 48-year-old black male with stage IV chronic kidney disease likely secondary to HIV nephropathy, although there is no history of renal biopsy, who has been noncompliant with the Renal Clinic and presents today for followup at the recommendation of his Infection Disease doctors.
+Specialty:
+",Nephrology,Nephrology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: 2-D M-Mode. Doppler.
+Specialty:
+",Radiology,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Newly diagnosed head and neck cancer.  The patient was recently diagnosed with squamous cell carcinoma of the base of the tongue bilaterally and down extension into the right tonsillar fossa.
+Specialty:
+",Hematology - Oncology,Hematology - Oncology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Flexible Sigmoidoscopy.
+Specialty:
+",Obstetrics / Gynecology,Gastroenterology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Acute on chronic COPD exacerbation and community acquired pneumonia both resolving.  However, she may need home O2 for a short period of time.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Caudate Nuclei atrophy, bilaterally, in patient with Huntington Disease.
+Specialty:
+",Neurology,Neurology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Tracheostomy with skin flaps and SCOOP procedure FastTract.  Oxygen dependency of approximately 5 liters nasal cannula at home and chronic obstructive pulmonary disease.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Fiberoptic bronchoscopy, diagnostic.  Hemoptysis and history of lung cancer.  Tumor occluding right middle lobe with friability.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Transesophageal echocardiogram.   The transesophageal probe was introduced into the posterior pharynx and esophagus without difficulty.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Left below-the-knee amputation.  Dressing change, right foot.
+Specialty:
+",Orthopedic,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Anterior cervical discectomy and osteophytectomy.  Application of prosthetic interbody fusion device.  Anterior cervical interbody arthrodesis.  Anterior cervical instrumentation
+Specialty:
+",Orthopedic,Neurosurgery
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Displaced left subtrochanteric femur fracture.  Intramedullary rod in the left hip using the Synthes trochanteric fixation nail measuring 11 x 130 degrees with an 85-mm helical blade.
+Specialty:
+",Orthopedic,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Ventriculoperitoneal shunt revision with replacement of ventricular catheter and flushing of the distal end.
+Specialty:
+",Neurosurgery,Neurosurgery
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Repair of entropion, left upper lid, with excision of anterior lamella and cryotherapy.  Repairs of blepharon, entropion, right lower lid with mucous membrane graft.
+Specialty:
+",Ophthalmology,Ophthalmology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: A 5-month-old boy brought by his parents because of 2 days of cough.
+Specialty:
+",Cardiovascular / Pulmonary,Pediatrics - Neonatal
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Left breast mass and hypertrophic scar of the left breast.  Excision of left breast mass and revision of scar.  The patient is status post left breast biopsy, which showed a fibrocystic disease with now a palpable mass just superior to the previous biopsy site.
+Specialty:
+",Obstetrics / Gynecology,Obstetrics / Gynecology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: This 61-year-old retailer who presents with acute shortness of breath, hypertension, found to be in acute pulmonary edema.   No confirmed prior history of heart attack, myocardial infarction, heart failure.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Left pleural effusion, parapneumonic, loculated.  Left chest tube placement.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Cervical cone biopsy, dilatation & curettage
+Specialty:
+",Obstetrics / Gynecology,Obstetrics / Gynecology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Bronchoscopy for persistent cough productive of sputum requiring repeated courses of oral antibiotics over the last six weeks in a patient who is a recipient of a bone marrow transplant with end-stage chemotherapy and radiation-induced pulmonary fibrosis.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: The thoracic spine was examined in the AP, lateral and swimmer's projections.
+Specialty:
+",Orthopedic,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Laparoscopy with left salpingo-oophorectomy.  Left adnexal mass/ovarian lesion.  The labia and perineum were within normal limits.  The hymen was found to be intact.  Laparoscopic findings revealed a 4 cm left adnexal mass, which appeared fluid filled.
+Specialty:
+",Obstetrics / Gynecology,Obstetrics / Gynecology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: A 7-year-old white male started to complain of pain in his fingers, elbows, and neck.  This patient may have had reactive arthritis.
+Specialty:
+",Orthopedic,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Excision of left breast mass.  The mass was identified adjacent to the left nipple.  It was freely mobile and it did not seem to hold the skin.
+Specialty:
+",Obstetrics / Gynecology,Hematology - Oncology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Placement of right new ventriculoperitoneal (VP) shunts Strata valve and to removal of right frontal Ommaya reservoir.
+Specialty:
+",Neurosurgery,Neurosurgery
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Placement of a subclavian single-lumen tunneled Hickman central venous catheter.  Surgeon-interpreted fluoroscopy.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Cerebral Angiogram - Lobulated aneurysm of the supraclinoid portion of the left internal carotid artery close to the origin of the left posterior communicating artery.
+Specialty:
+",Cardiovascular / Pulmonary,Neurology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Esophagogastroduodenoscopy.  The Olympus video panendoscope was advanced under direct vision into the esophagus.  The esophagus was normal in appearance and configuration.  The gastroesophageal junction was normal.
+Specialty:
+",Gastroenterology,Gastroenterology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Morbid obesity.  Laparoscopic Roux-en-Y gastric bypass, antecolic, antegastric with 25-mm EEA anastamosis, esophagogastroduodenoscopy.
+Specialty:
+",Obstetrics / Gynecology,Gastroenterology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: This is a 69-year-old white woman with Huntington disease, who presents with the third suicide attempt in the past two months.
+Specialty:
+",Neurology,Psychiatry / Psychology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Aortogram with bilateral, segmental lower extremity run off.  Left leg claudication.  The patient presents with lower extremity claudication.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Cardiolite treadmill exercise stress test.  The patient was exercised on the treadmill to maximum tolerance achieving after 5 minutes a peak heart rate of 137 beats per minute with a workload of 2.3 METS.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: The patient is a 26-year-old female, referred to Physical Therapy for low back pain.  The patient has a history of traumatic injury to low back.
+Specialty:
+",Orthopedic,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Bilateral pleural effusion.  Removal of bilateral #32 French chest tubes with closure of wound.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Need for cardiac catheterization.  Coronary artery disease, chest pain, history of diabetes, history of hypertension, history of obesity,  a 1.1 cm lesion in the medial aspect of the right parietal lobe, and deconditioning.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Carotid Ultrasonic & Color Flow Imaging
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Noncontrast CT scan of the lumbar spine.  Left lower extremity muscle spasm.  Transaxial thin slice CT images of the lumbar spine were obtained with sagittal and coronal reconstructions on emergency basis, as requested.
+Specialty:
+",Orthopedic,Neurology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Esophagogastroduodenoscopy and colonoscopy with polypectomy
+Specialty:
+",Gastroenterology,Gastroenterology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Esophagogastroduodenoscopy with biopsy, a 1-year-10-month-old with a history of dysphagia to solids.
+Specialty:
+",Gastroenterology,Gastroenterology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Flexible fiberoptic bronchoscopy with right lower lobe bronchoalveolar lavage and right upper lobe endobronchial biopsy.  Severe tracheobronchitis, mild venous engorgement with question varicosities associated pulmonary hypertension, right upper lobe submucosal hemorrhage without frank mass underneath it status post biopsy.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Left carotid endarterectomy with endovascular patch angioplasty.  Critical left carotid stenosis.  The external carotid artery was occluded at its origin.  When the endarterectomy was performed, the external carotid artery back-bled nicely.  The internal carotid artery had good backflow bleeding noted.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Esophagogastroduodenoscopy with gastric biopsies.  Antral erythema; 2 cm polypoid pyloric channel tissue, questionable inflammatory polyp which was biopsied; duodenal erythema and erosion.
+Specialty:
+",Gastroenterology,Gastroenterology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Echocardiogram was performed including 2-D and M-mode imaging.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: The patient is a 67-year-old white female with a history of uterine papillary serous carcinoma who is status post 6 cycles of carboplatin and Taxol, is here today for followup.
+Specialty:
+",Hematology - Oncology,Obstetrics / Gynecology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Ivor-Lewis esophagogastrectomy, feeding jejunostomy, placement of two right-sided 28 French chest tubes, and right thoracotomy.
+Specialty:
+",Cardiovascular / Pulmonary,Gastroenterology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Asked to see the patient in regards to a brain tumor.  She was initially diagnosed with a glioblastoma multiforme.  She presented with several lesions in her brain and a biopsy confirmed the diagnosis.
+Specialty:
+",Hematology - Oncology,Hematology - Oncology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Woman with adult hydrocephalus, routine evaluation.
+Specialty:
+",Neurosurgery,Neurology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Delivery is a normal spontaneous vaginal delivery of an intrauterine fetal demise.  Fetal position is right occiput anterior.
+Specialty:
+",Obstetrics / Gynecology,Obstetrics / Gynecology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Open reduction internal fixation of the left supracondylar, intercondylar distal femur fracture.
+Specialty:
+",Orthopedic,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Dobutamine Stress Echocardiogram.  Chest discomfort, evaluation for coronary artery disease.  Maximal dobutamine stress echocardiogram test achieving more than 85% of age-predicted heart rate.  Negative EKG criteria for ischemia.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: MRI L-S-Spine for Cauda Equina Syndrome secondary to L3-4 disc herniation - Low Back Pain (LBP) with associated BLE weakness.
+Specialty:
+",Orthopedic,Neurology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: A male with known alcohol cirrhosis who presented to the emergency room after an accidental fall in the bathroom.
+Specialty:
+",Cardiovascular / Pulmonary,Gastroenterology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: To evaluate recurrent episodes of uncomfortable feeling in arm at rest, as well as during exertion.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Right pontine pyramidal tract infarct.
+Specialty:
+",Neurology,Neurology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: A 26-mm Dacron graft replacement of type 4 thoracoabdominal aneurysm from T10 to the bifurcation of the aorta, re-implanting the celiac, superior mesenteric artery and right renal as an island and the left renal as a 8-mm interposition Dacron graft, utilizing left heart bypass and cerebrospinal fluid drainage.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Patient with a family history of premature coronary artery disease came in for evaluation of recurrent chest pain
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Patient with atrial fibrillation with slow ventricular response, partially due to medications.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Dilation and evacuation.  12 week incomplete miscarriage.  The patient unlike her visit in the ER approximately 4 hours before had some tissue in the vagina protruding from the os, this was teased out and then a D&E was performed yielding significant amount of central tissue.
+Specialty:
+",Obstetrics / Gynecology,Obstetrics / Gynecology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Arthroscopic subacromial decompression and repair of rotator cuff through mini-arthrotomy.
+Specialty:
+",Orthopedic,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Radical vulvectomy (complete), bilateral inguinal lymphadenectomy (superficial and deep).
+Specialty:
+",Obstetrics / Gynecology,Obstetrics / Gynecology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Laparoscopic hand-assisted left adrenalectomy and umbilical hernia repair.  Patient with a 5.5-cm diameter nonfunctioning mass in his right adrenal.
+Specialty:
+",Nephrology,Gastroenterology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Comprehensive Clinical Psychological Evaluation as part of a Disability Determination action.
+Specialty:
+",Psychiatry / Psychology,Psychiatry / Psychology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Total abdominal hysterectomy and bilateral salpingo-oophorectomy.
+Specialty:
+",Obstetrics / Gynecology,Obstetrics / Gynecology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: The patient has a previous history of aortic valve disease, status post aortic valve replacement, a previous history of paroxysmal atrial fibrillation, congestive heart failure, a previous history of transient ischemic attack with no residual neurologic deficits.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Consultation for right shoulder pain.
+Specialty:
+",Orthopedic,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Cosmetic rhinoplasty.  Request for cosmetic change in the external appearance of the nose.
+Specialty:
+",ENT - Otolaryngology,ENT - Otolaryngology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Patient presents to the emergency room with complaints of mid-epigastric and right upper quadrant abdominal pain for the last 14 days.
+Specialty:
+",Gastroenterology,Gastroenterology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Insertion of a VVIR permanent pacemaker.  This is an 87-year-old Caucasian female with critical aortic stenosis with an aortic valve area of 0.5 cm square and recurrent congestive heart failure symptoms mostly refractory to tachybrady arrhythmias
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Acute cholecystitis.  Laparoscopic cholecystectomy.  The abdominal area was prepped and draped in the usual sterile fashion.  A small skin incision was made below the umbilicus.  It was carried down in the transverse direction on the side of her old incision.  It was carried down to the fascia.
+Specialty:
+",Gastroenterology,Gastroenterology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Appendicitis, nonperforated.  Appendectomy.  A transverse right lower quadrant incision was made directly over the point of maximal tenderness.
+Specialty:
+",Nephrology,Gastroenterology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Patient experiences a dull pain in his upper outer arm.  It occurs on a daily basis.  He also experiences an achy sensation in his right hand radiating to the fingers.  There is no numbness or paresthesias in the hand or arm.
+Specialty:
+",Orthopedic,Neurology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Head injury, anxiety, and hypertensive emergency.
+Specialty:
+",Neurology,Pediatrics - Neonatal
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: True cut needle biopsy of the breast.  This 65-year-old female on exam was noted to have dimpling and puckering of the skin associated with nipple discharge.  On exam, she has a noticeable carcinoma of the left breast with dimpling, puckering, and erosion through the skin.
+Specialty:
+",Cardiovascular / Pulmonary,Obstetrics / Gynecology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: A neuropsychological evaluation to assess neuropsychological factors, clarify areas of strength and weakness, and to assist in therapeutic program planning in light of episodes of syncope.
+Specialty:
+",Psychiatry / Psychology,Psychiatry / Psychology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Problem of essential hypertension.  Symptoms that suggested intracranial pathology.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Sterilization candidate.  Cervical dilatation and laparoscopic bilateral partial salpingectomy.  A 30-year-old female gravida 4, para-3-0-1-3 who desires permanent sterilization.
+Specialty:
+",Obstetrics / Gynecology,Obstetrics / Gynecology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Decompressive left lumbar laminectomy C4-C5 and C5-C6 with neural foraminotomy. Posterior cervical fusion C4-C5.  Songer wire.  Right iliac bone graft.
+Specialty:
+",Orthopedic,Neurosurgery
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Carbon dioxide laser photo-ablation due to recurrent dysplasia of vulva.
+Specialty:
+",Obstetrics / Gynecology,Obstetrics / Gynecology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Arthroscopy with arthroscopic rotator cuff debridement, anterior acromioplasty, and Mumford procedure left shoulder.  Partial rotator cuff tear with impingement syndrome.  Degenerative osteoarthritis of acromioclavicular joint, left shoulder, rule out slap lesion.
+Specialty:
+",Orthopedic,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: MRI Brain, Carbon Monoxide poisoning.
+Specialty:
+",Neurology,Radiology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Intrauterine pregnancy at term with previous cesarean.   Desired sterilization.  Status post repeat low transverse cesarean and bilateral tubal ligation.
+Specialty:
+",Obstetrics / Gynecology,Obstetrics / Gynecology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Open reduction and internal plate and screw fixation of depressed anterior table right frontal sinus, transconjunctival exploration of orbital floor, open reduction of nasal septum and nasal pyramid fracture with osteotomy.
+Specialty:
+",Neurosurgery,ENT - Otolaryngology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Noncontrast CT abdomen and pelvis per renal stone protocol.
+Specialty:
+",Nephrology,Nephrology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Complete laminectomy, L4. and facetectomy, L3-L4 level.  A dural repair, right sided, on the lateral sheath, subarticular recess at the L4 pedicle level.  Posterior spinal instrumentation, L4 to S1, using Synthes Pangea System.  Posterior spinal fusion, L4 to S1.  Insertion of morselized autograft, L4 to S1.
+Specialty:
+",Neurosurgery,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Standard Laparoscopic Cholecystectomy Operative Note.
+Specialty:
+",Gastroenterology,Gastroenterology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Mild-to-moderate diverticulosis.  She was referred for a screening colonoscopy.  There is no family history of colon cancer.  No evidence of polyps or malignancy.
+Specialty:
+",Gastroenterology,Gastroenterology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Abnormal EKG and rapid heart rate.  The patient came to the emergency room.  Initially showed atrial fibrillation with rapid ventricular response.  It appears that the patient has chronic atrial fibrillation.  She denies any specific chest pain.  Her main complaint is shortness of breath and symptoms as above.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Back pain and right leg pain.  Small cell lung cancer with metastasis at the lower lumbar spine, pelvis, and both femurs
+Specialty:
+",Orthopedic,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Insertion of central venous line and arterial line and transesophageal echocardiography probe.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Abnormal electronystagmogram demonstrating prominent nystagmus on position testing in the head hanging right position.
+Specialty:
+",Neurology,Ophthalmology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: 13 years old complaining about severe ear pain - Chronic otitis media.
+Specialty:
+",ENT - Otolaryngology,ENT - Otolaryngology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Endoscopic third ventriculostomy.
+Specialty:
+",Cardiovascular / Pulmonary,Neurosurgery
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Exploratory laparotomy, total abdominal hysterectomy, bilateral salpingo-oophorectomy, right and left pelvic lymphadenectomy, common iliac lymphadenectomy, and endometrial cancer staging procedure.
+Specialty:
+",Obstetrics / Gynecology,Obstetrics / Gynecology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: A female admitted with jaundice and a pancreatic mass who was noted to have a new murmur, bacteremia, and fever.
+Specialty:
+",Pediatrics - Neonatal,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Patient with back and hip pain.
+Specialty:
+",Orthopedic,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Anterior cervical discectomy, osteophytectomy, foraminotomies, spinal cord decompression, fusion with machined allografts, Eagle titanium plate, Jackson-Pratt drain placement, and intraoperative monitoring with EMGs and SSEPs
+Specialty:
+",Orthopedic,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Delayed open reduction internal fixation with plates and screws, 6-hole contoured distal fibular plate and screws reducing posterolateral malleolar fragment as well as medial malleolar fragment.
+Specialty:
+",Orthopedic,Orthopedic
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Myoview nuclear stress study.  Angina, coronary artery disease.  Large fixed defect, inferior and apical wall, related to old myocardial infarction.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Complete laminectomy, L4. and facetectomy, L3-L4 level.  A dural repair, right sided, on the lateral sheath, subarticular recess at the L4 pedicle level.  Posterior spinal instrumentation, L4 to S1, using Synthes Pangea System.  Posterior spinal fusion, L4 to S1.  Insertion of morselized autograft, L4 to S1.
+Specialty:
+",Neurosurgery,Neurosurgery
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Common description of EGD.
+Specialty:
+",Cardiovascular / Pulmonary,Gastroenterology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: MRI C-spine: C4-5 Transverse Myelitis.
+Specialty:
+",Orthopedic,Neurology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Left thoracoscopy and left thoracotomy with declaudication and drainage of lung abscesses, and multiple biopsies of pleura and lung.
+Specialty:
+",Cardiovascular / Pulmonary,Cardiovascular / Pulmonary
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Psychiatric consultation for management of pain medications.
+Specialty:
+",Psychiatry / Psychology,Psychiatry / Psychology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Renal failure evaluation for possible dialysis therapy.  Acute kidney injury of which etiology is unknown at this time, with progressive azotemia unresponsive to IV fluids.
+Specialty:
+",Nephrology,Nephrology
+"
+Classify this medical description into one of these specialties: Cardiovascular / Pulmonary, Orthopedic, Nephrology, Obstetrics / Gynecology, Ophthalmology, Gastroenterology, Neurology, ENT - Otolaryngology, Psychiatry / Psychology, Pediatrics - Neonatal, Neurosurgery, Hematology - Oncology, Radiology
+Description: Bilateral myringotomies, insertion of PE tubes, and pharyngeal anesthesia.
+Specialty:
+",ENT - Otolaryngology,ENT - Otolaryngology
