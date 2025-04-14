@@ -12,6 +12,12 @@ We explore:
 
 ---
 
+## Weights and Biases
+
+The fine-tuned model weights, prediction, training logs, and metric were all logged on Weights and Biases. See the [report](https://api.wandb.ai/links/guntas-13-indian-institute-of-technology-gandhinagar/jee0kzjy).
+
+![](./images/wandb.png)
+
 ## Directory structure
 
 The directories named `llm_<model-name>` contain the `ipynb` for the Zero-Shot and Few-Shot prompting, meanwhile those named `train_<model-name>` contain the Fine-Tuning Code.
@@ -276,10 +282,13 @@ Fine-tuning trains models on the dataset for task-specific performance.
 
 ## Conclusion
 - **Zero-Shot**: Quick and no training required, but relies heavily on model’s pre-trained knowledge and prompt clarity.
-- **Few-Shot**: Improves over zero-shot by providing context, still no training, but limited by context window.
-- **Fine-Tuning**: Offers the best performance by adapting models to the task, though it requires computational resources and labeled data.
+![](./images/Zero.png)
 
-This pipeline demonstrates a progression from minimal effort (zero-shot) to high customization (fine-tuning), balancing speed, cost, and accuracy for medical specialty classification.
+- **Few-Shot**: Improves over zero-shot by providing context, still no training, but limited by context window.
+![](./images/Few.png)
+
+- **Fine-Tuning**: Offers the best performance by adapting models to the task, though it requires computational resources and labeled data.
+![](./images/fineTuned.png)
 
 --- 
 
