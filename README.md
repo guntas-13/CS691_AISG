@@ -2,8 +2,9 @@
 # Assignment - 2
 
 # Medical Specialty Classification: Zero-Shot, Few-Shot, and Fine-Tuning Workflows
+## See Nice Rendered Notebooks at the [Quarto Page](https://guntas-13.github.io/CS691_AISG/)!
 
-This assignment asked us to classify medical case descriptions into specialties using transformer models with three approaches: **zero-shot prompting**, **few-shot prompting**, and **fine-tuning**. We use the `hpe-ai/medical-cases-classification-tutorial` dataset, which contains medical descriptions and corresponding specialties (e.g., "Cardiovascular / Pulmonary", "Orthopedic"). The goal is to predict the correct specialty from a set of 13 unique classes.
+This assignment asked us to classify medical case descriptions into specialties using transformer models with three approaches: **zero-shot prompting**, **few-shot prompting**, and **fine-tuning**. We use the [`hpe-ai/medical-cases-classification-tutorial`](https://huggingface.co/datasets/hpe-ai/medical-cases-classification-tutorial) dataset, which contains medical descriptions and corresponding specialties (e.g., "Cardiovascular / Pulmonary", "Orthopedic"). The goal is to predict the correct specialty from a set of 13 unique classes.
 
 We explore:
 1. **Zero-Shot Prompting**: Leveraging a pre-trained language model without task-specific training.
