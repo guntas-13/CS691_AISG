@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/llm_llama/LLM_Llama.html",
       "/posts/train_gemma/HealthcareFineTuning_Gemma.html",
       "/posts/llm_deepseek/llmprompting-deepseek.html",
       "/posts/train_deepseek/HealthcareFineTuning_Deepseek.html",
