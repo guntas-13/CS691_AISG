@@ -278,7 +278,9 @@ conf_matrix = confusion_matrix(true_labels, pred_labels, labels=classes)
 
 ---
 
-## Conclusion
+## Conclusion and Results
+### Also checkout [plots.ipynb](./plots.ipynb)
+
 - **Zero-Shot**: Quick and no training required, but relies heavily on model’s pre-trained knowledge and prompt clarity.
 ![](./images/Zero.png)
 
