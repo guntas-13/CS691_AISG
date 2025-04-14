@@ -21,7 +21,7 @@ The fine-tuned model weights, prediction, training logs, and metric were all log
 
 ## Directory structure
 
-The directories named `llm_<model-name>` contain the `ipynb` for the Zero-Shot and Few-Shot prompting, meanwhile those named `train_<model-name>` contain the Fine-Tuning Code.
+The directories named `llm_<model-name>` contain the `ipynb` for the Zero-Shot and Few-Shot prompting, meanwhile those named `train_<model-name>` contain the Fine-Tuning Code. Also, see the fine-tuned model predictions in the [`predictions`](./predictions/) folder.
 
 ```
 Directory structure:
